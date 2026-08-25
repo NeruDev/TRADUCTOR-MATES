@@ -1,0 +1,446 @@
+{
+  "name": "TRADUCTOR MATES",
+  "type": "directory",
+  "children": [
+    {
+      "name": "docs",
+      "type": "directory",
+      "children": [
+        { "name": "ARCHITECTURE.md", "type": "file" },
+        {
+          "name": "base",
+          "type": "directory",
+          "children": [
+            { "name": "clase_configuracion.md", "type": "file" },
+            { "name": "entradas_script.md", "type": "file" },
+            { "name": "frontmatter_yaml.md", "type": "file" },
+            { "name": "tipado_estricto_inline.md", "type": "file" }
+          ]
+        },
+        { "name": "directorios.json", "type": "file" },
+        { "name": "directorios_comentados.jsonc", "type": "file" },
+        {
+          "name": "fisica",
+          "type": "directory",
+          "children": [
+            {
+              "name": "constantes",
+              "type": "directory",
+              "children": [
+                { "name": "constantes.md", "type": "file" }
+              ]
+            },
+            {
+              "name": "unidades",
+              "type": "directory",
+              "children": [
+                { "name": "unidades_fundamentales.md", "type": "file" },
+                { "name": "unidades_principales.md", "type": "file" },
+                { "name": "unidades_secundarias.md", "type": "file" }
+              ]
+            },
+            { "name": "formulario_avanzado.md", "type": "file" },
+            { "name": "formulario_basico.md", "type": "file" },
+            { "name": "formulario_fisica.md", "type": "file" },
+            { "name": "formulario_intermedio.md", "type": "file" }
+          ]
+        },
+        {
+          "name": "mates",
+          "type": "directory",
+          "children": [
+            {
+              "name": "constantes",
+              "type": "directory",
+              "children": [
+                { "name": "constantes.md", "type": "file" }
+              ]
+            },
+            { "name": "formulario_avanzado.md", "type": "file" },
+            { "name": "formulario_basico.md", "type": "file" },
+            { "name": "formulario_intermedio.md", "type": "file" },
+            { "name": "formulario_mates.md", "type": "file" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mathjax_build",
+      "type": "directory",
+      "children": [
+        /*
+         * SCRIPT: package_config.js
+         * DESCRIPCIÓN: Configuración modular de extensiones TeX de MathJax optimizada para matemáticas y física
+         * CONSTANTES: ACTIVE_PACKAGES
+         */
+        { "name": "package_config.js", "type": "file" },
+        /*
+         * SCRIPT: sanitizer.js
+         * DESCRIPCIÓN: Sanitización y adaptación de XML SVG para compatibilidad con Qt TinySVG
+         * FUNCIONES: stripSvgDimensions, ensureSvgXmlns, applySvgTheme, generateFallbackSvg, sanitizeSvgOutput
+         */
+        { "name": "sanitizer.js", "type": "file" },
+        /*
+         * SCRIPT: engine.js
+         * DESCRIPCIÓN: Inicialización del motor MathJax y generador de nodos LiteDOM
+         * FUNCIONES: convertLatexToSvgNode, nodeToOuterHtml, getAdaptor, getMathDocument
+         */
+        { "name": "engine.js", "type": "file" },
+        /*
+         * SCRIPT: renderer.js
+         * DESCRIPCIÓN: Orquestador síncrono de renderizado LaTeX a SVG con soporte multi-firma
+         * FUNCIONES: renderMathSync
+         */
+        { "name": "renderer.js", "type": "file" },
+        /*
+         * SCRIPT: index.js
+         * DESCRIPCIÓN: Punto de entrada del bundle y binding global para MiniRacer / V8
+         * FUNCIONES: renderMathSync
+         */
+        { "name": "index.js", "type": "file" },
+        /*
+         * SCRIPT: build.js
+         * DESCRIPCIÓN: Script de compilación esbuild con banner de metadatos YAML hacia mathjax_bundle.js
+         * FUNCIONES: buildBundle
+         */
+        { "name": "build.js", "type": "file" },
+        { "name": "package.json", "type": "file" }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "directory",
+      "children": [
+        {
+          "name": "assets",
+          "type": "directory",
+          "children": [
+            { "name": "mathjax_bundle.js", "type": "file" }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "directory",
+          "children": [
+            /*
+             * SCRIPT: __init__.py
+             * DESCRIPCIÓN: Paquete del motor lógico (AST, Parser, Renderer, Syntax, Translator)
+             */
+            { "name": "__init__.py", "type": "file" },
+            /*
+             * SCRIPT: ast.py
+             * DESCRIPCIÓN: Motor del Árbol de Sintaxis Abstracta (AST) y gestión de casillas (Slots)
+             * CLASES: Slot, MathNode, TextNode, SymbolNode, OperatorNode, TemplateNode, FractionNode, PowerNode, SubscriptNode, SubSupNode, SquareRootNode, NthRootNode, DefiniteIntegralNode, IndefiniteIntegralNode, SummationNode, LimitNode, BracketNode, MatrixNode, DerivativeNode, StyleDecoratorNode, BinomialNode, MathTree
+             */
+            { "name": "ast.py", "type": "file" },
+            /*
+             * SCRIPT: logger.py
+             * DESCRIPCIÓN: Sistema centralizado de registro de eventos y errores.
+             * CLASES: SessionLogger
+             * FUNCIONES: get_logger
+             */
+            { "name": "logger.py", "type": "file" },
+            /*
+             * SCRIPT: parser.py
+             * DESCRIPCIÓN: Parser inverso de código LaTeX a sintaxis del árbol AST (LaTeXParser)
+             * CLASES: _LaTeXStreamParser, LaTeXParser
+             */
+            { "name": "parser.py", "type": "file" },
+            /*
+             * SCRIPT: renderer.py
+             * DESCRIPCIÓN: Renderizador visual de fórmulas LaTeX a QPixmap mediante Matplotlib OO Agg API
+             * CLASES: MathRenderer
+             */
+            { "name": "renderer.py", "type": "file" },
+            /*
+             * SCRIPT: syntax.py
+             * DESCRIPCIÓN: Motor de análisis de sintaxis y resaltado de colores para expresiones y LaTeX
+             * CLASES: LaTeXSyntaxHighlighter
+             * FUNCIONES: get_token_color, format_highlighted_html
+             */
+            { "name": "syntax.py", "type": "file" },
+            /*
+             * SCRIPT: translator.py
+             * DESCRIPCIÓN: Capa de traducción de objetos MathTree a LaTeX, bloques Markdown y texto plano
+             * CLASES: LaTeXTranslator
+             */
+            { "name": "translator.py", "type": "file" }
+          ]
+        },
+        {
+          "name": "data",
+          "type": "directory",
+          "children": [
+            /*
+             * SCRIPT: __init__.py
+             * DESCRIPCIÓN: Paquete de catálogo de datos de símbolos y plantillas matemáticas
+             */
+            { "name": "__init__.py", "type": "file" },
+            /*
+             * SCRIPT: symbols.py
+             * DESCRIPCIÓN: Catálogo estructurado de plantillas, categorías y símbolos matemáticos
+             * FUNCIONES: _parse_preset
+             */
+            { "name": "constants.py", "type": "file" },
+            { "name": "symbols.py", "type": "file" },
+            { "name": "units.py", "type": "file" }
+          ]
+        },
+        {
+          "name": "ui",
+          "type": "directory",
+          "children": [
+            {
+              "name": "components",
+              "type": "directory",
+              "children": [
+                /*
+                 * SCRIPT: __init__.py
+                 * DESCRIPCIÓN: Paquete de componentes de interfaz reutilizables (Editor, Paleta, Código, Preview, ActionBar, Brackets)
+                 */
+                { "name": "__init__.py", "type": "file" },
+                /*
+                 * SCRIPT: action_bar.py
+                 * DESCRIPCIÓN: Barra de herramientas superior (Theme Toggle, Clear All, Help)
+                 * CLASES: MathActionBarWidget
+                 */
+                { "name": "action_bar.py", "type": "file" },
+                /*
+                 * SCRIPT: bracket_widget.py
+                 * DESCRIPCIÓN: Componente de dibujado vectorial de delimitadores y paréntesis adaptables en altura
+                 * CLASES: BracketGraphicWidget, AdaptiveBracketWidget, AdaptiveRootWidget, AdaptiveIntegralWidget
+                 */
+                { "name": "bracket_widget.py", "type": "file" },
+                /*
+                 * SCRIPT: code_panel.py
+                 * DESCRIPCIÓN: Panel de traducción a código LaTeX y Markdown con resaltado sintáctico y notificaciones Toast
+                 * CLASES: CodeTranslationPanel
+                 */
+                { "name": "code_panel.py", "type": "file" },
+                { "name": "constant_card.py", "type": "file" },
+                /*
+                 * SCRIPT: editor_widget.py
+                 * DESCRIPCIÓN: Editor visual e interactivo de casillas rellenables (Word / Wolfram Alpha Style)
+                 * CLASES: SlotBoxWidget, SlotContainerWidget, MathCanvasWidget, MathEditorWidget
+                 */
+                { "name": "editor_widget.py", "type": "file" },
+                /*
+                 * SCRIPT: log_dialog.py
+                 * DESCRIPCIÓN: Cuadro de diálogo modal para la visualización en tiempo real de los logs de sesión.
+                 * CLASES: SessionLogDialog
+                 */
+                { "name": "log_dialog.py", "type": "file" },
+                /*
+                 * SCRIPT: palette_widget.py
+                 * DESCRIPCIÓN: Paleta de favoritos, ejemplos y SVG.
+                 * CLASES: MathPaletteWidget
+                 */
+                { "name": "palette_widget.py", "type": "file" },
+                /*
+                 * SCRIPT: preview_panel.py
+                 * DESCRIPCIÓN: Panel de visualización renderizada en alta resolución con SVGMathCache (MiniRacer), exportación PNG/SVG.
+                 * CLASES: MathPreviewPanel
+                 * FUNCIONES: ensure_svg_white_background
+                 */
+                { "name": "preview_panel.py", "type": "file" },
+                { "name": "procedure_card.py", "type": "file" },
+                /*
+                 * SCRIPT: svg_cache.py
+                 * DESCRIPCIÓN: Motor de renderizado SVG y caché para fórmulas.
+                 * CLASES: SVGMathCache
+                 */
+                { "name": "svg_cache.py", "type": "file" },
+                /*
+                 * SCRIPT: template_card.py
+                 * DESCRIPCIÓN: Componente de tarjeta visual de plantilla.
+                 * CLASES: TemplateCardOption
+                 */
+                { "name": "template_card.py", "type": "file" },
+                { "name": "unit_card.py", "type": "file" }
+              ]
+            },
+            /*
+             * SCRIPT: __init__.py
+             * DESCRIPCIÓN: Paquete de interfaz de usuario PySide6 (Material 3 & Hatsune Miku Theme)
+             */
+            { "name": "__init__.py", "type": "file" },
+            /*
+             * SCRIPT: main_window.py
+             * DESCRIPCIÓN: Ventana principal de la aplicación con layout de 4 paneles redimensionables y splitters
+             * CLASES: MainWindow
+             */
+            { "name": "main_window.py", "type": "file" },
+            /*
+             * SCRIPT: theme.py
+             * DESCRIPCIÓN: Sistema de diseño y temas dinámicos inspirados en Hatsune Miku (Modo Claro/Oscuro y QSS)
+             * FUNCIONES: get_theme_dict, get_theme_qss
+             */
+            { "name": "theme.py", "type": "file" }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "directory",
+          "children": [
+            /*
+             * SCRIPT: __init__.py
+             * DESCRIPCIÓN: Paquete de utilidades generales, gestores de persistencia y helpers de Qt
+             */
+            { "name": "__init__.py", "type": "file" },
+            /*
+             * SCRIPT: favorites_manager.py
+             * DESCRIPCIÓN: Gestor de símbolos y plantillas favoritas del usuario.
+             * CLASES: FavoritesManager
+             */
+            { "name": "favorites_manager.py", "type": "file" },
+            /*
+             * SCRIPT: qt_utils.py
+             * DESCRIPCIÓN: Funciones de utilidad para PyQt/PySide6.
+             * FUNCIONES: clear_layout
+             */
+            { "name": "qt_utils.py", "type": "file" },
+            /*
+             * SCRIPT: recovery_manager.py
+             * DESCRIPCIÓN: Gestor de auto-guardado para recuperación de fórmulas en caso de cierre inesperado.
+             * CLASES: RecoveryManager
+             */
+            { "name": "recovery_manager.py", "type": "file" },
+            /*
+             * SCRIPT: user_formulas_manager.py
+             * DESCRIPCIÓN: Gestor de persistencia para categorías, subcategorías, fórmulas y variantes creadas por el usuario.
+             * CLASES: UserFormulasManager
+             */
+            { "name": "user_formulas_manager.py", "type": "file" }
+          ]
+        },
+        { "name": "README.md", "type": "file" },
+        /*
+         * SCRIPT: __init__.py
+         * DESCRIPCIÓN: Paquete principal del código fuente de Traductor Mates
+         */
+        { "name": "__init__.py", "type": "file" }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "directory",
+      "children": [
+        { "name": "README.md", "type": "file" },
+        /*
+         * SCRIPT: __init__.py
+         * DESCRIPCIÓN: Unit Test Suite Package
+         */
+        { "name": "__init__.py", "type": "file" },
+        /*
+         * SCRIPT: test_ast.py
+         * DESCRIPCIÓN: Unit Tests for Math AST and Slot Navigation Engine
+         * FUNCIONES: test_empty_tree_to_latex, test_text_insertion, test_fraction_insertion, test_nested_templates, test_symbol_node_rare_symbols, test_derivative_and_subsup, test_clear_all
+         */
+        { "name": "test_ast.py", "type": "file" },
+        /*
+         * SCRIPT: test_editor_widget.py
+         * DESCRIPCIÓN: Unit tests for Math Editor Widget, Slot Box, and Adaptive Brackets.
+         * FUNCIONES: qapp, test_bracket_widgets, test_editor_widget_rebuild, test_integral_rendering
+         */
+        { "name": "test_editor_widget.py", "type": "file" },
+        /*
+         * SCRIPT: test_mathjax_build.js
+         * DESCRIPCIÓN: Pruebas unitarias nativas en JavaScript para los módulos de compilación de mathjax_build
+         * SUITES: package_config, sanitizer, engine, renderer, index
+         */
+        { "name": "test_mathjax_build.js", "type": "file" },
+        /*
+         * SCRIPT: test_mathjax_bundle.js
+         * DESCRIPCIÓN: Pruebas unitarias en JavaScript para la ejecución del bundle en contexto VM V8
+         * SUITES: metadata, formulas_categories, signatures, themes
+         */
+        { "name": "test_mathjax_bundle.js", "type": "file" },
+        /*
+         * SCRIPT: test_parser.py
+         * DESCRIPCIÓN: Unit Tests for Inverse LaTeX Parser (LaTeXParser)
+         * FUNCIONES: test_parse_indefinite_integral, test_parse_matrix, test_parse_fraction_and_roots, test_parse_derivative_edge_case, test_parse_partial_derivative, test_parse_limits, test_unclosed_braces_fallback, test_all_presets_build_valid_tree
+         */
+        { "name": "test_parser.py", "type": "file" },
+        /*
+         * SCRIPT: test_syntax.py
+         * DESCRIPCIÓN: Unit tests for Math Syntax Highlighting & Token Classifier Module.
+         * FUNCIONES: test_strict_token_color_classification, test_format_highlighted_html_strict_colors
+         */
+        { "name": "test_syntax.py", "type": "file" },
+        /*
+         * SCRIPT: test_theme.py
+         * DESCRIPCIÓN: Unit tests for Hatsune Miku Theme Generator & Switching.
+         * FUNCIONES: test_miku_theme_palettes, test_theme_qss_generation
+         */
+        { "name": "test_theme.py", "type": "file" },
+        /*
+         * SCRIPT: test_translator.py
+         * DESCRIPCIÓN: Unit Tests for LaTeX and Markdown Translation Layer
+         * FUNCIONES: test_markdown_translation, test_latex_canonization, test_plain_text_export
+         */
+        { "name": "test_translator.py", "type": "file" }
+      ]
+    },
+    { "name": ".gitignore", "type": "file" },
+    { "name": "AGENTS.md", "type": "file" },
+    { "name": "MEMORY.md", "type": "file" },
+    { "name": "PROGRESS.md", "type": "file" },
+    { "name": "README.md", "type": "file" },
+    /*
+     * SCRIPT: main.py
+     * DESCRIPCIÓN: Punto de entrada principal ejecutable de la aplicación Traductor Mates
+     * FUNCIONES: global_exception_handler, main
+     */
+    { "name": "main.py", "type": "file" },
+    { "name": "pyproject.toml", "type": "file" },
+    { "name": "run_app.bat", "type": "file" },
+    { "name": "run_qa.bat", "type": "file" },
+    { "name": "session.log", "type": "file" },
+    { "name": "setup_venv.bat", "type": "file" },
+  ]
+}
+
+/* ==========================================
+ * TABLA DE VARIABLES GLOBALES IMPORTANTES (VERSIÓN ACTUALIZADA)
+ * ==========================================
+ * | Variable                  | Tipo                 | Ubicación                                |
+ * | ------------------------- | -------------------- | ---------------------------------------- |
+ * | SESSION_LOG_FILE          | str                  | src/core/logger.py:23                                  |
+ * | ERROR_CODES               | dict                 | src/core/logger.py:26                                  |
+ * | OPERATOR_CMDS             | Any                  | src/core/parser.py:59                                  |
+ * | STYLE_CMDS                | Any                  | src/core/parser.py:75                                  |
+ * | STYLE_PATTERN             | Any                  | src/core/parser.py:100                                 |
+ * | COLOR_NUMBER              | str                  | src/core/syntax.py:42                                  |
+ * | COLOR_OPERATOR            | str                  | src/core/syntax.py:43                                  |
+ * | COLOR_VARIABLE            | str                  | src/core/syntax.py:44                                  |
+ * | COLOR_DELIMITER           | str                  | src/core/syntax.py:45                                  |
+ * | COLOR_LATEX_CMD           | str                  | src/core/syntax.py:46                                  |
+ * | COLOR_DEFAULT             | str                  | src/core/syntax.py:47                                  |
+ * | VARIABLE_NAMES            | Any                  | src/core/syntax.py:50                                  |
+ * | OPERATOR_SYMBOLS          | Any                  | src/core/syntax.py:56                                  |
+ * | CATEGORIES                | list                 | src/data/symbols.py:51                                  |
+ * | TEMPLATES                 | list                 | src/data/symbols.py:63                                  |
+ * | SYMBOLS                   | list                 | src/data/symbols.py:219                                 |
+ * | LATEX_TO_UNICODE          | Any                  | src/data/symbols.py:314                                 |
+ * | PRESET_CATEGORIES         | list                 | src/data/symbols.py:317                                 |
+ * | PRESET_FORMULAS           | list                 | src/data/symbols.py:346                                 |
+ * | TEMPLATE_ART              | dict                 | src/data/symbols.py:537                                 |
+ * | COLOR_MIKU_CYAN           | str                  | src/ui/theme.py:30                                  |
+ * | COLOR_MIKU_CYAN_HOVER     | str                  | src/ui/theme.py:31                                  |
+ * | COLOR_MIKU_MAGENTA        | str                  | src/ui/theme.py:32                                  |
+ * | COLOR_MIKU_MAGENTA_HOVER  | str                  | src/ui/theme.py:33                                  |
+ * | COLOR_BG                  | str                  | src/ui/theme.py:36                                  |
+ * | COLOR_SURFACE             | str                  | src/ui/theme.py:37                                  |
+ * | COLOR_SURFACE_VARIANT     | str                  | src/ui/theme.py:38                                  |
+ * | COLOR_SURFACE_SLOT        | str                  | src/ui/theme.py:39                                  |
+ * | COLOR_PRIMARY             | Any                  | src/ui/theme.py:40                                  |
+ * | COLOR_PRIMARY_HOVER       | Any                  | src/ui/theme.py:41                                  |
+ * | COLOR_SECONDARY           | Any                  | src/ui/theme.py:42                                  |
+ * | COLOR_ACCENT              | str                  | src/ui/theme.py:43                                  |
+ * | COLOR_TEXT_PRIMARY        | str                  | src/ui/theme.py:44                                  |
+ * | COLOR_TEXT_SECONDARY      | str                  | src/ui/theme.py:45                                  |
+ * | COLOR_BORDER              | str                  | src/ui/theme.py:46                                  |
+ * | COLOR_ACTIVE_SLOT         | Any                  | src/ui/theme.py:47                                  |
+ * | THEMES                    | dict                 | src/ui/theme.py:50                                  |
+ * | ANDROID_STYLE_QSS         | Any                  | src/ui/theme.py:335                                 |
+ */

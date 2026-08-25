@@ -1,0 +1,108 @@
+[
+    {
+        "category": "Álgebra",
+        "subcategories": [
+            {
+                "name": "Ecuaciones de Segundo Grado",
+                "formulas": [
+                    {
+                        "id": "b8719f9c-7945-4a15-b021-9a73e4b7a111",
+                        "name": "Fórmula General Cuadrática",
+                        "description": "Demostración de la Fórmula General por Completación de Cuadrados",
+                        "latex": "x = \\frac{ -b \\pm \\sqrt{ b^{ 2 } - 4ac } }{ 2a }",
+                        "variations": [
+                            {
+                                "name": "Paso 1: Ecuación cuadrática general",
+                                "latex": "ax^{ 2 } + bx + c = 0",
+                                "description": "Demostración de la Fórmula General por Completación de Cuadrados"
+                            },
+                            {
+                                "name": "Paso 2: Dividir toda la ecuación entre 'a'",
+                                "latex": "x^{ 2 } + \\frac{ b }{ a } x + \\frac{ c }{ a } = 0",
+                                "description": "Demostración de la Fórmula General por Completación de Cuadrados"
+                            },
+                            {
+                                "name": "Paso 3: Transponer el término independiente",
+                                "latex": "x^{ 2 } + \\frac{ b }{ a } x = -\\frac{ c }{ a }",
+                                "description": "Demostración de la Fórmula General por Completación de Cuadrados"
+                            },
+                            {
+                                "name": "Paso 4: Sumar (b/2a)² a ambos lados",
+                                "latex": "x^{ 2 } + \\frac{ b }{ a } x + \\left( \\frac{ b }{ 2a } \\right)^{ 2 } = -\\frac{ c }{ a } + \\frac{ b^{ 2 } }{ 4a^{ 2 } }",
+                                "description": "Demostración de la Fórmula General por Completación de Cuadrados"
+                            },
+                            {
+                                "name": "Paso 5: Factorizar el trinomio cuadrado perfecto",
+                                "latex": "\\left( x + \\frac{ b }{ 2a } \\right)^{ 2 } = \\frac{ b^{ 2 } - 4ac }{ 4a^{ 2 } }",
+                                "description": "Demostración de la Fórmula General por Completación de Cuadrados"
+                            },
+                            {
+                                "name": "Paso 6: Aplicar raíz cuadrada en ambos lados",
+                                "latex": "x + \\frac{ b }{ 2a } = \\pm \\frac{ \\sqrt{ b^{ 2 } - 4ac } }{ 2a }",
+                                "description": "Demostración de la Fórmula General por Completación de Cuadrados"
+                            },
+                            {
+                                "name": "Paso 7: Despejar 'x' (Fórmula General)",
+                                "latex": "x = \\frac{ -b \\pm \\sqrt{ b^{ 2 } - 4ac } }{ 2a }",
+                                "description": "Demostración de la Fórmula General por Completación de Cuadrados"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Cinemática y Dinámica Newtoniana",
+        "subcategories": [
+            {
+                "name": "Movimiento Rectilíneo (MRUA)",
+                "formulas": [
+                    {
+                        "id": "d3a4b912-1f7c-4826-9f89-8d76e4c5b222",
+                        "name": "Ecuación de Torricelli",
+                        "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)",
+                        "latex": "v^{ 2 } = v_{ 0 }^{ 2 } + 2ad",
+                        "variations": [
+                            {
+                                "name": "Paso 1: Ecuación de velocidad en MRUA",
+                                "latex": "v = v_{ 0 } + at",
+                                "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)"
+                            },
+                            {
+                                "name": "Paso 2: Despeje del tiempo 't'",
+                                "latex": "t = \\frac{ v - v_{ 0 } }{ a }",
+                                "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)"
+                            },
+                            {
+                                "name": "Paso 3: Ecuación de posición en MRUA",
+                                "latex": "d = v_{ 0 }t + \\frac{ 1 }{ 2 } at^{ 2 }",
+                                "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)"
+                            },
+                            {
+                                "name": "Paso 4: Sustituir 't' en la ecuación de posición",
+                                "latex": "d = v_{ 0 }\\left( \\frac{ v - v_{ 0 } }{ a } \\right) + \\frac{ 1 }{ 2 } a\\left( \\frac{ v - v_{ 0 } }{ a } \\right)^{ 2 }",
+                                "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)"
+                            },
+                            {
+                                "name": "Paso 5: Multiplicar por 2a y expandir binomio",
+                                "latex": "2ad = 2v_{ 0 }v - 2v_{ 0 }^{ 2 } + (v^{ 2 } - 2v_{ 0 }v + v_{ 0 }^{ 2 })",
+                                "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)"
+                            },
+                            {
+                                "name": "Paso 6: Reducción de términos semejantes",
+                                "latex": "2ad = v^{ 2 } - v_{ 0 }^{ 2 }",
+                                "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)"
+                            },
+                            {
+                                "name": "Paso 7: Despeje final de velocidad (Torricelli)",
+                                "latex": "v^{ 2 } = v_{ 0 }^{ 2 } + 2ad",
+                                "description": "Deducción de la Ecuación de Torricelli (MRUA independiente del tiempo)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

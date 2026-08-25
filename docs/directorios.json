@@ -1,0 +1,682 @@
+{
+  "name": "TRADUCTOR MATES",
+  "type": "directory",
+  "children": [
+    {
+      "name": ".mypy_cache",
+      "type": "directory",
+      "children": [
+        {
+          "name": "3.10",
+          "type": "directory",
+          "children": [
+            {
+              "name": "cache.0.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.1.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.10.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.11.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.12.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.13.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.14.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.15.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.2.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.3.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.4.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.5.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.6.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.7.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.8.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.9.db",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "3.12",
+          "type": "directory",
+          "children": [
+            {
+              "name": "cache.0.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.1.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.10.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.11.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.12.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.13.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.14.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.15.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.2.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.3.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.4.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.5.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.6.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.7.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.8.db",
+              "type": "file"
+            },
+            {
+              "name": "cache.9.db",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": ".gitignore",
+          "type": "file"
+        },
+        {
+          "name": "CACHEDIR.TAG",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": ".ruff_cache",
+      "type": "directory",
+      "children": [
+        {
+          "name": "0.16.3",
+          "type": "directory",
+          "children": [
+            {
+              "name": "13399460618021943105",
+              "type": "file"
+            },
+            {
+              "name": "14313934132340230753",
+              "type": "file"
+            },
+            {
+              "name": "15173245934333173786",
+              "type": "file"
+            },
+            {
+              "name": "1948989786985659236",
+              "type": "file"
+            },
+            {
+              "name": "4069506811244280281",
+              "type": "file"
+            },
+            {
+              "name": "409328007561779702",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": ".gitignore",
+          "type": "file"
+        },
+        {
+          "name": "CACHEDIR.TAG",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "type": "directory",
+      "children": [
+        {
+          "name": "base",
+          "type": "directory",
+          "children": [
+            {
+              "name": "clase_configuracion.md",
+              "type": "file"
+            },
+            {
+              "name": "entradas_script.md",
+              "type": "file"
+            },
+            {
+              "name": "frontmatter_yaml.md",
+              "type": "file"
+            },
+            {
+              "name": "tipado_estricto_inline.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "fisica",
+          "type": "directory",
+          "children": [
+            {
+              "name": "constantes",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "constantes.md",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "unidades",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "unidades_fundamentales.md",
+                  "type": "file"
+                },
+                {
+                  "name": "unidades_principales.md",
+                  "type": "file"
+                },
+                {
+                  "name": "unidades_secundarias.md",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "formulario_avanzado.md",
+              "type": "file"
+            },
+            {
+              "name": "formulario_basico.md",
+              "type": "file"
+            },
+            {
+              "name": "formulario_fisica.md",
+              "type": "file"
+            },
+            {
+              "name": "formulario_intermedio.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "mates",
+          "type": "directory",
+          "children": [
+            {
+              "name": "constantes",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "constantes.md",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "formulario_avanzado.md",
+              "type": "file"
+            },
+            {
+              "name": "formulario_basico.md",
+              "type": "file"
+            },
+            {
+              "name": "formulario_intermedio.md",
+              "type": "file"
+            },
+            {
+              "name": "formulario_mates.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "ARCHITECTURE.md",
+          "type": "file"
+        },
+        {
+          "name": "directorios.json",
+          "type": "file"
+        },
+        {
+          "name": "directorios_comentados.jsonc",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "mathjax_build",
+      "type": "directory",
+      "children": [
+        {
+          "name": "build.js",
+          "type": "file"
+        },
+        {
+          "name": "engine.js",
+          "type": "file"
+        },
+        {
+          "name": "index.js",
+          "type": "file"
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file"
+        },
+        {
+          "name": "package.json",
+          "type": "file"
+        },
+        {
+          "name": "package_config.js",
+          "type": "file"
+        },
+        {
+          "name": "renderer.js",
+          "type": "file"
+        },
+        {
+          "name": "sanitizer.js",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "scratch",
+      "type": "directory",
+      "children": [
+        {
+          "name": "analysis_output.json",
+          "type": "file"
+        },
+        {
+          "name": "analysis_output_v2.json",
+          "type": "file"
+        },
+        {
+          "name": "generate_docs_json.py",
+          "type": "file"
+        },
+        {
+          "name": "test_parser.py",
+          "type": "file"
+        },
+        {
+          "name": "update_jsonc.py",
+          "type": "file"
+        },
+        {
+          "name": "update_jsonc_v2.py",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "directory",
+      "children": [
+        {
+          "name": "assets",
+          "type": "directory",
+          "children": [
+            {
+              "name": "mathjax_bundle.js",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "directory",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file"
+            },
+            {
+              "name": "ast.py",
+              "type": "file"
+            },
+            {
+              "name": "logger.py",
+              "type": "file"
+            },
+            {
+              "name": "parser.py",
+              "type": "file"
+            },
+            {
+              "name": "renderer.py",
+              "type": "file"
+            },
+            {
+              "name": "syntax.py",
+              "type": "file"
+            },
+            {
+              "name": "translator.py",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "data",
+          "type": "directory",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file"
+            },
+            {
+              "name": "constants.py",
+              "type": "file"
+            },
+            {
+              "name": "symbols.py",
+              "type": "file"
+            },
+            {
+              "name": "units.py",
+              "type": "file"
+            },
+            {
+              "name": "user_formulas_data.json",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "ui",
+          "type": "directory",
+          "children": [
+            {
+              "name": "components",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file"
+                },
+                {
+                  "name": "action_bar.py",
+                  "type": "file"
+                },
+                {
+                  "name": "bracket_widget.py",
+                  "type": "file"
+                },
+                {
+                  "name": "code_panel.py",
+                  "type": "file"
+                },
+                {
+                  "name": "constant_card.py",
+                  "type": "file"
+                },
+                {
+                  "name": "edit_formula_dialog.py",
+                  "type": "file"
+                },
+                {
+                  "name": "editor_widget.py",
+                  "type": "file"
+                },
+                {
+                  "name": "help_dialog.py",
+                  "type": "file"
+                },
+                {
+                  "name": "log_dialog.py",
+                  "type": "file"
+                },
+                {
+                  "name": "palette_widget.py",
+                  "type": "file"
+                },
+                {
+                  "name": "preview_panel.py",
+                  "type": "file"
+                },
+                {
+                  "name": "procedure_card.py",
+                  "type": "file"
+                },
+                {
+                  "name": "save_formula_dialog.py",
+                  "type": "file"
+                },
+                {
+                  "name": "svg_cache.py",
+                  "type": "file"
+                },
+                {
+                  "name": "template_card.py",
+                  "type": "file"
+                },
+                {
+                  "name": "unit_card.py",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "__init__.py",
+              "type": "file"
+            },
+            {
+              "name": "main_window.py",
+              "type": "file"
+            },
+            {
+              "name": "theme.py",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "directory",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file"
+            },
+            {
+              "name": "favorites_manager.py",
+              "type": "file"
+            },
+            {
+              "name": "qt_utils.py",
+              "type": "file"
+            },
+            {
+              "name": "recovery_manager.py",
+              "type": "file"
+            },
+            {
+              "name": "user_formulas_manager.py",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file"
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "directory",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file"
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        },
+        {
+          "name": "test_ast.py",
+          "type": "file"
+        },
+        {
+          "name": "test_editor_widget.py",
+          "type": "file"
+        },
+        {
+          "name": "test_mathjax_build.js",
+          "type": "file"
+        },
+        {
+          "name": "test_mathjax_bundle.js",
+          "type": "file"
+        },
+        {
+          "name": "test_parser.py",
+          "type": "file"
+        },
+        {
+          "name": "test_syntax.py",
+          "type": "file"
+        },
+        {
+          "name": "test_theme.py",
+          "type": "file"
+        },
+        {
+          "name": "test_translator.py",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "type": "file"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file"
+    },
+    {
+      "name": "main.py",
+      "type": "file"
+    },
+    {
+      "name": "MEMORY.md",
+      "type": "file"
+    },
+    {
+      "name": "PROGRESS.md",
+      "type": "file"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file"
+    },
+    {
+      "name": "README.md",
+      "type": "file"
+    },
+    {
+      "name": "run_app.bat",
+      "type": "file"
+    },
+    {
+      "name": "run_qa.bat",
+      "type": "file"
+    },
+    {
+      "name": "session.log",
+      "type": "file"
+    },
+    {
+      "name": "setup_venv.bat",
+      "type": "file"
+    }
+  ]
+}

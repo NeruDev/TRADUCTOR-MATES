@@ -1,0 +1,24 @@
+{
+  "name": "mathjax_build",
+  "version": "1.2.0",
+  "description": "Herramienta de compilación modular de MathJax v3 para Traductor Mates",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "bundle": "node build.js",
+    "test": "node -e \"const { renderMathSync } = require('./index.js'); console.log(renderMathSync('\\\\frac{a}{b}', '#39C5BB'));\""
+  },
+  "keywords": [
+    "mathjax",
+    "svg",
+    "esbuild",
+    "traductor-mates"
+  ],
+  "author": "Equipo Traductor Mates",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "mathjax-full": "^3.2.1"
+  }
+}

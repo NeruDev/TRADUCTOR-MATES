@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "traductor-mates"
+version = "1.0.0"
+description = "Editor visual de ecuaciones matemáticas con casillas rellenables y traductor a LaTeX/Markdown estilo Android"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Traductor Mates Team" }
+]
+dependencies = [
+    "pyside6>=6.5.0",
+    "matplotlib>=3.7.0",
+    "numpy>=1.26.0",
+    "pyperclip>=1.8.2",
+    "mini-racer>=0.14.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.4.0",
+    "mypy>=1.10.0",
+    "pydoclint>=0.4.1"
+]
+
+[project.scripts]
+traductor-mates = "main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.pydoclint]
+style = "google"
+exclude = '\.git|\.venv'
+require-return-section-when-returning-nothing = false
+arg-type-hints-in-docstring = false
+arg-type-hints-in-signature = true
+check-return-types = false
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+exclude = ['\.venv', 'tests']
+disable_error_code = ["attr-defined"]
