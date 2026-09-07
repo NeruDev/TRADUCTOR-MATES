@@ -1,0 +1,123 @@
+% ---
+% file: docs/latex/Fisica/unidades/unidades_secundarias.tex
+% description: Catálogo y especificación de unidades no SI aceptadas y unidades de uso práctico en física.
+% type: doc/manual
+% version: 1.0.0
+% date: 2026-08-24
+% covers:
+%   - src/data/units.py
+% relations:
+%   - docs/fisica/unidades/unidades_fundamentales.md
+%   - docs/fisica/unidades/unidades_principales.md
+%   - docs/ARCHITECTURE.md
+% keywords:
+%   - unidades-secundarias
+%   - conversiones-unidades
+%   - unidades-practicas
+%   - unidades-no-si
+% ---
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{esint}
+\usepackage{array,tabularx}
+
+% Configuración de márgenes y espaciado estándar
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.25cm}
+\setlength{\evensidemargin}{-0.25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+
+\section*{3. Unidades Secundarias y de Uso Práctico}
+\addcontentsline{toc}{section}{3. Unidades Secundarias y de Uso Práctico}
+
+Este archivo debe leerse tercero en la app: agrupa unidades no SI aceptadas y otras conversiones comunes en física aplicada.
+
+\section*{1. Unidades no SI aceptadas para uso con SI}
+\addcontentsline{toc}{section}{1. Unidades no SI aceptadas para uso con SI}
+
+\scriptsize
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\hline
+Magnitud & Unidad & Símbolo & Valor en SI \\
+\hline
+Tiempo & minuto & min & $60\ \mathrm{s}$ \\
+\hline
+Tiempo & hora & h & $3600\ \mathrm{s}$ \\
+\hline
+Tiempo & día & d & $86\,400\ \mathrm{s}$ \\
+\hline
+Ángulo plano & grado & $^\circ$ & $\pi/180\ \mathrm{rad}$ \\
+\hline
+Ángulo plano & minuto de arco & ' & $\pi/10\,800\ \mathrm{rad}$ \\
+\hline
+Ángulo plano & segundo de arco & '' & $\pi/648\,000\ \mathrm{rad}$ \\
+\hline
+Volumen & litro & L & $10^{-3}\ \mathrm{m}^3$ \\
+\hline
+Masa & tonelada & t & $10^3\ \mathrm{kg}$ \\
+\hline
+Área & hectárea & ha & $10^4\ \mathrm{m}^2$ \\
+\hline
+Presión & bar & bar & $10^5\ \mathrm{Pa}$ \\
+\hline
+Presión & atmósfera estándar & atm & $101\,325\ \mathrm{Pa}$ \\
+\hline
+Energía & electronvoltio & eV & $1.602\,176\,634\times10^{-19}\ \mathrm{J}$ \\
+\hline
+Longitud & ångström & Å & $10^{-10}\ \mathrm{m}$ \\
+\hline
+\end{tabularx}
+\normalsize
+
+\section*{2. Unidades de ingeniería y laboratorio (muy usadas)}
+\addcontentsline{toc}{section}{2. Unidades de ingeniería y laboratorio (muy usadas)}
+
+\scriptsize
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\hline
+Magnitud & Unidad & Símbolo & Valor en SI \\
+\hline
+Energía & watt-hora & Wh & $3600\ \mathrm{J}$ \\
+\hline
+Energía & kilowatt-hora & kWh & $3.6\times10^6\ \mathrm{J}$ \\
+\hline
+Potencia & caballo de vapor métrico & CV & $735.49875\ \mathrm{W}$ \\
+\hline
+Potencia & horsepower mecánico & hp & $745.699871582...\ \mathrm{W}$ \\
+\hline
+Longitud náutica & milla náutica & nmi & $1852\ \mathrm{m}$ \\
+\hline
+Velocidad & nudo & kn & $0.514444...\ \mathrm{m s}^{-1}$ \\
+\hline
+\end{tabularx}
+\normalsize
+
+\section*{3. Magnitudes secundarias frecuentes en formularios}
+\addcontentsline{toc}{section}{3. Magnitudes secundarias frecuentes en formularios}
+
+\scriptsize
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\hline
+Magnitud & Unidad habitual & Equivalencia SI \\
+\hline
+Frecuencia angular & $\mathrm{rad s}^{-1}$ & $\mathrm{s}^{-1}$ \\
+\hline
+Densidad de carga & $\mathrm{C m}^{-3}$ & $\mathrm{A s m}^{-3}$ \\
+\hline
+Densidad de corriente & $\mathrm{A m}^{-2}$ & $\mathrm{A m}^{-2}$ \\
+\hline
+\end{tabularx}
+\normalsize
+
+
+\end{document}

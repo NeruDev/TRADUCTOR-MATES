@@ -88,7 +88,7 @@ keywords:
   $$
 ### 1.3 Porcentajes y Proporcionalidad
 
-- Tanto por ciento ($P = \mathrm{porcentaje}$, $C = \mathrm{cantidad}$, $r = \mathrm{tasa}$):
+- Tanto por ciento ($P = \text{porcentaje}$, $C = \text{cantidad}$, $r = \text{tasa}$):
   $$
   P = \frac{C \cdot r}{100}
   $$

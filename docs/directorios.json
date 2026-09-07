@@ -3,204 +3,6 @@
   "type": "directory",
   "children": [
     {
-      "name": ".mypy_cache",
-      "type": "directory",
-      "children": [
-        {
-          "name": "3.10",
-          "type": "directory",
-          "children": [
-            {
-              "name": "cache.0.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.1.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.10.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.11.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.12.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.13.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.14.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.15.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.2.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.3.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.4.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.5.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.6.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.7.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.8.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.9.db",
-              "type": "file"
-            }
-          ]
-        },
-        {
-          "name": "3.12",
-          "type": "directory",
-          "children": [
-            {
-              "name": "cache.0.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.1.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.10.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.11.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.12.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.13.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.14.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.15.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.2.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.3.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.4.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.5.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.6.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.7.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.8.db",
-              "type": "file"
-            },
-            {
-              "name": "cache.9.db",
-              "type": "file"
-            }
-          ]
-        },
-        {
-          "name": ".gitignore",
-          "type": "file"
-        },
-        {
-          "name": "CACHEDIR.TAG",
-          "type": "file"
-        }
-      ]
-    },
-    {
-      "name": ".ruff_cache",
-      "type": "directory",
-      "children": [
-        {
-          "name": "0.16.3",
-          "type": "directory",
-          "children": [
-            {
-              "name": "13399460618021943105",
-              "type": "file"
-            },
-            {
-              "name": "14313934132340230753",
-              "type": "file"
-            },
-            {
-              "name": "15173245934333173786",
-              "type": "file"
-            },
-            {
-              "name": "1948989786985659236",
-              "type": "file"
-            },
-            {
-              "name": "4069506811244280281",
-              "type": "file"
-            },
-            {
-              "name": "409328007561779702",
-              "type": "file"
-            }
-          ]
-        },
-        {
-          "name": ".gitignore",
-          "type": "file"
-        },
-        {
-          "name": "CACHEDIR.TAG",
-          "type": "file"
-        }
-      ]
-    },
-    {
       "name": "docs",
       "type": "directory",
       "children": [
@@ -272,6 +74,38 @@
             },
             {
               "name": "formulario_intermedio.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "latex",
+          "type": "directory",
+          "children": [
+            {
+              "name": "constantes",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "constantes.tex",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "formulario_avanzado.tex",
+              "type": "file"
+            },
+            {
+              "name": "formulario_basico.tex",
+              "type": "file"
+            },
+            {
+              "name": "formulario_intermedio.tex",
+              "type": "file"
+            },
+            {
+              "name": "formulario_mates.tex",
               "type": "file"
             }
           ]
@@ -668,6 +502,10 @@
     },
     {
       "name": "run_qa.bat",
+      "type": "file"
+    },
+    {
+      "name": "run_sandbox_app.bat",
       "type": "file"
     },
     {

@@ -90,12 +90,12 @@ keywords:
   \Delta = b^2 - 4ac
 
   $$
-- Relaciones de Cardano-Vieta ($2^\circ \mathrm{ grado}$) (1):
+- Relaciones de Cardano-Vieta ($2^\circ \text{ grado}$) (1):
   $$
   x_1 + x_2 = -\frac{b}{a}
 
   $$
-- Relaciones de Cardano-Vieta ($2^\circ \mathrm{ grado}$) (2):
+- Relaciones de Cardano-Vieta ($2^\circ \text{ grado}$) (2):
   $$
   x_1 \cdot x_2 = \frac{c}{a}
 
@@ -357,12 +357,12 @@ keywords:
   $$
 - Potencia de un Punto $P$ respecto a una circunferencia (1):
   $$
-  PA \cdot PB = PC \cdot PD \quad (\mathrm{Secantes})
+  PA \cdot PB = PC \cdot PD \quad (\text{Secantes})
 
   $$
 - Potencia de un Punto $P$ respecto a una circunferencia (2):
   $$
-  PT^2 = PA \cdot PB \quad (\mathrm{Tangente y secante})
+  PT^2 = PA \cdot PB \quad (\text{Tangente y secante})
 
   $$
 - Teorema de Ceva (Cevianas concurrentes):
@@ -372,12 +372,12 @@ keywords:
   $$
 - Teorema de Menelao (Puntos $D, E, F$ sobre las rectas de los lados de un $\triangle ABC$ son colineales) (1):
   $$
-  \frac{AF}{FB} \cdot \frac{BD}{DC} \cdot \frac{CE}{EA} = -1 \quad (\mathrm{Razones dirigidas})
+  \frac{AF}{FB} \cdot \frac{BD}{DC} \cdot \frac{CE}{EA} = -1 \quad (\text{Razones dirigidas})
 
   $$
 - Teorema de Menelao (Puntos $D, E, F$ sobre las rectas de los lados de un $\triangle ABC$ son colineales) (2):
   $$
-  \left( \mathrm{En magnitudes no dirigidas: } \frac{|AF|}{|FB|} \cdot \frac{|BD|}{|DC|} \cdot \frac{|CE|}{|EA|} = 1 \mathrm{ con 1 o 3 puntos en las prolongaciones exteriores} \right)
+  \left( \text{En magnitudes no dirigidas: } \frac{|AF|}{|FB|} \cdot \frac{|BD|}{|DC|} \cdot \frac{|CE|}{|EA|} = 1 \text{ con 1 o 3 puntos en las prolongaciones exteriores} \right)
 
   $$
 

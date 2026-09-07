@@ -28,7 +28,7 @@ keywords:
   $$
   a \equiv b \pmod{m} \iff m \mid (a - b)
   $$
-- Pequeño Teorema de Fermat ($p \mathrm{ es primo y } \operatorname{mcd}(a, p) = 1$):
+- Pequeño Teorema de Fermat ($p \text{ es primo y } \operatorname{mcd}(a, p) = 1$):
   $$
   a^{p - 1} \equiv 1 \pmod{p}
   $$

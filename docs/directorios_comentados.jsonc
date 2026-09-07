@@ -46,6 +46,23 @@
           ]
         },
         {
+          "name": "latex",
+          "type": "directory",
+          "children": [
+            {
+              "name": "constantes",
+              "type": "directory",
+              "children": [
+                { "name": "constantes.tex", "type": "file" }
+              ]
+            },
+            { "name": "formulario_avanzado.tex", "type": "file" },
+            { "name": "formulario_basico.tex", "type": "file" },
+            { "name": "formulario_intermedio.tex", "type": "file" },
+            { "name": "formulario_mates.tex", "type": "file" }
+          ]
+        },
+        {
           "name": "mates",
           "type": "directory",
           "children": [

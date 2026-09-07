@@ -1,0 +1,933 @@
+% ---
+% file: docs/latex/formulario_avanzado.tex
+% description: Compendio didáctico de fórmulas matemáticas de nivel avanzado y universitario (ecuaciones diferenciales, cálculo vectorial, métodos numéricos).
+% type: doc/manual
+% version: 1.0.0
+% date: 2026-08-24
+% covers:
+%   - src/data/symbols.py
+% relations:
+%   - docs/mates/formulario_mates.md
+%   - docs/fisica/formulario_avanzado.md
+%   - docs/ARCHITECTURE.md
+% keywords:
+%   - formulas-avanzadas-mates
+%   - ecuaciones-diferenciales
+%   - calculo-vectorial
+%   - metodos-numericos
+% ---
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+
+% Configuración de márgenes y espaciado estándar
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.25cm}
+\setlength{\evensidemargin}{-0.25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\section*{Compendio I: Aritmética, Álgebra y Trigonometría}
+\addcontentsline{toc}{section}{Compendio I: Aritmética, Álgebra y Trigonometría}
+
+\textit{(Nivel Avanzado)}
+
+\section*{1. Aritmética}
+\addcontentsline{toc}{section}{1. Aritmética}
+
+\subsection*{1.1 Aritmética Modular}
+\addcontentsline{toc}{subsection}{1.1 Aritmética Modular}
+
+\begin{itemize}
+  \item \textbf{Congruencia lineal:}
+  \[
+    a \equiv b \pmod{m} \iff m \mid (a - b)
+  \]
+  \item \textbf{Pequeño Teorema de Fermat ($p \text{ es primo y } \operatorname{mcd}(a, p) = 1$):}
+  \[
+    a^{p - 1} \equiv 1 \pmod{p}
+  \]
+  \item \textbf{Teorema de Euler-Fermat ($\operatorname{mcd}(a, m) = 1$):}
+  \[
+    a^{\varphi(m)} \equiv 1 \pmod{m}
+  \]
+  \item \textbf{Función $\varphi$ de Euler:}
+  \[
+    \varphi(n) = n \prod_{p \mid n} \left(1 - \frac{1}{p}\right)
+  \]
+\end{itemize}
+
+\subsection*{1.2 Teorema Chino del Resto}
+\addcontentsline{toc}{subsection}{1.2 Teorema Chino del Resto}
+
+\begin{itemize}
+  \item \textbf{Solución única módulo $M = m_1 \cdot m_2 \cdots m_k$ para el sistema con $\operatorname{mcd}(m_i, m_j) = 1$ para $i \ne j$ (1):}
+  \[
+    x \equiv a_i \pmod{m_i}
+  \]
+  \item \textbf{Solución única módulo $M = m_1 \cdot m_2 \cdots m_k$ para el sistema con $\operatorname{mcd}(m_i, m_j) = 1$ para $i \ne j$ (2):}
+  \[
+    M = \prod_{i=1}^k m_i
+  \]
+  \item \textbf{Solución única módulo $M = m_1 \cdot m_2 \cdots m_k$ para el sistema con $\operatorname{mcd}(m_i, m_j) = 1$ para $i \ne j$ (3):}
+  \[
+    M_i = \frac{M}{m_i}
+  \]
+  \item \textbf{Solución única módulo $M = m_1 \cdot m_2 \cdots m_k$ para el sistema con $\operatorname{mcd}(m_i, m_j) = 1$ para $i \ne j$ (4):}
+  \[
+    y_i \equiv M_i^{-1} \pmod{m_i}
+  \]
+  \item \textbf{Solución única módulo $M = m_1 \cdot m_2 \cdots m_k$ para el sistema con $\operatorname{mcd}(m_i, m_j) = 1$ para $i \ne j$ (5):}
+  \[
+    x \equiv \sum_{i=1}^k a_i M_i y_i \pmod{M}
+  \]
+\end{itemize}
+
+\section*{2. Álgebra}
+\addcontentsline{toc}{section}{2. Álgebra}
+
+\subsection*{2.1 Números Complejos}
+\addcontentsline{toc}{subsection}{2.1 Números Complejos}
+
+\begin{itemize}
+  \item \textbf{Forma rectangular / binómica ($i^2 = -1$):}
+  \[
+    z = a + bi
+  \]
+  \item \textbf{Módulo:}
+  \[
+    |z| = r = \sqrt{a^2 + b^2}
+  \]
+  \item \textbf{Argumento:}
+  \[
+    \theta = \operatorname{atan2}(b, a) = \operatorname{arg}(z) \in (-\pi, \pi]
+  \]
+  \item \textbf{Forma polar y exponencial (Euler):}
+  \[
+    z = r(\cos(\theta) + i\sin(\theta)) = r e^{i\theta}
+  \]
+  \item \textbf{Teorema de De Moivre:}
+  \[
+    [r(\cos(\theta) + i\sin(\theta))]^n = r^n (\cos(n\theta) + i\sin(n\theta))
+  \]
+  \item \textbf{Raíces $n$-ésimas de un complejo ($k = 0, 1, \dots, n-1$):}
+  \[
+    z_k = \sqrt[n]{r} \, e^{i \frac{\theta + 2k\pi}{n}}
+  \]
+\end{itemize}
+
+\subsection*{2.2 Álgebra Lineal y Matrices}
+\addcontentsline{toc}{subsection}{2.2 Álgebra Lineal y Matrices}
+
+\begin{itemize}
+  \item \textbf{Determinante $2 \times 2$:}
+  \[
+    \det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc
+  \]
+  \item \textbf{Matriz Inversa ($2 \times 2$ con $\det(A) \ne 0$):}
+  \[
+    A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+  \]
+  \item \textbf{Matriz Inversa general ($\operatorname{adj}(A) = [\operatorname{Cof}(A)]^T$):}
+  \[
+    A^{-1} = \frac{1}{\det(A)} \operatorname{adj}(A) = \frac{1}{\det(A)} [\operatorname{Cof}(A)]^T \quad (\det(A) \ne 0)
+  \]
+  \item \textbf{Ecuación Característica (Autovalores):}
+  \[
+    \det(A - \lambda I) = 0
+  \]
+  \item \textbf{Autovectores:}
+  \[
+    (A - \lambda I)\vec{v} = \vec{0}
+  \]
+\end{itemize}
+
+\section*{3. Trigonometría}
+\addcontentsline{toc}{section}{3. Trigonometría}
+
+\subsection*{3.1 Definición Compleja de Funciones Circulares (Fórmula de Euler)}
+\addcontentsline{toc}{subsection}{3.1 Definición Compleja de Funciones Circulares (Fórmula de Euler)}
+
+\begin{itemize}
+  \item \textbf{Identidad de Euler:}
+  \[
+    e^{i\theta} = \cos(\theta) + i\sin(\theta)
+  \]
+  \item \textbf{Seno complejo:}
+  \[
+    \sin(z) = \frac{e^{iz} - e^{-iz}}{2i}
+  \]
+  \item \textbf{Coseno complejo:}
+  \[
+    \cos(z) = \frac{e^{iz} + e^{-iz}}{2}
+  \]
+  \item \textbf{Tangente compleja:}
+  \[
+    \tan(z) = \frac{e^{iz} - e^{-iz}}{i(e^{iz} + e^{-iz})}
+  \]
+\end{itemize}
+
+\subsection*{3.2 Funciones Hiperbólicas}
+\addcontentsline{toc}{subsection}{3.2 Funciones Hiperbólicas}
+
+\begin{itemize}
+  \item \textbf{Seno hiperbólico:}
+  \[
+    \sinh(x) = \frac{e^x - e^{-x}}{2}
+  \]
+  \item \textbf{Coseno hiperbólico:}
+  \[
+    \cosh(x) = \frac{e^x + e^{-x}}{2}
+  \]
+  \item \textbf{Tangente hiperbólica:}
+  \[
+    \tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+  \]
+  \item \textbf{Identidad Fundamental Hiperbólica:}
+  \[
+    \cosh^2(x) - \sinh^2(x) = 1
+  \]
+  \item \textbf{Identidad derivada:}
+  \[
+    1 - \tanh^2(x) = \operatorname{sech}^2(x)
+  \]
+\end{itemize}
+
+\subsection*{3.3 Relación entre Funciones Circulares e Hiperbólicas}
+\addcontentsline{toc}{subsection}{3.3 Relación entre Funciones Circulares e Hiperbólicas}
+
+\begin{itemize}
+  \item \textbf{Seno:}
+  \[
+    \sin(iz) = i\sinh(z)
+  \]
+  \item \textbf{Coseno:}
+  \[
+    \cos(iz) = \cosh(z)
+  \]
+  \item \textbf{Seno hiperbólico:}
+  \[
+    \sinh(iz) = i\sin(z)
+  \]
+  \item \textbf{Coseno hiperbólico:}
+  \[
+    \cosh(iz) = \cos(z)
+  \]
+\end{itemize}
+
+\subsection*{3.4 Desarrollo en Series de Potencias (Taylor / Maclaurin en $x = 0$)}
+\addcontentsline{toc}{subsection}{3.4 Desarrollo en Series de Potencias (Taylor / Maclaurin en $x = 0$)}
+
+\begin{itemize}
+  \item \textbf{Seno:}
+  \[
+    \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \dots
+  \]
+  \item \textbf{Coseno:}
+  \[
+    \cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \dots
+  \]
+  \item \textbf{Seno hiperbólico:}
+  \[
+    \sinh(x) = \sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!} = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \dots
+  \]
+  \item \textbf{Coseno hiperbólico:}
+  \[
+    \cosh(x) = \sum_{n=0}^\infty \frac{x^{2n}}{(2n)!} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \dots
+  \]
+\end{itemize}
+
+\section*{Compendio II: Geometría, Geometría Analítica y Álgebra Lineal}
+\addcontentsline{toc}{section}{Compendio II: Geometría, Geometría Analítica y Álgebra Lineal}
+
+\textit{(Nivel Avanzado)}
+
+\section*{4. Geometría (Plana y del Espacio / Euclidiana)}
+\addcontentsline{toc}{section}{4. Geometría (Plana y del Espacio / Euclidiana)}
+
+\subsection*{4.1 Geometría no Euclidiana y Topología Básica}
+\addcontentsline{toc}{subsection}{4.1 Geometría no Euclidiana y Topología Básica}
+
+\begin{itemize}
+  \item \textbf{Característica de Euler-Poincaré (Poliedros convexos):}
+  \[
+    V - E + F = 2 \quad (\text{Vértices} - \text{Aristas} + \text{Caras})
+  \]
+  \item \textbf{Triángulo Esférico (Exceso esférico $E$ en radianes con ángulos $\alpha, \beta, \gamma$):}
+  \[
+    E = \alpha + \beta + \gamma - \pi \quad (\text{con } E > 0 \text{ en rad})
+  \]
+  \item \textbf{Área del Triángulo Esférico (Esfera de radio $R$):}
+  \[
+    \text{Área} = R^2 E = R^2 (\alpha + \beta + \gamma - \pi)
+  \]
+  \item \textbf{Curvatura Gaussiana ($K$):}
+  \[
+    K = k_1 \cdot k_2
+  \]
+  \item \textbf{Teorema de Gauss-Bonnet (Superficies compactas):}
+  \[
+    \iint_M K \, dA + \oint_{\partial M} k_g \, ds = 2\pi \chi(M)
+  \]
+  \item \textbf{Razón Doble (Cross-Ratio en Geometría Proyectiva):}
+  \[
+    (A, B; C, D) = \frac{(c - a)(d - b)}{(c - b)(d - a)}
+  \]
+\end{itemize}
+
+\section*{5. Geometría Analítica}
+\addcontentsline{toc}{section}{5. Geometría Analítica}
+
+\subsection*{5.1 Geometría Analítica del Espacio (3D)}
+\addcontentsline{toc}{subsection}{5.1 Geometría Analítica del Espacio (3D)}
+
+\begin{itemize}
+  \item \textbf{Distancia entre dos puntos en $\mathbb{R}^3$:}
+  \[
+    d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}
+  \]
+  \item \textbf{Ecuación del Plano (Normal $\vec{n} = (A, B, C)$, pasa por $P_0(x_0, y_0, z_0)$):}
+  \[
+    A(x - x_0) + B(y - y_0) + C(z - z_0) = 0 \implies Ax + By + Cz + D = 0
+  \]
+  \item \textbf{Distancia de un punto $P(x_0, y_0, z_0)$ a un plano $Ax + By + Cz + D = 0$:}
+  \[
+    d = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}
+  \]
+  \item \textbf{Ecuaciones de la Recta en $\mathbb{R}^3$ ($\vec{v} = (v_1, v_2, v_3)$) (1):}
+  \[
+    \mathbf{r}(t) = \mathbf{r}_0 + t\mathbf{v} \quad (\text{Vectorial})
+  \]
+  \item \textbf{Ecuaciones de la Recta en $\mathbb{R}^3$ ($\vec{v} = (v_1, v_2, v_3)$) (2):}
+  \[
+    x = x_0 + tv_1
+  \]
+  \item \textbf{Ecuaciones de la Recta en $\mathbb{R}^3$ ($\vec{v} = (v_1, v_2, v_3)$) (3):}
+  \[
+    y = y_0 + tv_2
+  \]
+  \item \textbf{Ecuaciones de la Recta en $\mathbb{R}^3$ ($\vec{v} = (v_1, v_2, v_3)$) (4):}
+  \[
+    z = z_0 + tv_3 \quad (\text{Paramétrica})
+  \]
+  \item \textbf{Ecuaciones de la Recta en $\mathbb{R}^3$ ($\vec{v} = (v_1, v_2, v_3)$) (5):}
+  \[
+    \frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3} \quad (\text{Continua / Simétrica})
+  \]
+  \item \textbf{Distancia entre dos rectas alabeadas (cruzadas):}
+  \[
+    d = \frac{|(\mathbf{r}_2 - \mathbf{r}_1) \cdot (\mathbf{v}_1 \times \mathbf{v}_2)|}{\|\mathbf{v}_1 \times \mathbf{v}_2\|}
+  \]
+\end{itemize}
+
+\subsection*{5.2 Superficies Cuádricas en $\mathbb{R}^3$ (Centro en el origen)}
+\addcontentsline{toc}{subsection}{5.2 Superficies Cuádricas en $\mathbb{R}^3$ (Centro en el origen)}
+
+\begin{itemize}
+  \item \textbf{Elipsoide:}
+  \[
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1
+  \]
+  \item \textbf{Hiperboloide de 1 hoja:}
+  \[
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1
+  \]
+  \item \textbf{Hiperboloide de 2 hojas:}
+  \[
+    \frac{x^2}{a^2} - \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1
+  \]
+  \item \textbf{Paraboloide Elíptico:}
+  \[
+    z = \frac{x^2}{a^2} + \frac{y^2}{b^2}
+  \]
+  \item \textbf{Paraboloide Hiperbólico (Silla de montar):}
+  \[
+    z = \frac{y^2}{b^2} - \frac{x^2}{a^2}
+  \]
+  \item \textbf{Cono Cuádrico:}
+  \[
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} = \frac{z^2}{c^2}
+  \]
+\end{itemize}
+
+\subsection*{5.3 Transformaciones de Coordenadas en $\mathbb{R}^3$}
+\addcontentsline{toc}{subsection}{5.3 Transformaciones de Coordenadas en $\mathbb{R}^3$}
+
+\begin{itemize}
+  \item \textbf{Coseno:}
+  \[
+    x = r\cos(\theta)
+  \]
+  \item \textbf{Seno:}
+  \[
+    y = r\sin(\theta)
+  \]
+  \item \textbf{Cilíndricas (3):}
+  \[
+    z = z
+  \]
+  \item \textbf{Esféricas ($\rho \ge 0, 0 \le \theta < 2\pi, 0 \le \varphi \le \pi$):}
+  \[
+    x = \rho\sin(\varphi)\cos(\theta), \quad y = \rho\sin(\varphi)\sin(\theta), \quad z = \rho\cos(\varphi)
+  \]
+\end{itemize}
+
+\section*{6. Álgebra Lineal}
+\addcontentsline{toc}{section}{6. Álgebra Lineal}
+
+\subsection*{6.1 Autovalores, Autovectores y Diagonalización}
+\addcontentsline{toc}{subsection}{6.1 Autovalores, Autovectores y Diagonalización}
+
+\begin{itemize}
+  \item \textbf{Polinomio Característico:}
+  \[
+    p(\lambda) = \det(A - \lambda I) = 0
+  \]
+  \item \textbf{Ecuación del Autovector:}
+  \[
+    (A - \lambda I)\mathbf{v} = \mathbf{0} \iff A\mathbf{v} = \lambda\mathbf{v}
+  \]
+  \item \textbf{Teorema de Cayley-Hamilton:}
+  \[
+    p(A) = O
+  \]
+  \item \textbf{Diagonalización:}
+  \[
+    A = PDP^{-1}
+  \]
+  \item \textbf{Teorema Espectral (Matrices Simétricas / Hermíticas) (1):}
+  \[
+    A = Q\Lambda Q^T \quad (\text{Real simétrica: } Q \text{ ortogonal})
+  \]
+  \item \textbf{Teorema Espectral (Matrices Simétricas / Hermíticas) (2):}
+  \[
+    A = U\Lambda U^H \quad (\text{Compleja hermítica: } U \text{ unitaria})
+  \]
+  \item \textbf{Forma Canónica de Jordan (1):}
+  \[
+    A = PJP^{-1}
+  \]
+  \item \textbf{Forma Canónica de Jordan (2):}
+  \[
+    J = \operatorname{diag}(J_1, \dots, J_k)
+  \]
+\end{itemize}
+
+\subsection*{6.2 Factorizaciones y Descomposiciones Matriciales}
+\addcontentsline{toc}{subsection}{6.2 Factorizaciones y Descomposiciones Matriciales}
+
+\begin{itemize}
+  \item \textbf{Descomposiciones LU:}
+  \[
+    A = LU
+  \]
+  \item \textbf{QR:}
+  \[
+    A = QR
+  \]
+  \item \textbf{Cholesky ($A$ simétrica definida positiva):}
+  \[
+    A = LL^T
+  \]
+  \item \textbf{Descomposición en Valores Singulares (SVD) (1):}
+  \[
+    A = U\Sigma V^T \quad (\text{o } U\Sigma V^*)
+  \]
+  \item \textbf{Descomposición en Valores Singulares (SVD) (2):}
+  \[
+    \sigma_i = \sqrt{\lambda_i(A^T A)}
+  \]
+  \item \textbf{Pseudoinversa de Moore-Penrose:}
+  \[
+    A^+ = V\Sigma^+ U^H \quad (\text{General vía SVD; } A^+ = (A^H A)^{-1} A^H \text{ si } \operatorname{rango}(A) = n \text{ [col. completo]})
+  \]
+  \item \textbf{Solución por Mínimos Cuadrados ($\hat{\mathbf{x}} = A^+ \mathbf{b}$):}
+  \[
+    \hat{\mathbf{x}} = (A^T A)^{-1} A^T \mathbf{b} \quad (\text{Para } A \text{ real de rango columna completo})
+  \]
+\end{itemize}
+
+\subsection*{6.3 Operaciones Tensoriales}
+\addcontentsline{toc}{subsection}{6.3 Operaciones Tensoriales}
+
+\begin{itemize}
+  \item \textbf{Producto de Kronecker:}
+  \[
+    (A \otimes B)_{p(r-1)+v, \, q(s-1)+w} = A_{rs} B_{vw}
+  \]
+  \item \textbf{Propiedad de Producto Mixto:}
+  \[
+    (A \otimes B)(C \otimes D) = (AC) \otimes (BD)
+  \]
+\end{itemize}
+
+\section*{Compendio III: Cálculo Diferencial, Integral y Vectorial}
+\addcontentsline{toc}{section}{Compendio III: Cálculo Diferencial, Integral y Vectorial}
+
+\textit{(Nivel Avanzado)}
+
+\section*{7. Cálculo Diferencial}
+\addcontentsline{toc}{section}{7. Cálculo Diferencial}
+
+\subsection*{7.1 Derivadas de Funciones Hiperbólicas e Inversas}
+\addcontentsline{toc}{subsection}{7.1 Derivadas de Funciones Hiperbólicas e Inversas}
+
+\begin{itemize}
+  \item \textbf{Seno:}
+  \[
+    \frac{d}{dx}[\sinh(x)] = \cosh(x)
+  \]
+  \item \textbf{Seno:}
+  \[
+    \frac{d}{dx}[\cosh(x)] = \sinh(x)
+  \]
+  \item \textbf{Tangente:}
+  \[
+    \frac{d}{dx}[\tanh(x)] = \operatorname{sech}^2(x)
+  \]
+  \item \textbf{Tangente:}
+  \[
+    \frac{d}{dx}[\operatorname{sech}(x)] = -\operatorname{sech}(x)\tanh(x)
+  \]
+  \item \textbf{Arcoseno hiperbólico:}
+  \[
+    \frac{d}{dx}[\operatorname{arsinh}(x)] = \frac{1}{\sqrt{x^2 + 1}}
+  \]
+  \item \textbf{Arcocoseno hiperbólico:}
+  \[
+    \frac{d}{dx}[\operatorname{arcosh}(x)] = \frac{1}{\sqrt{x^2 - 1}} \quad (x > 1)
+  \]
+  \item \textbf{Arcotangente hiperbólica:}
+  \[
+    \frac{d}{dx}[\operatorname{artanh}(x)] = \frac{1}{1 - x^2} \quad (|x| < 1)
+  \]
+\end{itemize}
+
+\subsection*{7.2 Diferencial Total y Series}
+\addcontentsline{toc}{subsection}{7.2 Diferencial Total y Series}
+
+\begin{itemize}
+  \item \textbf{Diferencial:}
+  \[
+    dy = f'(x) dx
+  \]
+  \item \textbf{Serie de Taylor alrededor de $x = a$:}
+  \[
+    f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x - a)^n
+  \]
+  \item \textbf{Resto de Lagrange ($\xi \in (a, x)$):}
+  \[
+    R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x - a)^{n+1}
+  \]
+\end{itemize}
+
+\subsection*{7.3 Geometría Diferencial de Curvas Planas}
+\addcontentsline{toc}{subsection}{7.3 Geometría Diferencial de Curvas Planas}
+
+\begin{itemize}
+  \item \textbf{Curvatura ($\kappa$):}
+  \[
+    \kappa = \frac{|y''|}{[1 + (y')^2]^{\frac{3}{2}}}
+  \]
+  \item \textbf{Radio de Curvatura ($R$):}
+  \[
+    R = \frac{1}{\kappa} = \frac{[1 + (y')^2]^{\frac{3}{2}}}{|y''|}
+  \]
+\end{itemize}
+
+\section*{8. Cálculo Integral}
+\addcontentsline{toc}{section}{8. Cálculo Integral}
+
+\subsection*{8.1 Integrales Impropias}
+\addcontentsline{toc}{subsection}{8.1 Integrales Impropias}
+
+\begin{itemize}
+  \item \textbf{Límites infinitos:}
+  \[
+    \int_a^\infty f(x) \, dx = \lim_{t \to \infty} \int_a^t f(x) \, dx
+  \]
+  \item \textbf{Discontinuidad en $b$:}
+  \[
+    \int_a^b f(x) \, dx = \lim_{t \to b^-} \int_a^t f(x) \, dx
+  \]
+\end{itemize}
+
+\subsection*{8.2 Sustitución Universal de Weierstrass (Ángulo Mitad)}
+\addcontentsline{toc}{subsection}{8.2 Sustitución Universal de Weierstrass (Ángulo Mitad)}
+
+\begin{itemize}
+  \item \textbf{Sustitución $t = \tan\left(\frac{x}{2}\right)$ (1):}
+  \[
+    dx = \frac{2}{1 + t^2} dt
+  \]
+  \item \textbf{Seno:}
+  \[
+    \sin(x) = \frac{2t}{1 + t^2}
+  \]
+  \item \textbf{Coseno:}
+  \[
+    \cos(x) = \frac{1 - t^2}{1 + t^2}
+  \]
+\end{itemize}
+
+\subsection*{8.3 Integrales Hiperbólicas Inmediatas}
+\addcontentsline{toc}{subsection}{8.3 Integrales Hiperbólicas Inmediatas}
+
+\begin{itemize}
+  \item \textbf{Seno:}
+  \[
+    \int \sinh(x) \, dx = \cosh(x) + C
+  \]
+  \item \textbf{Coseno hiperbólico:}
+  \[
+    \int \cosh(x) \, dx = \sinh(x) + C
+  \]
+  \item \textbf{Arcoseno hiperbólico:}
+  \[
+    \int \frac{1}{\sqrt{x^2 + a^2}} \, dx = \operatorname{arsinh}\left(\frac{x}{a}\right) + C = \ln\left(x + \sqrt{x^2 + a^2}\right) + C
+  \]
+  \item \textbf{Arcocoseno hiperbólico:}
+  \[
+    \int \frac{1}{\sqrt{x^2 - a^2}} \, dx = \operatorname{arcosh}\left(\frac{x}{a}\right) + C = \ln\left|x + \sqrt{x^2 - a^2}\right| + C \quad (x > a)
+  \]
+\end{itemize}
+
+\subsection*{8.4 Funciones Especiales e Integrales Notables}
+\addcontentsline{toc}{subsection}{8.4 Funciones Especiales e Integrales Notables}
+
+\begin{itemize}
+  \item \textbf{Función Gamma ($\Gamma(n + 1) = n!$):}
+  \[
+    \Gamma(z) = \int_0^\infty t^{z-1} e^{-t} \, dt
+  \]
+  \item \textbf{Función Beta:}
+  \[
+    \text{B}(x, y) = \int_0^1 t^{x-1} (1 - t)^{y-1} \, dt = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x + y)}
+  \]
+  \item \textbf{Integral Gaussiana:}
+  \[
+    \int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi}
+  \]
+  \item \textbf{Diferenciación bajo el signo de integral (Regla de Leibniz 2D):}
+  \[
+    \frac{d}{dx} \left[ \int_{a(x)}^{b(x)} f(x, t) \, dt \right] = f(x, b(x))b'(x) - f(x, a(x))a'(x) + \int_{a(x)}^{b(x)} \frac{\partial f}{\partial x}(x, t) \, dt
+  \]
+\end{itemize}
+
+\section*{9. Cálculo Vectorial y Multivariable}
+\addcontentsline{toc}{section}{9. Cálculo Vectorial y Multivariable}
+
+\subsection*{9.1 Operadores Diferenciales Vectoriales (en Coordenadas Cartesianas)}
+\addcontentsline{toc}{subsection}{9.1 Operadores Diferenciales Vectoriales (en Coordenadas Cartesianas)}
+
+\begin{itemize}
+  \item \textbf{Divergencia de un campo vectorial $\mathbf{F} = (P, Q, R)$:}
+  \[
+    \operatorname{div}(\mathbf{F}) = \nabla \cdot \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
+  \]
+  \item \textbf{Rotacional de un campo vectorial $\mathbf{F} = (P, Q, R)$:}
+  \[
+    \operatorname{rot}(\mathbf{F}) = \nabla \times \mathbf{F} = \det\begin{pmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & R \end{pmatrix} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\mathbf{i} + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\mathbf{j} + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\mathbf{k}
+  \]
+  \item \textbf{Operador Laplaciano Escalar:}
+  \[
+    \Delta f = \nabla^2 f = \nabla \cdot (\nabla f) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}
+  \]
+  \item \textbf{Operador Laplaciano Vectorial:}
+  \[
+    \nabla^2 \mathbf{F} = \nabla(\nabla \cdot \mathbf{F}) - \nabla \times (\nabla \times \mathbf{F})
+  \]
+  \item \textbf{Identidades Diferenciales Fundamentales (1):}
+  \[
+    \nabla \times (\nabla f) = \mathbf{0} \quad (\text{Rotacional de gradiente nulo})
+  \]
+  \item \textbf{Identidades Diferenciales Fundamentales (2):}
+  \[
+    \nabla \cdot (\nabla \times \mathbf{F}) = 0 \quad (\text{Divergencia de rotacional nula})
+  \]
+  \item \textbf{Identidades Diferenciales Fundamentales (3):}
+  \[
+    \nabla \cdot (f \mathbf{F}) = f(\nabla \cdot \mathbf{F}) + \mathbf{F} \cdot (\nabla f)
+  \]
+  \item \textbf{Identidades Diferenciales Fundamentales (4):}
+  \[
+    \nabla \times (f \mathbf{F}) = f(\nabla \times \mathbf{F}) + (\nabla f) \times \mathbf{F}
+  \]
+\end{itemize}
+
+\subsection*{9.2 Integrales de Línea y Superficie}
+\addcontentsline{toc}{subsection}{9.2 Integrales de Línea y Superficie}
+
+\begin{itemize}
+  \item \textbf{Integral de Línea de Campo Escalar:}
+  \[
+    \int_C f \, ds = \int_a^b f(\mathbf{r}(t)) \|\mathbf{r}'(t)\| \, dt
+  \]
+  \item \textbf{Integral de Línea de Campo Vectorial (Trabajo / Circulación):}
+  \[
+    W = \int_C \mathbf{F} \cdot d\mathbf{r} = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt = \int_C (P \, dx + Q \, dy + R \, dz)
+  \]
+  \item \textbf{Teorema Fundamental para Integrales de Línea (Campos Conservativos $\mathbf{F} = \nabla\varphi$):}
+  \[
+    \int_C \mathbf{F} \cdot d\mathbf{r} = \varphi(\mathbf{r}(b)) - \varphi(\mathbf{r}(a))
+  \]
+  \item \textbf{Integral de Superficie de Campo Vectorial (Flujo):}
+  \[
+    \Phi = \iint_S \mathbf{F} \cdot d\mathbf{S} = \iint_D \mathbf{F}(\mathbf{r}(u, v)) \cdot (\mathbf{r}_u \times \mathbf{r}_v) \, du \, dv
+  \]
+\end{itemize}
+
+\subsection*{9.3 Teoremas Integrales Fundamentales del Análisis Vectorial}
+\addcontentsline{toc}{subsection}{9.3 Teoremas Integrales Fundamentales del Análisis Vectorial}
+
+\begin{itemize}
+  \item \textbf{Teorema de Green en el Plano (Curva $C$ cerrada, frontera de $D$):}
+  \[
+    \oint_C (P \, dx + Q \, dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA
+  \]
+  \item \textbf{Teorema de Stokes:}
+  \[
+    \oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S}
+  \]
+  \item \textbf{Teorema de la Divergencia de Gauss (Superficie cerrada $\partial V$):}
+  \[
+    \iint_{\partial V} \mathbf{F} \cdot d\mathbf{S} = \iiint_V (\nabla \cdot \mathbf{F}) \, dV
+  \]
+\end{itemize}
+
+\subsection*{9.4 Geometría Diferencial en $\mathbb{R}^3$ (Triedro de Frenet-Serret)}
+\addcontentsline{toc}{subsection}{9.4 Geometría Diferencial en $\mathbb{R}^3$ (Triedro de Frenet-Serret)}
+
+\begin{itemize}
+  \item \textbf{Vector Tangente Unitario:}
+  \[
+    \mathbf{T}(t) = \frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|}
+  \]
+  \item \textbf{Vector Normal Principal:}
+  \[
+    \mathbf{N}(t) = \frac{\mathbf{T}'(t)}{\|\mathbf{T}'(t)\|}
+  \]
+  \item \textbf{Vector Binormal:}
+  \[
+    \mathbf{B}(t) = \mathbf{T}(t) \times \mathbf{N}(t)
+  \]
+  \item \textbf{Fórmulas de Frenet-Serret (Parámetro de longitud de arco $s$) (1):}
+  \[
+    \frac{d\mathbf{T}}{ds} = \kappa \mathbf{N}
+  \]
+  \item \textbf{Fórmulas de Frenet-Serret (Parámetro de longitud de arco $s$) (2):}
+  \[
+    \frac{d\mathbf{N}}{ds} = -\kappa \mathbf{T} + \tau \mathbf{B}
+  \]
+  \item \textbf{Fórmulas de Frenet-Serret (Parámetro de longitud de arco $s$) (3):}
+  \[
+    \frac{d\mathbf{B}}{ds} = -\tau \mathbf{N} \quad (\kappa = \text{curvatura}, \, \tau = \text{torsión})
+  \]
+\end{itemize}
+
+\section*{Compendio IV: Ecuaciones Diferenciales y Métodos Numéricos}
+\addcontentsline{toc}{section}{Compendio IV: Ecuaciones Diferenciales y Métodos Numéricos}
+
+\textit{(Nivel Avanzado)}
+
+\section*{10. Ecuaciones Diferenciales}
+\addcontentsline{toc}{section}{10. Ecuaciones Diferenciales}
+
+\subsection*{10.1 Solución de EDOs por Series de Potencias}
+\addcontentsline{toc}{subsection}{10.1 Solución de EDOs por Series de Potencias}
+
+\begin{itemize}
+  \item \textbf{En torno a un punto ordinario $x_0 = 0$:}
+  \[
+    y(x) = \sum_{n=0}^\infty c_n x^n
+  \]
+  \item \textbf{Método de Frobenius (Punto singular regular $x_0 = 0$) (1):}
+  \[
+    y(x) = x^r \sum_{n=0}^\infty c_n x^n = \sum_{n=0}^\infty c_n x^{n + r} \quad (c_0 \ne 0)
+  \]
+  \item \textbf{Método de Frobenius (Punto singular regular $x_0 = 0$) (2):}
+  \[
+    \text{Ecuación Indicial: } F(r) = r(r - 1) + p_0 r + q_0 = 0
+  \]
+  \item \textbf{Ecuación Diferencial de Bessel:}
+  \[
+    x^2 y'' + x y' + (x^2 - \nu^2)y = 0 \implies y(x) = c_1 J_\nu(x) + c_2 Y_\nu(x)
+  \]
+  \item \textbf{Ecuación Diferencial de Legendre:}
+  \[
+    (1 - x^2)y'' - 2x y' + n(n + 1)y = 0 \implies y(x) = c_1 P_n(x) + c_2 Q_n(x)
+  \]
+\end{itemize}
+
+\subsection*{10.2 Sistemas de Ecuaciones Diferenciales Lineales}
+\addcontentsline{toc}{subsection}{10.2 Sistemas de Ecuaciones Diferenciales Lineales}
+
+\begin{itemize}
+  \item \textbf{Forma Matricial:}
+  \[
+    \mathbf{x}'(t) = A\mathbf{x}(t) + \mathbf{g}(t)
+  \]
+  \item \textbf{Matriz Exponencial:}
+  \[
+    e^{At} = I + At + \frac{A^2 t^2}{2!} + \dots = \sum_{k=0}^\infty \frac{A^k t^k}{k!}
+  \]
+  \item \textbf{Solución del Sistema Homogéneo:}
+  \[
+    \mathbf{x}(t) = e^{At}\mathbf{x}(0) = \Phi(t)\mathbf{c}
+  \]
+  \item \textbf{Fórmula de Variación de Parámetros Matricial:}
+  \[
+    \mathbf{x}(t) = e^{A(t - t_0)}\mathbf{x}(t_0) + \int_{t_0}^t e^{A(t - \tau)}\mathbf{g}(\tau) \, d\tau
+  \]
+\end{itemize}
+
+\subsection*{10.3 Ecuaciones Diferenciales Parciales (EDP) Clásicas}
+\addcontentsline{toc}{subsection}{10.3 Ecuaciones Diferenciales Parciales (EDP) Clásicas}
+
+\begin{itemize}
+  \item \textbf{Ecuación de Onda (Hiperbólica):}
+  \[
+    \frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+  \]
+  \item \textbf{Fórmula de d'Alembert (1D en recta infinita):}
+  \[
+    u(x, t) = \frac{f(x - ct) + f(x + ct)}{2} + \frac{1}{2c}\int_{x - ct}^{x + ct} g(s) \, ds
+  \]
+  \item \textbf{Ecuación del Calor / Difusión (Parabólica):}
+  \[
+    \frac{\partial u}{\partial t} = \alpha \nabla^2 u
+  \]
+  \item \textbf{Solución Fundamental / Núcleo del Calor (1D):}
+  \[
+    \Phi(x, t) = \frac{1}{\sqrt{4\pi \alpha t}} e^{-\frac{x^2}{4\alpha t}}
+  \]
+  \item \textbf{Ecuaciones de Laplace:}
+  \[
+    \nabla^2 u = 0 \quad (\text{Laplace})
+  \]
+  \item \textbf{Poisson (Elípticas):}
+  \[
+    \nabla^2 u = f(x, y, z) \quad (\text{Poisson})
+  \]
+  \item \textbf{Método de Separación de Variables (1D):}
+  \[
+    u(x, t) = X(x)T(t) \implies \frac{X''}{X} = \frac{T'}{\alpha T} = -\lambda
+  \]
+\end{itemize}
+
+\subsection*{10.4 Problemas de Sturm-Liouville}
+\addcontentsline{toc}{subsection}{10.4 Problemas de Sturm-Liouville}
+
+\begin{itemize}
+  \item \textbf{Forma Autoadjunta ($x \in [a, b]$):}
+  \[
+    \frac{d}{dx}\left[ p(x)\frac{dy}{dx} \right] + q(x)y + \lambda w(x)y = 0
+  \]
+  \item \textbf{Relación de Ortogonalidad de Autofunciones ($\lambda_n \ne \lambda_m$):}
+  \[
+    \int_a^b \phi_n(x)\phi_m(x)w(x) \, dx = 0
+  \]
+\end{itemize}
+
+\section*{11. Métodos Numéricos}
+\addcontentsline{toc}{section}{11. Métodos Numéricos}
+
+\subsection*{11.1 Solución Numérica de EDOs (Problemas de Valor Inicial)}
+\addcontentsline{toc}{subsection}{11.1 Solución Numérica de EDOs (Problemas de Valor Inicial)}
+
+\begin{itemize}
+  \item \textbf{Método de Euler (Explícito):}
+  \[
+    y_{n+1} = y_n + h f(t_n, y_n) \quad (\text{Error local } O(h^2), \text{ global } O(h))
+  \]
+  \item \textbf{Método de Euler Mejorado / Heun (Predictor-Corrector) (1):}
+  \[
+    y_{n+1}^* = y_n + h f(t_n, y_n)
+  \]
+  \item \textbf{Método de Euler Mejorado / Heun (Predictor-Corrector) (2):}
+  \[
+    y_{n+1} = y_n + \frac{h}{2}[f(t_n, y_n) + f(t_{n+1}, y_{n+1}^*)]
+  \]
+  \item \textbf{Método de Runge-Kutta Clásico de 4° Orden (RK4) (1):}
+  \[
+    k_1 = f(t_n, y_n)
+  \]
+  \item \textbf{Método de Runge-Kutta Clásico de 4° Orden (RK4) (2):}
+  \[
+    k_2 = f\left(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_1\right)
+  \]
+  \item \textbf{Método de Runge-Kutta Clásico de 4° Orden (RK4) (3):}
+  \[
+    k_3 = f\left(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_2\right)
+  \]
+  \item \textbf{Método de Runge-Kutta Clásico de 4° Orden (RK4) (4):}
+  \[
+    k_4 = f(t_n + h, y_n + hk_3)
+  \]
+  \item \textbf{Método de Runge-Kutta Clásico de 4° Orden (RK4) (5):}
+  \[
+    y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4) \quad (\text{Error local } O(h^5), \text{ global } O(h^4))
+  \]
+  \item \textbf{Métodos Multipaso (Adams-Bashforth / Adams-Moulton) (1):}
+  \[
+    \text{Adams-Bashforth (4 pasos): } y_{n+1} = y_n + \frac{h}{24}[55f_n - 59f_{n-1} + 37f_{n-2} - 9f_{n-3}]
+  \]
+  \item \textbf{Métodos Multipaso (Adams-Bashforth / Adams-Moulton) (2):}
+  \[
+    \text{Adams-Moulton (3 pasos): } y_{n+1} = y_n + \frac{h}{24}[9f_{n+1} + 19f_n - 5f_{n-1} + f_{n-2}]
+  \]
+\end{itemize}
+
+\subsection*{11.2 Solución Numérica de Problemas de Valor en la Frontera (PVF)}
+\addcontentsline{toc}{subsection}{11.2 Solución Numérica de Problemas de Valor en la Frontera (PVF)}
+
+\begin{itemize}
+  \item \textbf{Método de Disparo Lineal (Shooting Method):}
+  \[
+    y(x) = u(x) + \frac{\beta - u(b)}{v(b)} v(x)
+  \]
+  \item \textbf{Método de Diferencias Finitas para PVF:}
+  \[
+    \frac{y_{i+1} - 2y_i + y_{i-1}}{h^2} = p(x_i)\frac{y_{i+1} - y_{i-1}}{2h} + q(x_i)y_i + r(x_i) \implies A\mathbf{y} = \mathbf{d}
+  \]
+\end{itemize}
+
+\subsection*{11.3 Solución Numérica de Ecuaciones Diferenciales Parciales (EDP)}
+\addcontentsline{toc}{subsection}{11.3 Solución Numérica de Ecuaciones Diferenciales Parciales (EDP)}
+
+\begin{itemize}
+  \item \textbf{Diferencias Finitas para EDPs Elípticas (Laplace/Poisson 2D con $\Delta x = \Delta y = h$):}
+  \[
+    u_{i+1, j} + u_{i-1, j} + u_{i, j+1} + u_{i, j-1} - 4u_{i, j} = h^2 f_{i, j}
+  \]
+  \item \textbf{Diferencias Finitas para EDPs Parabólicas (Calor 1D $u_t = \alpha u_{xx}$) (1):}
+  \[
+    \text{Esquema Explícito (FTCS): } u_i^{n+1} = u_i^n + r(u_{i+1}^n - 2u_i^n + u_{i-1}^n)
+  \]
+  \item \textbf{Diferencias Finitas para EDPs Parabólicas (Calor 1D $u_t = \alpha u_{xx}$) (2):}
+  \[
+    r = \frac{\alpha \Delta t}{(\Delta x)^2} \le \frac{1}{2}
+  \]
+  \item \textbf{Diferencias Finitas para EDPs Parabólicas (Calor 1D $u_t = \alpha u_{xx}$) (3):}
+  \[
+    \text{Método de Crank-Nicolson: } -r u_{i-1}^{n+1} + 2(1 + r)u_i^{n+1} - r u_{i+1}^{n+1} = r u_{i-1}^n + 2(1 - r)u_i^n + r u_{i+1}^n
+  \]
+  \item \textbf{Diferencias Finitas para EDPs Hiperbólicas (Onda 1D $u_{tt} = c^2 u_{xx}$) (1):}
+  \[
+    u_i^{n+1} = 2(1 - C^2)u_i^n + C^2(u_{i+1}^n + u_{i-1}^n) - u_i^{n-1}
+  \]
+  \item \textbf{Diferencias Finitas para EDPs Hiperbólicas (Onda 1D $u_{tt} = c^2 u_{xx}$) (2):}
+  \[
+    \text{Condición CFL: } C = \frac{c \Delta t}{\Delta x} \le 1
+  \]
+\end{itemize}
+
+
+\end{document}

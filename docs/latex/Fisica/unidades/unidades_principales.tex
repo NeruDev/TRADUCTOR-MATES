@@ -1,0 +1,197 @@
+% ---
+% file: docs/latex/Fisica/unidades/unidades_principales.tex
+% description: Catálogo y especificación de unidades derivadas principales del SI con y sin nombre especial.
+% type: doc/manual
+% version: 1.0.0
+% date: 2026-08-24
+% covers:
+%   - src/data/units.py
+% relations:
+%   - docs/fisica/unidades/unidades_fundamentales.md
+%   - docs/fisica/unidades/unidades_secundarias.md
+%   - docs/ARCHITECTURE.md
+% keywords:
+%   - unidades-derivadas
+%   - sistema-internacional
+%   - magnitudes-fisicas
+%   - equivalencias-si
+% ---
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{esint}
+\usepackage{array,tabularx}
+
+% Configuración de márgenes y espaciado estándar
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.25cm}
+\setlength{\evensidemargin}{-0.25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+
+\section*{2. Unidades Principales Derivadas del SI}
+\addcontentsline{toc}{section}{2. Unidades Principales Derivadas del SI}
+
+Este archivo debe leerse segundo en la app: recopila unidades derivadas SI de uso transversal en física (con y sin nombre especial), con su equivalencia en unidades base.
+
+\section*{1. Derivadas SI con nombre especial}
+\addcontentsline{toc}{section}{1. Derivadas SI con nombre especial}
+
+\scriptsize
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\hline
+Magnitud & Unidad & Símbolo & Equivalencia en SI base \\
+\hline
+Ángulo plano & radián & rad & $1$ (adimensional) \\
+\hline
+Ángulo sólido & estereorradián & sr & $1$ (adimensional) \\
+\hline
+Frecuencia & hertz & Hz & $\mathrm{s^{-1}}$ \\
+\hline
+Fuerza & newton & N & $\mathrm{kg\ m\ s^{-2}}$ \\
+\hline
+Presión & pascal & Pa & $\mathrm{kg\ m^{-1}\ s^{-2}}$ \\
+\hline
+Energía, trabajo, calor & joule & J & $\mathrm{kg\ m^2\ s^{-2}}$ \\
+\hline
+Potencia & watt & W & $\mathrm{kg\ m^2\ s^{-3}}$ \\
+\hline
+Carga eléctrica & coulomb & C & $\mathrm{A\ s}$ \\
+\hline
+Diferencia de potencial & volt & V & $\mathrm{kg\ m^2\ s^{-3}\ A^{-1}}$ \\
+\hline
+Capacitancia & farad & F & $\mathrm{kg^{-1}\ m^{-2}\ s^4\ A^2}$ \\
+\hline
+Resistencia eléctrica & ohm & $\Omega$ & $\mathrm{kg\ m^2\ s^{-3}\ A^{-2}}$ \\
+\hline
+Conductancia eléctrica & siemens & S & $\mathrm{kg^{-1}\ m^{-2}\ s^3\ A^2}$ \\
+\hline
+Flujo magnético & weber & Wb & $\mathrm{kg\ m^2\ s^{-2}\ A^{-1}}$ \\
+\hline
+Densidad de flujo magnético & tesla & T & $\mathrm{kg\ s^{-2}\ A^{-1}}$ \\
+\hline
+Inductancia & henry & H & $\mathrm{kg\ m^2\ s^{-2}\ A^{-2}}$ \\
+\hline
+Temperatura Celsius & grado Celsius & $^\circ\mathrm{C}$ & $\mathrm{K}$ \\
+\hline
+Flujo luminoso & lumen & lm & $\mathrm{cd\ sr}$ \\
+\hline
+Iluminancia & lux & lx & $\mathrm{lm\ m^{-2}} = \mathrm{cd\ sr\ m^{-2}}$ \\
+\hline
+Actividad radiactiva & becquerel & Bq & $\mathrm{s^{-1}}$ \\
+\hline
+Dosis absorbida & gray & Gy & $\mathrm{m^2\ s^{-2}}$ \\
+\hline
+Dosis equivalente/efectiva & sievert & Sv & $\mathrm{m^2\ s^{-2}}$ \\
+\hline
+Actividad catalítica & katal & kat & $\mathrm{mol\ s^{-1}}$ \\
+\hline
+\end{tabularx}
+\normalsize
+
+\section*{2. Derivadas SI frecuentes sin nombre especial}
+\addcontentsline{toc}{section}{2. Derivadas SI frecuentes sin nombre especial}
+
+\scriptsize
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\hline
+Magnitud & Unidad habitual & Equivalencia en SI base \\
+\hline
+Velocidad & $\mathrm{m\ s^{-1}}$ & $\mathrm{m\ s^{-1}}$ \\
+\hline
+Aceleración & $\mathrm{m\ s^{-2}}$ & $\mathrm{m\ s^{-2}}$ \\
+\hline
+Densidad de masa & $\mathrm{kg\ m^{-3}}$ & $\mathrm{kg\ m^{-3}}$ \\
+\hline
+Viscosidad dinámica & $\mathrm{Pa\ s}$ & $\mathrm{kg\ m^{-1}\ s^{-1}}$ \\
+\hline
+Viscosidad cinemática & $\mathrm{m^2\ s^{-1}}$ & $\mathrm{m^2\ s^{-1}}$ \\
+\hline
+Campo eléctrico & $\mathrm{V\ m^{-1}}$ & $\mathrm{kg\ m\ s^{-3}\ A^{-1}}$ \\
+\hline
+Campo magnético auxiliar & $\mathrm{A\ m^{-1}}$ & $\mathrm{A\ m^{-1}}$ \\
+\hline
+Entropía/capacidad calorífica & $\mathrm{J\ K^{-1}}$ & $\mathrm{kg\ m^2\ s^{-2}\ K^{-1}}$ \\
+\hline
+Calor específico másico & $\mathrm{J\ kg^{-1}\ K^{-1}}$ & $\mathrm{m^2\ s^{-2}\ K^{-1}}$ \\
+\hline
+Conductividad térmica & $\mathrm{W\ m^{-1}\ K^{-1}}$ & $\mathrm{kg\ m\ s^{-3}\ K^{-1}}$ \\
+\hline
+\end{tabularx}
+\normalsize
+
+\section*{3. Otras Unidades Derivadas por Rama de la Física (SI)}
+\addcontentsline{toc}{section}{3. Otras Unidades Derivadas por Rama de la Física (SI)}
+
+\textit{(Se omiten las magnitudes ya listadas en las tablas superiores para evitar duplicidad de datos)}
+
+\begin{itemize}
+  \item \#\#\# 1. Mecánica Clásica
+  \item \#\#\#\# Momento de una Fuerza (Torque)
+  \[
+    \text{Newton metro} = \mathrm{N}\cdot\mathrm{m} \left[\frac{\mathrm{kg}\cdot\mathrm{m}^2}{\mathrm{s}^2}\right]
+  \]
+  \item \#\#\#\# Cantidad de Movimiento (Momento lineal)
+  \[
+    \text{Kilogramo metro por segundo} = \mathrm{kg}\cdot\mathrm{m}/\mathrm{s} \left[\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{s}}\right]
+  \]
+  \item \#\#\#\# Momento Angular y Acción
+  \[
+    \text{Joule segundo} = \mathrm{J}\cdot\mathrm{s} \left[\frac{\mathrm{kg}\cdot\mathrm{m}^2}{\mathrm{s}}\right]
+  \]
+  \item \#\#\# 2. Termodinámica y Mecánica Estadística
+  \item \#\#\#\# Entropía Molar y Capacidad Calorífica Molar
+  \[
+    \text{Joule por mol Kelvin} = \mathrm{J}/(\mathrm{mol}\cdot\mathrm{K}) \left[\frac{\mathrm{kg}\cdot\mathrm{m}^2}{\mathrm{s}^2\cdot\mathrm{mol}\cdot\mathrm{K}}\right]
+  \]
+  \item \#\#\# 3. Ondas, Oscilaciones y Acústica
+  \item \#\#\#\# Número de Onda Espacial
+  \[
+    \text{Metro a la menos uno} = \mathrm{m}^{-1} \left[\frac{1}{\mathrm{m}}\right]
+  \]
+  \item \#\#\#\# Intensidad Sonora y Densidad de Flujo de Potencia
+  \[
+    \text{Watt por metro cuadrado} = \mathrm{W}/\mathrm{m}^2 \left[\frac{\mathrm{kg}}{\mathrm{s}^3}\right]
+  \]
+  \item \#\#\#\# Impedancia Acústica Específica
+  \[
+    \text{Pascal segundo por metro} = \mathrm{Pa}\cdot\mathrm{s}/\mathrm{m} \left[\frac{\mathrm{kg}}{\mathrm{m}^2\cdot\mathrm{s}}\right]
+  \]
+  \item \#\#\# 4. Óptica y Fotometría
+  \item \#\#\#\# Luminancia (Brillo fotométrico)
+  \[
+    \text{Candela por metro cuadrado} = \mathrm{cd}/\mathrm{m}^2 \left[\frac{\mathrm{cd}}{\mathrm{m}^2}\right]
+  \]
+  \item \#\#\#\# Potencia Óptica (Refringencia / Convergencia)
+  \[
+    \text{Dioptría} = \mathrm{dpt} \left[\frac{1}{\mathrm{m}}\right]
+  \]
+  \item \#\#\# 5. Física Atómica, Nuclear y de Radiaciones
+  \item \#\#\#\# Exposición a Radiación Ionizante
+  \[
+    \text{Coulomb por kilogramo} = \mathrm{C}/\mathrm{kg} \left[\frac{\mathrm{A}\cdot\mathrm{s}}{\mathrm{kg}}\right]
+  \]
+  \item \#\#\#\# Energía a Escala Atómica
+  \[
+    \text{Electronvoltio} = \mathrm{eV} = 1.602176634 \times 10^{-19}\mathrm{ J} \left[1.602176634 \times 10^{-19}\frac{\mathrm{kg}\cdot\mathrm{m}^2}{\mathrm{s}^2}\right]
+  \]
+\end{itemize}
+
+\section*{4. Nota de alcance}
+\addcontentsline{toc}{section}{4. Nota de alcance}
+
+\begin{itemize}
+  \item Estas son las unidades principales recomendadas para visualización didáctica y consistencia en la app.
+  \item Las unidades no SI o de uso convencional se listan en el archivo de unidades secundarias.
+\end{itemize}
+
+
+\end{document}

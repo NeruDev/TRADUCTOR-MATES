@@ -12,6 +12,90 @@ relations:
 
 # Registro de Memoria (MEMORY.md)
 
+## Sesión: Maxwell Diferencial en Formulario Intermedio de Física (2026-09-05)
+
+- Se amplió `docs/latex/Fisica/formulario_intermedio.tex` con Maxwell diferencial, continuidad de carga, potenciales y calibre, ondas electromagnéticas, relaciones de onda plana, impedancia del vacío y propagación en medios lineales.
+- Poynting pasó a la sección 14.4 para insertar la nueva sección 14.3.
+- Validación: `pdflatex` correcto, sin errores LaTeX ni `Overfull \\hbox`.
+
+## Sesión: Auditoría de Renderizado LaTeX en Física (2026-09-05 00:45)
+
+- Se corrigió el conversor `sandbox/convert_mates_to_latex.py` para preservar `\text{...}` en expresiones inline y convertir automáticamente texto verbal heredado en `\mathrm{...}` a `\text{...}`, manteniendo unidades y símbolos breves en roman.
+- Se regeneraron los ocho documentos de `docs/latex/Fisica/`; se adaptaron tablas Markdown mediante `tabularx` y tamaño compacto local para evitar desbordamientos severos.
+- Validación final: 8/8 documentos compilan con `pdflatex`, 0 errores LaTeX y 0 etiquetas lingüísticas residuales dentro de `\mathrm`. Persisten avisos menores `Overfull \\hbox` en algunas fórmulas físicas extensas que requieren composición editorial específica.
+
+## Sesión: Auditoría de Renderizado LaTeX en Mates (2026-09-05 00:45)
+
+- Se corrigieron 11 usos de texto verbal dentro de `\mathrm{...}` en `docs/latex/Mates`, incluyendo el caso `p \text{ es primo y }`, evitando palabras unidas en el PDF.
+- Se sincronizaron los casos equivalentes en las fuentes Markdown de `docs/mates/` para evitar regresiones al regenerar.
+- Se ajustaron fórmulas extensas con `aligned` y saltos de línea en Menelao, Newton-Cotes, el teorema espectral y el catálogo de constantes.
+- Validación final: 5/5 documentos compilados, 0 errores LaTeX, 0 desbordamientos horizontales y 0 casos lingüísticos dentro de `\mathrm`.
+
+## Sesión: Exportación LaTeX de Documentación Física (2026-09-05 00:28)
+
+- Se generaron ocho documentos `.tex` en `docs/latex/Fisica/`, replicando la estructura de `docs/fisica/` (formularios, constantes y unidades).
+- Se mejoró `sandbox/convert_mates_to_latex.py` para soportar tablas Markdown, unidades con `\mathrm`, `\oiint` y fórmulas físicas partidas durante la conversión.
+- Validación completada: los ocho documentos compilan correctamente con `pdflatex` y el espejo de rutas es exacto.
+
+## Sesión: Corrección Integral de Incidencias en Prototipo Sandbox (2026-08-30 14:35)
+
+- **[2026-08-30 14:35] Resolución de Duplicación, Renderizado Visual 2D y Resaltado Léxico de Código:**
+  1) **Incidencia 1 (Duplicación en Catálogo, Preview y Eventos):** Se configuraron macros TeX (`Box`, `square`, `blacksquare`) y evento `mathjax-ready` en `index.html`. En `Palette.ts` y `PreviewPanel.ts` se implementó `replaceChildren()` en la inyección de SVGs generados por MathJax y se blindaron los eventos de clic con `preventDefault()` y `stopPropagation()`, eliminando renderizados dobles y fallos `Undefined control sequence`.
+  2) **Incidencia 2 (Renderizado Completo y Estructura Visual 2D en `Editor2D.ts` y `theme.css`):** Se reconstruyó `renderNode()` para generar explícitamente elementos estáticos: barra de fracción `<div class="fraction-bar">`, radicales `√` con sobrelínea continua, integrales (`∫`, `∮`, `∬`, `∭`) con límites y diferencial `d{var}`, sumatorias y productorias (`∑`, `∏`) con pila de límites verticales, límites analíticos (`lim` con subíndice `x → a`), derivadas simples/parciales (`d`/`∂`), binomiales `(n k)`, delimitadores tipográficos y matrices con corchetes laterales adaptables y grid de casillas.
+  3) **Incidencia 3 (Resaltado de Sintaxis en `CodePanel.ts` y `theme.css`):** Se implementó un editor de código sincronizado de doble capa (overlay) con tokenización léxica en tiempo real (`highlightLatex()` y `highlightMarkdown()`), coloreando comandos (`.tok-command`), entornos (`.tok-env`), números (`.tok-number`), variables matemáticas (`.tok-var`), operadores (`.tok-op`) y delimitadores (`.tok-punct`). Se sincronizó el scroll y la edición con <kbd>Ctrl+Enter</kbd>.
+  4) **Validación:** Compilación de producción con TypeScript y Vite (`npm run build`) aprobada al 100% (cero errores) y suite de integración `python sandbox/test_integration.py` aprobada con 12/12 tests exitosos.
+
+## Sesión: Documentación Estructural del Prototipo TypeScript en Sandbox (2026-08-30 14:23)
+
+- **[2026-08-30 14:23] Creación de `sandbox/ts_prototype/directorios_comentados.jsonc`:**
+  1) Se creó el mapa documental estructurado en formato JSONC (`sandbox/ts_prototype/directorios_comentados.jsonc`) análogo a `docs/directorios_comentados.jsonc`.
+  2) Se documentó exhaustivamente cada componente de la arquitectura: servidor Python multiproceso (`api_server.py`), punto de entrada frontend (`main.ts`), cliente API REST (`client.ts`), los 7 componentes interactivos (`CodePanel.ts`, `Editor2D.ts`, `Header.ts`, `Modals.ts`, `Palette.ts`, `PreviewPanel.ts`, `SplitterLayout.ts`), tipado e interfaces (`ast.ts`), estilos (`theme.css`), y configuraciones de construcción (`package.json`, `tsconfig.json`, `vite.config.ts`, `index.html`).
+  3) Se incluyeron tablas de variables/constantes globales, selectores de colores Hatsune Miku y la especificación detallada de los 19 endpoints HTTP REST (GET/POST) expuestos por el backend.
+
+## Sesión: Prototipo de UI en TypeScript y Backend API REST en Sandbox (2026-08-29 23:00)
+
+- **[2026-08-29 23:00] Corrección de `StyleDecoratorNode`, Visibilidad de Fracciones/Raíces y Control Programático MathJax:**
+  1) Se corrigió el atributo `style_cmd` en `StyleDecoratorNode` en `sandbox/ts_prototype/api_server.py`. Las fórmulas y constantes que contienen modificadores de texto y fuentes (`\text`, `\mathrm`, `\mathbf`) ahora se insertan y serializan sin fallos.
+  2) Se configuró MathJax en `index.html` con `skipHtmlTags` y `pageReady: no-op`, desactivando el analizador automático del DOM global que producía el renderizado doble o encimado de fórmulas en las tarjetas y vista previa.
+  3) Se rediseñó en `theme.css` y `Editor2D.ts` la presentación visual del operador de fracción (barra con `border-bottom: 2.5px solid #39C5BB`) y del operador de raíz (símbolo `√` junto con barra superior `border-top: 2.5px solid #39C5BB`).
+
+## Sesión: Prototipo de UI en TypeScript y Backend API REST en Sandbox (2026-08-29 22:47)
+
+- **[2026-08-29 22:47] Corrección de Matrices, Delimitadores, Enfoque tras Limpiar y Singleton en Frontend:**
+  1) Se corrigieron los atributos de `BracketNode` (`left_delim`, `right_delim`) y `MatrixNode` (`matrix_type`, `matrix_grid`) en `sandbox/ts_prototype/api_server.py`. Las clases canónicas en `src.core.ast` no poseían `bracket_type` ni `left_type`, resolviendo al 100% las excepciones registradas en los logs al insertar matrices o delimitadores.
+  2) Se protegió la instanciación de `App` en `main.ts` asegurando un patrón Singleton estricto, evitando que el módulo y el evento `DOMContentLoaded` montaran componentes duplicados en el DOM.
+  3) Se corrigió el desborde de tarjetas en `Palette.ts` y `theme.css` aplicando dimensiones máximas de 38px en SVGs y notación matricial compacta.
+  4) Se integró restauración de enfoque `focus()` en `Editor2D.ts` al limpiar el lienzo con el botón o hacer clic en cualquier área del fondo.
+
+## Sesión: Prototipo de UI en TypeScript y Backend API REST en Sandbox (2026-08-29 22:35)
+
+- **[2026-08-29 22:35] Exportación de PNG con Fondo Blanco Sólido y Descarga Directa de SVG:**
+  1) Se adaptó `PreviewPanel.ts` implementando la lógica de `ensure_svg_white_background()` para inyectar `<rect class="math-bg" ... fill="#FFFFFF" />` y estilo CSS con trazos negros `#000000`.
+  2) Se cambió el botón de SVG de "Copiar código" a **"💾 Guardar SVG"**, generando la descarga directa de un archivo `.svg` compatible con software de diseño e imprenta.
+  3) Se ajustó el exportador PNG para pintar un lienzo con fondo blanco sólido antes de renderizar la ecuación.
+
+## Sesión: Prototipo de UI en TypeScript y Backend API REST en Sandbox (2026-08-29 22:32)
+
+- **[2026-08-29 22:32] Corrección Crítica de Atributos AST (`SymbolNode`/`OperatorNode`), Resaltado Didáctico y MathJax en Tarjetas:**
+  1) Se corrigió el mapeo de atributos en `serialize_node` y `create_template_node` en `sandbox/ts_prototype/api_server.py`. Las clases en `src.core.ast` utilizan `self.display` y `self.latex_cmd` (en vez de `self.symbol` o `self.operator`), lo que causaba el fallo `AttributeError: 'SymbolNode' object has no attribute 'symbol'` al parsear o insertar fórmulas complejas.
+  2) Se implementó el sistema de colores didácticos matemáticos en `Editor2D.ts` y `theme.css`: números (`#70D6A3` verde menta), variables (`#FF7597` rosa coral itálica), operadores (`#56D8CD` cian), letras griegas (`#39C5BB`), funciones analíticas (`#C084FC` lavanda) y delimitadores (`#828DA4` pizarra).
+  3) Se actualizaron las tarjetas de la paleta en `Palette.ts` para renderizar código LaTeX tipográfico con MathJax SVG interactivo en lugar de texto plano unicode inline.
+  4) Se añadió un guard de tokens de render (`renderId`) en `PreviewPanel.ts` que previene carreras asíncronas y renderizado duplicado.
+
+## Sesión: Prototipo de UI en TypeScript y Backend API REST en Sandbox (2026-08-29 22:20)
+
+- **[2026-08-29 22:20] Redimensionamiento Dinámico (Splitters), Modo App Independiente e Interactividad Full:**
+  1) Se añadió el componente `SplitterLayout.ts` para permitir el arrastre de divisores entre paneles con ratón (emulando `QSplitter`).
+  2) Se configuró el lanzador `launch_desktop_window()` para ejecutar la aplicación en ventana independiente de escritorio nativa (Modo Aplicación Chromium sin barras ni pestañas de navegador).
+  3) Se mejoró el flujo de inserción de fórmulas/símbolos desde la paleta y la edición bidireccional desde el traductor de código con sincronización automática.
+  4) Se añadió botón para copiar el registro de logs al portapapeles y se corrigió la selección de texto.
+
+- **[2026-08-29 22:03] Implementación de Arquitectura Desacoplada (Python API + TypeScript UI en Sandbox):**
+  1) Se creó el servidor REST/HTTP multiproceso `sandbox/ts_prototype/api_server.py` que desacopla el núcleo matemático (`src.core.ast`, `src.core.parser`, `src.core.translator`), catálogos (`src.data.*`) y gestores (`src.utils.*`) sirviendo endpoints tipados y archivos compilados.
+  2) Se construyó en `sandbox/ts_prototype/frontend/` una aplicación SPA en TypeScript moderna y modular con Vite, organizada en los 4 cuadrantes (*Editor 2D con casillas interactivas `[□]`, Paleta con buscador en tiempo real, Vista Previa HD con MathJax SVG nativo y Traductor de Código*).
+  3) Se creó el lanzador ejecutable `run_sandbox_app.bat` en la raíz que compila automáticamente el frontend y abre la interfaz web en `http://127.0.0.1:8080` sin alterar el código de producción en `src/`.
+  4) Se validaron con éxito 5/5 pruebas de integración en `sandbox/test_integration.py` y las 43/43 pruebas unitarias de regresión en Pytest.
+
 ## Sesión: Estándar y Plantillas de Metadatos YAML Frontmatter (2026-08-24 22:10)
 
 - **[2026-08-25 00:36] Directiva de Despliegue en `AGENTS.md` y Consolidación de Commit Único v1.0.0:**

@@ -1,0 +1,1301 @@
+% ---
+% file: docs/latex/formulario_intermedio.tex
+% description: Compendio didáctico de fórmulas matemáticas de nivel intermedio (álgebra lineal, cálculo diferencial e integral).
+% type: doc/manual
+% version: 1.0.0
+% date: 2026-08-24
+% covers:
+%   - src/data/symbols.py
+% relations:
+%   - docs/mates/formulario_mates.md
+%   - docs/fisica/formulario_intermedio.md
+%   - docs/ARCHITECTURE.md
+% keywords:
+%   - formulas-intermedias-mates
+%   - algebra-lineal
+%   - calculo-diferencial
+%   - calculo-integral
+% ---
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+
+% Configuración de márgenes y espaciado estándar
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.25cm}
+\setlength{\evensidemargin}{-0.25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\section*{Compendio I: Aritmética, Álgebra y Trigonometría}
+\addcontentsline{toc}{section}{Compendio I: Aritmética, Álgebra y Trigonometría}
+
+\textit{(Nivel Intermedio)}
+
+\section*{1. Aritmética}
+\addcontentsline{toc}{section}{1. Aritmética}
+
+\subsection*{1.1 Teoría de Números Básica}
+\addcontentsline{toc}{subsection}{1.1 Teoría de Números Básica}
+
+\begin{itemize}
+  \item \textbf{Algoritmo de la división (Euclides) (1):}
+  \[
+    D = d \cdot q + r
+  \]
+  \item \textbf{Algoritmo de la división (Euclides) (2):}
+  \[
+    0 \le r < d
+  \]
+  \item \textbf{Relación MCD y MCM:}
+  \[
+    \operatorname{mcd}(a, b) \cdot \operatorname{mcm}(a, b) = |a \cdot b|
+  \]
+\end{itemize}
+
+\subsection*{1.2 Progresiones Aritméticas (PA)}
+\addcontentsline{toc}{subsection}{1.2 Progresiones Aritméticas (PA)}
+
+\begin{itemize}
+  \item \textbf{Término general:}
+  \[
+    a_n = a_1 + (n - 1)d
+  \]
+  \item \textbf{Suma de los primeros $n$ términos:}
+  \[
+    S_n = \frac{n}{2} (a_1 + a_n)
+  \]
+\end{itemize}
+
+\subsection*{1.3 Progresiones Geométricas (PG)}
+\addcontentsline{toc}{subsection}{1.3 Progresiones Geométricas (PG)}
+
+\begin{itemize}
+  \item \textbf{Término general:}
+  \[
+    a_n = a_1 \cdot r^{n - 1}
+  \]
+  \item \textbf{Suma de $n$ términos ($r \ne 1$):}
+  \[
+    S_n = \frac{a_1 (1 - r^n)}{1 - r}
+  \]
+  \item \textbf{Suma infinita ($|r| < 1$):}
+  \[
+    S_\infty = \frac{a_1}{1 - r}
+  \]
+\end{itemize}
+
+\section*{2. Álgebra}
+\addcontentsline{toc}{section}{2. Álgebra}
+
+\subsection*{2.1 Ecuaciones Cuadráticas}
+\addcontentsline{toc}{subsection}{2.1 Ecuaciones Cuadráticas}
+
+\begin{itemize}
+  \item \textbf{Forma general:}
+  \[
+    ax^2 + bx + c = 0
+  \]
+  \item \textbf{Fórmula cuadrática:}
+  \[
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+  \]
+  \item \textbf{Discriminante ($\Delta$):}
+  \[
+    \Delta = b^2 - 4ac
+  \]
+  \item \textbf{Relaciones de Cardano-Vieta ($2^\circ \text{ grado}$) (1):}
+  \[
+    x_1 + x_2 = -\frac{b}{a}
+  \]
+  \item \textbf{Relaciones de Cardano-Vieta ($2^\circ \text{ grado}$) (2):}
+  \[
+    x_1 \cdot x_2 = \frac{c}{a}
+  \]
+\end{itemize}
+
+\subsection*{2.2 Logaritmos}
+\addcontentsline{toc}{subsection}{2.2 Logaritmos}
+
+\begin{itemize}
+  \item \textbf{Definición ($b > 0, b \ne 1, x > 0$):}
+  \[
+    \log_b(x) = y \iff b^y = x
+  \]
+  \item \textbf{Logaritmo de un producto:}
+  \[
+    \log_b(x \cdot y) = \log_b(x) + \log_b(y)
+  \]
+  \item \textbf{Logaritmo de un cociente:}
+  \[
+    \log_b\left(\frac{x}{y}\right) = \log_b(x) - \log_b(y)
+  \]
+  \item \textbf{Logaritmo de una potencia:}
+  \[
+    \log_b(x^k) = k \cdot \log_b(x)
+  \]
+  \item \textbf{Cambio de base:}
+  \[
+    \log_b(x) = \frac{\log_c(x)}{\log_c(b)}
+  \]
+\end{itemize}
+
+\subsection*{2.3 Teorema del Binomio (Newton)}
+\addcontentsline{toc}{subsection}{2.3 Teorema del Binomio (Newton)}
+
+\begin{itemize}
+  \item \textbf{Expansión binomial:}
+  \[
+    (a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n - k} b^k = \sum_{k=0}^n \frac{n!}{k!(n - k)!} a^{n - k} b^k
+  \]
+\end{itemize}
+
+\section*{3. Trigonometría}
+\addcontentsline{toc}{section}{3. Trigonometría}
+
+\subsection*{3.1 Fórmulas de Suma y Diferencia de Ángulos}
+\addcontentsline{toc}{subsection}{3.1 Fórmulas de Suma y Diferencia de Ángulos}
+
+\begin{itemize}
+  \item \textbf{Seno de suma y diferencia:}
+  \[
+    \sin(\alpha \pm \beta) = \sin(\alpha)\cos(\beta) \pm \cos(\alpha)\sin(\beta)
+  \]
+  \item \textbf{Coseno de suma y diferencia:}
+  \[
+    \cos(\alpha \pm \beta) = \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)
+  \]
+  \item \textbf{Tangente de suma y diferencia:}
+  \[
+    \tan(\alpha \pm \beta) = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha)\tan(\beta)}
+  \]
+\end{itemize}
+
+\subsection*{3.2 Ángulo Doble y Ángulo Mitad}
+\addcontentsline{toc}{subsection}{3.2 Ángulo Doble y Ángulo Mitad}
+
+\begin{itemize}
+  \item \textbf{Seno del ángulo doble:}
+  \[
+    \sin(2\theta) = 2\sin(\theta)\cos(\theta)
+  \]
+  \item \textbf{Coseno del ángulo doble:}
+  \[
+    \cos(2\theta) = \cos^2(\theta) - \sin^2(\theta) = 2\cos^2(\theta) - 1 = 1 - 2\sin^2(\theta)
+  \]
+  \item \textbf{Tangente del ángulo doble:}
+  \[
+    \tan(2\theta) = \frac{2\tan(\theta)}{1 - \tan^2(\theta)}
+  \]
+  \item \textbf{Seno:}
+  \[
+    \sin\left(\frac{\theta}{2}\right) = \pm \sqrt{\frac{1 - \cos(\theta)}{2}}
+  \]
+  \item \textbf{Coseno del ángulo mitad:}
+  \[
+    \cos\left(\frac{\theta}{2}\right) = \pm \sqrt{\frac{1 + \cos(\theta)}{2}}
+  \]
+  \item \textbf{Tangente del ángulo mitad:}
+  \[
+    \tan\left(\frac{\theta}{2}\right) = \frac{\sin(\theta)}{1 + \cos(\theta)} = \frac{1 - \cos(\theta)}{\sin(\theta)}
+  \]
+\end{itemize}
+
+\subsection*{3.3 Leyes de Triángulos Oblicuángulos}
+\addcontentsline{toc}{subsection}{3.3 Leyes de Triángulos Oblicuángulos}
+
+\begin{itemize}
+  \item \textbf{Ley de Senos ($R = \text{circunradio}$):}
+  \[
+    \frac{a}{\sin(A)} = \frac{b}{\sin(B)} = \frac{c}{\sin(C)} = 2R
+  \]
+  \item \textbf{Ley de Cosenos:}
+  \[
+    a^2 = b^2 + c^2 - 2bc \cos(A)
+  \]
+  \item \textbf{Área de un triángulo:}
+  \[
+    \text{Área} = \frac{1}{2} a b \sin(C)
+  \]
+  \item \textbf{Fórmula de Herón ($s = \frac{a + b + c}{2}$):}
+  \[
+    \text{Área} = \sqrt{s(s - a)(s - b)(s - c)}
+  \]
+\end{itemize}
+
+\subsection*{3.4 Transformaciones de Suma a Producto (Fórmulas de Prostaféresis)}
+\addcontentsline{toc}{subsection}{3.4 Transformaciones de Suma a Producto (Fórmulas de Prostaféresis)}
+
+\begin{itemize}
+  \item \textbf{Suma y resta de senos:}
+  \[
+    \sin(\alpha) \pm \sin(\beta) = 2 \sin\left(\frac{\alpha \pm \beta}{2}\right) \cos\left(\frac{\alpha \mp \beta}{2}\right)
+  \]
+  \item \textbf{Suma de cosenos:}
+  \[
+    \cos(\alpha) + \cos(\beta) = 2 \cos\left(\frac{\alpha + \beta}{2}\right) \cos\left(\frac{\alpha - \beta}{2}\right)
+  \]
+  \item \textbf{Resta de cosenos:}
+  \[
+    \cos(\alpha) - \cos(\beta) = -2 \sin\left(\frac{\alpha + \beta}{2}\right) \sin\left(\frac{\alpha - \beta}{2}\right)
+  \]
+\end{itemize}
+
+\subsection*{3.5 Transformaciones de Producto a Suma}
+\addcontentsline{toc}{subsection}{3.5 Transformaciones de Producto a Suma}
+
+\begin{itemize}
+  \item \textbf{Producto seno-coseno:}
+  \[
+    2\sin(\alpha)\cos(\beta) = \sin(\alpha + \beta) + \sin(\alpha - \beta)
+  \]
+  \item \textbf{Producto coseno-coseno:}
+  \[
+    2\cos(\alpha)\cos(\beta) = \cos(\alpha + \beta) + \cos(\alpha - \beta)
+  \]
+  \item \textbf{Producto seno-seno:}
+  \[
+    2\sin(\alpha)\sin(\beta) = \cos(\alpha - \beta) - \cos(\alpha + \beta)
+  \]
+\end{itemize}
+
+\section*{Compendio II: Geometría, Geometría Analítica y Álgebra Lineal}
+\addcontentsline{toc}{section}{Compendio II: Geometría, Geometría Analítica y Álgebra Lineal}
+
+\textit{(Nivel Intermedio)}
+
+\section*{4. Geometría (Plana y del Espacio / Euclidiana)}
+\addcontentsline{toc}{section}{4. Geometría (Plana y del Espacio / Euclidiana)}
+
+\subsection*{4.1 Geometría del Espacio (Áreas y Volúmenes 3D)}
+\addcontentsline{toc}{subsection}{4.1 Geometría del Espacio (Áreas y Volúmenes 3D)}
+
+\begin{itemize}
+  \item \textbf{Prisma Recto (1):}
+  \[
+    A_L = P_{\text{base}} \cdot h
+  \]
+  \item \textbf{Prisma Recto (2):}
+  \[
+    V = A_{\text{base}} \cdot h
+  \]
+  \item \textbf{Cilindro Circular Recto (1):}
+  \[
+    A_T = 2\pi r(h + r)
+  \]
+  \item \textbf{Cilindro Circular Recto (2):}
+  \[
+    V = \pi r^2 h
+  \]
+  \item \textbf{Pirámide:}
+  \[
+    V = \frac{1}{3} A_{\text{base}} \cdot h
+  \]
+  \item \textbf{Cono Circular Recto (1):}
+  \[
+    g = \sqrt{r^2 + h^2}
+  \]
+  \item \textbf{Cono Circular Recto (2):}
+  \[
+    A_T = \pi r(g + r)
+  \]
+  \item \textbf{Cono Circular Recto (3):}
+  \[
+    V = \frac{1}{3} \pi r^2 h
+  \]
+  \item \textbf{Tronco de Cono:}
+  \[
+    V = \frac{1}{3} \pi h (R^2 + r^2 + R \cdot r)
+  \]
+  \item \textbf{Esfera (1):}
+  \[
+    A = 4\pi r^2
+  \]
+  \item \textbf{Esfera (2):}
+  \[
+    V = \frac{4}{3} \pi r^3
+  \]
+  \item \textbf{Casquete Esférico (1):}
+  \[
+    A = 2\pi r h
+  \]
+  \item \textbf{Casquete Esférico (2):}
+  \[
+    V = \frac{1}{3} \pi h^2 (3r - h)
+  \]
+\end{itemize}
+
+\subsection*{4.2 Teoremas Métricos y Proporcionalidad}
+\addcontentsline{toc}{subsection}{4.2 Teoremas Métricos y Proporcionalidad}
+
+\begin{itemize}
+  \item \textbf{Teorema de Tales (Rectas paralelas $L_1 \parallel L_2 \parallel L_3$ cortadas por transversales en $A, B, C$ y $D, E, F$):}
+  \[
+    \frac{AB}{BC} = \frac{DE}{EF} \iff \frac{AB}{AC} = \frac{DE}{DF}
+  \]
+  \item \textbf{Teorema de la Bisectriz Interior:}
+  \[
+    \frac{a}{b} = \frac{c_1}{c_2}
+  \]
+  \item \textbf{Relaciones Métricas en el Triángulo Rectángulo (1):}
+  \[
+    h^2 = m \cdot n
+  \]
+  \item \textbf{Relaciones Métricas en el Triángulo Rectángulo (2):}
+  \[
+    a^2 = c \cdot m
+  \]
+  \item \textbf{Relaciones Métricas en el Triángulo Rectángulo (3):}
+  \[
+    b^2 = c \cdot n
+  \]
+  \item \textbf{Relaciones Métricas en el Triángulo Rectángulo (4):}
+  \[
+    a \cdot b = c \cdot h
+  \]
+  \item \textbf{Potencia de un Punto $P$ respecto a una circunferencia (1):}
+  \[
+    PA \cdot PB = PC \cdot PD \quad (\text{Secantes})
+  \]
+  \item \textbf{Potencia de un Punto $P$ respecto a una circunferencia (2):}
+  \[
+    PT^2 = PA \cdot PB \quad (\text{Tangente y secante})
+  \]
+  \item \textbf{Teorema de Ceva (Cevianas concurrentes):}
+  \[
+    \frac{AF}{FB} \cdot \frac{BD}{DC} \cdot \frac{CE}{EA} = 1
+  \]
+  \item \textbf{Teorema de Menelao (Puntos $D, E, F$ sobre las rectas de los lados de un $\triangle ABC$ son colineales) (1):}
+  \[
+    \frac{AF}{FB} \cdot \frac{BD}{DC} \cdot \frac{CE}{EA} = -1 \quad (\text{Razones dirigidas})
+  \]
+  \item \textbf{Teorema de Menelao (Puntos $D, E, F$ sobre las rectas de los lados de un $\triangle ABC$ son colineales) (2):}
+  \[
+    \begin{aligned}
+      &\text{En magnitudes no dirigidas: } \\
+      &\frac{|AF|}{|FB|} \cdot \frac{|BD|}{|DC|} \cdot \frac{|CE|}{|EA|} = 1 \\
+      &\text{con 1 o 3 puntos en las prolongaciones exteriores}
+    \end{aligned}
+  \]
+\end{itemize}
+
+\section*{5. Geometría Analítica}
+\addcontentsline{toc}{section}{5. Geometría Analítica}
+
+\subsection*{5.1 Distancias y Secciones Cónicas en 2D}
+\addcontentsline{toc}{subsection}{5.1 Distancias y Secciones Cónicas en 2D}
+
+\begin{itemize}
+  \item \textbf{Distancia de un punto $P(x_0, y_0)$ a una recta $Ax + By + C = 0$:}
+  \[
+    d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}
+  \]
+\end{itemize}
+
+\subsection*{5.2 Circunferencia}
+\addcontentsline{toc}{subsection}{5.2 Circunferencia}
+
+\begin{itemize}
+  \item \textbf{Ecuación Ordinaria (Centro $(h, k)$, Radio $r$):}
+  \[
+    (x - h)^2 + (y - k)^2 = r^2
+  \]
+  \item \textbf{Ecuación General:}
+  \[
+    x^2 + y^2 + Dx + Ey + F = 0
+  \]
+\end{itemize}
+
+\subsection*{5.3 Parábola}
+\addcontentsline{toc}{subsection}{5.3 Parábola}
+
+\begin{itemize}
+  \item \textbf{Eje focal horizontal (1):}
+  \[
+    (y - k)^2 = \pm 4p(x - h) \quad | \quad \text{Foco: } (h \pm p, k) \quad |
+  \]
+  \item \textbf{Eje focal horizontal (2):}
+  \[
+    \text{Directriz: } x = h \mp p
+  \]
+  \item \textbf{Eje focal vertical (1):}
+  \[
+    (x - h)^2 = \pm 4p(y - k) \quad | \quad \text{Foco: } (h, k \pm p) \quad |
+  \]
+  \item \textbf{Eje focal vertical (2):}
+  \[
+    \text{Directriz: } y = k \mp p
+  \]
+  \item \textbf{Longitud del Lado Recto:}
+  \[
+    LR = |4p|
+  \]
+\end{itemize}
+
+\subsection*{5.4 Elipse}
+\addcontentsline{toc}{subsection}{5.4 Elipse}
+
+\begin{itemize}
+  \item \textbf{Ecuación Ordinaria (Eje focal horizontal, $a > b$):}
+  \[
+    \frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1
+  \]
+  \item \textbf{Relación fundamental:}
+  \[
+    a^2 = b^2 + c^2
+  \]
+  \item \textbf{Excentricidad ($0 < e < 1$):}
+  \[
+    e = \frac{c}{a}
+  \]
+  \item \textbf{Longitud del Lado Recto:}
+  \[
+    LR = \frac{2b^2}{a}
+  \]
+\end{itemize}
+
+\subsection*{5.5 Hipérbola}
+\addcontentsline{toc}{subsection}{5.5 Hipérbola}
+
+\begin{itemize}
+  \item \textbf{Ecuación Ordinaria (Eje transversal horizontal):}
+  \[
+    \frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1
+  \]
+  \item \textbf{Relación fundamental:}
+  \[
+    c^2 = a^2 + b^2
+  \]
+  \item \textbf{Excentricidad ($e > 1$):}
+  \[
+    e = \frac{c}{a}
+  \]
+  \item \textbf{Asíntotas (Centro en $(h,k)$):}
+  \[
+    y - k = \pm \frac{b}{a}(x - h)
+  \]
+\end{itemize}
+
+\subsection*{5.6 Ecuación General de Segundo Grado en 2D}
+\addcontentsline{toc}{subsection}{5.6 Ecuación General de Segundo Grado en 2D}
+
+\begin{itemize}
+  \item \textbf{Forma general:}
+  \[
+    Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0
+  \]
+  \item \textbf{Discriminante ($\delta$):}
+  \[
+    \Delta = B^2 - 4AC
+  \]
+  \item \textbf{Clasificación cónica (1):}
+  \[
+    \Delta < 0 \implies \text{Tipo Elíptico (Elipse, Circunferencia)}
+  \]
+  \item \textbf{Clasificación cónica (2):}
+  \[
+    \Delta = 0 \implies \text{Tipo Parabólico (Parábola, Rectas paralelas)}
+  \]
+  \item \textbf{Clasificación cónica (3):}
+  \[
+    \Delta > 0 \implies \text{Tipo Hiperbólico (Hipérbola, Rectas secantes)}
+  \]
+  \item \textbf{Ángulo de rotación de ejes para eliminar el término $Bxy$:}
+  \[
+    \cot(2\theta) = \frac{A - C}{B}
+  \]
+\end{itemize}
+
+\subsection*{5.7 Sistemas de Coordenadas Alternativos}
+\addcontentsline{toc}{subsection}{5.7 Sistemas de Coordenadas Alternativos}
+
+\begin{itemize}
+  \item \textbf{Coseno:}
+  \[
+    x = r\cos(\theta)
+  \]
+  \item \textbf{Seno:}
+  \[
+    y = r\sin(\theta)
+  \]
+  \item \textbf{Cartesianas a Polares (1):}
+  \[
+    r = \sqrt{x^2 + y^2}
+  \]
+  \item \textbf{Cartesianas a Polares (2):}
+  \[
+    \theta = \operatorname{atan2}(y, x) \in (-\pi, \pi]
+  \]
+\end{itemize}
+
+\section*{6. Álgebra Lineal}
+\addcontentsline{toc}{section}{6. Álgebra Lineal}
+
+\subsection*{6.1 Álgebra de Matrices}
+\addcontentsline{toc}{subsection}{6.1 Álgebra de Matrices}
+
+\begin{itemize}
+  \item \textbf{Multiplicación de Matrices:}
+  \[
+    (AB)_{ij} = \sum_{k=1}^m A_{ik} B_{kj}
+  \]
+  \item \textbf{Transposición:}
+  \[
+    (AB)^T = B^T A^T
+  \]
+  \item \textbf{Traza:}
+  \[
+    \operatorname{Tr}(A) = \sum_{i=1}^n A_{ii}
+  \]
+  \item \textbf{Propiedad cíclica:}
+  \[
+    \operatorname{Tr}(AB) = \operatorname{Tr}(BA)
+  \]
+  \item \textbf{Determinante (Propiedades) (1):}
+  \[
+    \det(AB) = \det(A)\det(B)
+  \]
+  \item \textbf{Determinante (Propiedades) (2):}
+  \[
+    \det(A^T) = \det(A)
+  \]
+  \item \textbf{Determinante (Propiedades) (3):}
+  \[
+    \det(A^{-1}) = \frac{1}{\det(A)}
+  \]
+  \item \textbf{Determinante (Propiedades) (4):}
+  \[
+    \det(cA) = c^n \det(A)
+  \]
+\end{itemize}
+
+\subsection*{6.2 Espacios Vectoriales}
+\addcontentsline{toc}{subsection}{6.2 Espacios Vectoriales}
+
+\begin{itemize}
+  \item \textbf{Subespacios (Criterio de cerradura):}
+  \[
+    \mathbf{0} \in W \quad \mathbf{u} + \mathbf{v} \in W \quad c\mathbf{u} \in W
+  \]
+  \item \textbf{Dependencia Lineal:}
+  \[
+    \sum_{i=1}^k c_i \mathbf{v}_i = \mathbf{0} \quad (\text{con algún } c_i \ne 0)
+  \]
+  \item \textbf{Teorema del Rango-Nulidad:}
+  \[
+    \dim(\operatorname{Nuc}(T)) + \dim(\operatorname{Im}(T)) = \dim(V) \iff \operatorname{nulidad}(A) + \operatorname{rango}(A) = n
+  \]
+\end{itemize}
+
+\subsection*{6.3 Espacios con Producto Interno y Ortogonalidad}
+\addcontentsline{toc}{subsection}{6.3 Espacios con Producto Interno y Ortogonalidad}
+
+\begin{itemize}
+  \item \textbf{Desigualdad de Cauchy-Schwarz:}
+  \[
+    |\langle \mathbf{u}, \mathbf{v} \rangle| \le \|\mathbf{u}\| \|\mathbf{v}\|
+  \]
+  \item \textbf{Desigualdad Triangular:}
+  \[
+    \|\mathbf{u} + \mathbf{v}\| \le \|\mathbf{u}\| + \|\mathbf{v}\|
+  \]
+  \item \textbf{Proyección Ortogonal de $\mathbf{u}$ sobre $\mathbf{v}$:}
+  \[
+    \operatorname{Proy}_{\mathbf{v}}(\mathbf{u}) = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{v}\|^2} \mathbf{v}
+  \]
+  \item \textbf{Proceso de Ortogonalización de Gram-Schmidt (1):}
+  \[
+    \mathbf{u}_1 = \mathbf{v}_1
+  \]
+  \item \textbf{Proceso de Ortogonalización de Gram-Schmidt (2):}
+  \[
+    \mathbf{u}_k = \mathbf{v}_k - \sum_{j=1}^{k-1} \operatorname{Proy}_{\mathbf{u}_j}(\mathbf{v}_k)
+  \]
+  \item \textbf{Proceso de Ortogonalización de Gram-Schmidt (3):}
+  \[
+    \mathbf{e}_i = \frac{\mathbf{u}_i}{\|\mathbf{u}_i\|} \quad (\text{Normalización})
+  \]
+\end{itemize}
+
+\section*{Compendio III: Cálculo Diferencial, Integral y Vectorial}
+\addcontentsline{toc}{section}{Compendio III: Cálculo Diferencial, Integral y Vectorial}
+
+\textit{(Nivel Intermedio)}
+
+\section*{7. Cálculo Diferencial}
+\addcontentsline{toc}{section}{7. Cálculo Diferencial}
+
+\subsection*{7.1 Reglas Fundamentales de Derivación}
+\addcontentsline{toc}{subsection}{7.1 Reglas Fundamentales de Derivación}
+
+\begin{itemize}
+  \item \textbf{Regla del Producto:}
+  \[
+    \frac{d}{dx}[f(x) \cdot g(x)] = f'(x)g(x) + f(x)g'(x)
+  \]
+  \item \textbf{Regla del Cociente:}
+  \[
+    \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}
+  \]
+  \item \textbf{Regla de la Cadena:}
+  \[
+    \frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x) \iff \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}
+  \]
+\end{itemize}
+
+\subsection*{7.2 Derivadas de Funciones Trascendentes Elementales}
+\addcontentsline{toc}{subsection}{7.2 Derivadas de Funciones Trascendentes Elementales}
+
+\begin{itemize}
+  \item \textbf{Exponenciales (1):}
+  \[
+    \frac{d}{dx}(e^x) = e^x
+  \]
+  \item \textbf{Exponenciales (2):}
+  \[
+    \frac{d}{dx}(a^x) = a^x \ln(a) \quad (a > 0, a \ne 1)
+  \]
+  \item \textbf{Logarítmicas (1):}
+  \[
+    \frac{d}{dx}(\ln|x|) = \frac{1}{x}
+  \]
+  \item \textbf{Logarítmicas (2):}
+  \[
+    \frac{d}{dx}(\log_a|x|) = \frac{1}{x\ln(a)}
+  \]
+  \item \textbf{Derivada de Seno:}
+  \[
+    \frac{d}{dx}[\sin(x)] = \cos(x)
+  \]
+  \item \textbf{Derivada de Coseno:}
+  \[
+    \frac{d}{dx}[\cos(x)] = -\sin(x)
+  \]
+  \item \textbf{Derivada de Tangente:}
+  \[
+    \frac{d}{dx}[\tan(x)] = \sec^2(x)
+  \]
+  \item \textbf{Derivada de Cotangente:}
+  \[
+    \frac{d}{dx}[\cot(x)] = -\csc^2(x)
+  \]
+  \item \textbf{Derivada de Secante:}
+  \[
+    \frac{d}{dx}[\sec(x)] = \sec(x)\tan(x)
+  \]
+  \item \textbf{Derivada de Cosecante:}
+  \[
+    \frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)
+  \]
+  \item \textbf{Derivada de Arcoseno:}
+  \[
+    \frac{d}{dx}[\arcsin(x)] = \frac{1}{\sqrt{1 - x^2}}
+  \]
+  \item \textbf{Derivada de Arcocoseno:}
+  \[
+    \frac{d}{dx}[\arccos(x)] = -\frac{1}{\sqrt{1 - x^2}}
+  \]
+  \item \textbf{Derivada de Arcotangente:}
+  \[
+    \frac{d}{dx}[\arctan(x)] = \frac{1}{1 + x^2}
+  \]
+  \item \textbf{Derivada de Arcocotangente:}
+  \[
+    \frac{d}{dx}[\operatorname{arccot}(x)] = -\frac{1}{1 + x^2}
+  \]
+  \item \textbf{Derivada de Arcosecante:}
+  \[
+    \frac{d}{dx}[\operatorname{arcsec}(x)] = \frac{1}{|x|\sqrt{x^2 - 1}}
+  \]
+  \item \textbf{Derivada de Arcocosecante:}
+  \[
+    \frac{d}{dx}[\operatorname{arccsc}(x)] = -\frac{1}{|x|\sqrt{x^2 - 1}}
+  \]
+\end{itemize}
+
+\subsection*{7.3 Aplicaciones y Teoremas del Cálculo Diferencial}
+\addcontentsline{toc}{subsection}{7.3 Aplicaciones y Teoremas del Cálculo Diferencial}
+
+\begin{itemize}
+  \item \textbf{Recta Tangente en $(x_0, y_0)$:}
+  \[
+    y - y_0 = f'(x_0)(x - x_0)
+  \]
+  \item \textbf{Recta Normal en $(x_0, y_0)$ ($f'(x_0) \ne 0$):}
+  \[
+    y - y_0 = -\frac{1}{f'(x_0)}(x - x_0)
+  \]
+  \item \textbf{Regla de L'Hôpital ($f, g$ derivables, $g'(x) \ne 0$ cerca de $a$, indeterminación $0/0$ o $\pm\infty/\pm\infty$, y existe el límite de $f'/g'$):}
+  \[
+    \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+  \]
+  \item \textbf{Teorema de Rolle ($f$ continua en $[a, b]$, derivable en $(a, b)$ y $f(a) = f(b)$):}
+  \[
+    \exists c \in (a, b) : f'(c) = 0
+  \]
+  \item \textbf{Teorema del Valor Medio (Lagrange, $f$ continua en $[a, b]$ y derivable en $(a, b)$):}
+  \[
+    \exists c \in (a, b) : f'(c) = \frac{f(b) - f(a)}{b - a}
+  \]
+  \item \textbf{Teorema del Valor Medio Generalizado (Cauchy, $f, g$ continuas en $[a, b]$, derivables en $(a, b)$ y $g'(x) \ne 0$ en $(a, b)$):}
+  \[
+    \exists c \in (a, b) : \frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)}
+  \]
+\end{itemize}
+
+\section*{8. Cálculo Integral}
+\addcontentsline{toc}{section}{8. Cálculo Integral}
+
+\subsection*{8.1 Teorema Fundamental del Cálculo (TFC)}
+\addcontentsline{toc}{subsection}{8.1 Teorema Fundamental del Cálculo (TFC)}
+
+\begin{itemize}
+  \item \textbf{Parte 1 (Derivada de la integral):}
+  \[
+    \frac{d}{dx} \left[ \int_a^x f(t) \, dt \right] = f(x)
+  \]
+  \item \textbf{Regla de Leibniz (1D):}
+  \[
+    \frac{d}{dx} \left[ \int_{u(x)}^{v(x)} f(t) \, dt \right] = f(v(x))v'(x) - f(u(x))u'(x)
+  \]
+  \item \textbf{Parte 2 (Regla de Barrow):}
+  \[
+    \int_a^b f(x) \, dx = F(b) - F(a) = [F(x)]_a^b
+  \]
+\end{itemize}
+
+\subsection*{8.2 Técnicas / Métodos de Integración}
+\addcontentsline{toc}{subsection}{8.2 Técnicas / Métodos de Integración}
+
+\begin{itemize}
+  \item \textbf{Cambio de Variable / Sustitución ($u = g(x)$):}
+  \[
+    \int f(g(x))g'(x) \, dx = \int f(u) \, du
+  \]
+  \item \textbf{Integración por Partes:}
+  \[
+    \int u \, dv = u v - \int v \, du
+  \]
+  \item \textbf{Seno:}
+  \[
+    \text{Para } \sqrt{a^2 - x^2} \implies x = a\sin(\theta)
+  \]
+  \item \textbf{Coseno:}
+  \[
+    dx = a\cos(\theta) d\theta
+  \]
+  \item \textbf{Coseno:}
+  \[
+    \sqrt{a^2 - x^2} = a\cos(\theta)
+  \]
+  \item \textbf{Tangente:}
+  \[
+    \text{Para } \sqrt{a^2 + x^2} \implies x = a\tan(\theta)
+  \]
+  \item \textbf{Secante:}
+  \[
+    dx = a\sec^2(\theta) d\theta
+  \]
+  \item \textbf{Secante:}
+  \[
+    \sqrt{a^2 + x^2} = a\sec(\theta)
+  \]
+  \item \textbf{Secante:}
+  \[
+    \text{Para } \sqrt{x^2 - a^2} \implies x = a\sec(\theta)
+  \]
+  \item \textbf{Tangente:}
+  \[
+    dx = a\sec(\theta)\tan(\theta) d\theta
+  \]
+  \item \textbf{Tangente:}
+  \[
+    \sqrt{x^2 - a^2} = a\tan(\theta)
+  \]
+\end{itemize}
+
+\subsection*{8.3 Integrales Trigonométricas e Inversas Clave}
+\addcontentsline{toc}{subsection}{8.3 Integrales Trigonométricas e Inversas Clave}
+
+\begin{itemize}
+  \item \textbf{Tangente:}
+  \[
+    \int \tan(x) \, dx = \ln|\sec(x)| + C = -\ln|\cos(x)| + C
+  \]
+  \item \textbf{Cotangente:}
+  \[
+    \int \cot(x) \, dx = \ln|\sin(x)| + C
+  \]
+  \item \textbf{Secante:}
+  \[
+    \int \sec(x) \, dx = \ln|\sec(x) + \tan(x)| + C
+  \]
+  \item \textbf{Cosecante:}
+  \[
+    \int \csc(x) \, dx = -\ln|\csc(x) + \cot(x)| + C = \ln|\csc(x) - \cot(x)| + C
+  \]
+  \item \textbf{Integral de Arcotangente:}
+  \[
+    \int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a} \arctan\left(\frac{x}{a}\right) + C
+  \]
+  \item \textbf{Integral de Arcoseno:}
+  \[
+    \int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \arcsin\left(\frac{x}{a}\right) + C
+  \]
+  \item \textbf{Integral de Arcosecante:}
+  \[
+    \int \frac{1}{|x|\sqrt{x^2 - a^2}} \, dx = \frac{1}{a} \operatorname{arcsec}\left(\frac{|x|}{a}\right) + C
+  \]
+  \item \textbf{Racionales y de Radicales (4):}
+  \[
+    \int \frac{1}{x^2 - a^2} \, dx = \frac{1}{2a} \ln\left|\frac{x - a}{x + a}\right| + C
+  \]
+\end{itemize}
+
+\subsection*{8.4 Aplicaciones Geométricas y Físicas}
+\addcontentsline{toc}{subsection}{8.4 Aplicaciones Geométricas y Físicas}
+
+\begin{itemize}
+  \item \textbf{Área entre curvas:}
+  \[
+    A = \int_a^b |f(x) - g(x)| \, dx
+  \]
+  \item \textbf{Longitud de Arco:}
+  \[
+    L = \int_a^b \sqrt{1 + [f'(x)]^2} \, dx
+  \]
+  \item \textbf{Volumen de Revolución (Método de Discos):}
+  \[
+    V = \pi \int_a^b [f(x)]^2 \, dx
+  \]
+  \item \textbf{Volumen de Revolución (Método de Arandelas):}
+  \[
+    V = \pi \int_a^b ([R(x)]^2 - [r(x)]^2) \, dx
+  \]
+  \item \textbf{Volumen de Revolución (Método de Cascarones / Capas):}
+  \[
+    V = 2\pi \int_a^b x f(x) \, dx
+  \]
+  \item \textbf{Área de Superficie de Revolución:}
+  \[
+    S = 2\pi \int_a^b f(x) \sqrt{1 + [f'(x)]^2} \, dx
+  \]
+  \item \textbf{Valor Medio de una Función:}
+  \[
+    f_{\text{prom}} = \frac{1}{b - a} \int_a^b f(x) \, dx
+  \]
+\end{itemize}
+
+\section*{9. Cálculo Vectorial y Multivariable}
+\addcontentsline{toc}{section}{9. Cálculo Vectorial y Multivariable}
+
+\subsection*{9.1 Diferenciabilidad y Regla de la Cadena Multivariable}
+\addcontentsline{toc}{subsection}{9.1 Diferenciabilidad y Regla de la Cadena Multivariable}
+
+\begin{itemize}
+  \item \textbf{Diferencial Total:}
+  \[
+    df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy + \frac{\partial f}{\partial z} dz
+  \]
+  \item \textbf{Regla de la Cadena ($w = f(x, y)$, con $x = x(t)$, $y = y(t)$):}
+  \[
+    \frac{dw}{dt} = \frac{\partial w}{\partial x}\frac{dx}{dt} + \frac{\partial w}{\partial y}\frac{dy}{dt}
+  \]
+\end{itemize}
+
+\subsection*{9.2 Derivada Direccional y Planos Tangentes}
+\addcontentsline{toc}{subsection}{9.2 Derivada Direccional y Planos Tangentes}
+
+\begin{itemize}
+  \item \textbf{Derivada de Coseno:}
+  \[
+    D_{\mathbf{u}} f = \nabla f \cdot \mathbf{u} = \|\nabla f\|\cos(\theta)
+  \]
+  \item \textbf{Derivada Direccional (en dirección del vector unitario $\mathbf{u}$) (2):}
+  \[
+    (\text{Dirección de máximo crecimiento} = \nabla f;
+  \]
+  \item \textbf{Derivada Direccional (en dirección del vector unitario $\mathbf{u}$) (3):}
+  \[
+    \text{Valor máximo} = \|\nabla f\|)
+  \]
+  \item \textbf{Plano Tangente a superficie de nivel $F(x, y, z) = c$ en $P_0(x_0, y_0, z_0)$:}
+  \[
+    \nabla F(P_0) \cdot (\mathbf{r} - \mathbf{r}_0) = 0 \implies F_x(P_0)(x - x_0) + F_y(P_0)(y - y_0) + F_z(P_0)(z - z_0) = 0
+  \]
+\end{itemize}
+
+\subsection*{9.3 Optimización Multivariable}
+\addcontentsline{toc}{subsection}{9.3 Optimización Multivariable}
+
+\begin{itemize}
+  \item \textbf{Matriz hessiana (2d):}
+  \[
+    H = \begin{pmatrix} f_{xx} & f_{xy} \\ f_{yx} & f_{yy} \end{pmatrix}
+  \]
+  \item \textbf{Discriminante ($d$):}
+  \[
+    D = \det(H) = f_{xx} f_{yy} - (f_{xy})^2
+  \]
+  \item \textbf{Criterio de clasificación (1):}
+  \[
+    D > 0 \text{ y } f_{xx} > 0 \implies \text{Mínimo Local}
+  \]
+  \item \textbf{Criterio de clasificación (2):}
+  \[
+    D > 0 \text{ y } f_{xx} < 0 \implies \text{Máximo Local}
+  \]
+  \item \textbf{Criterio de clasificación (3):}
+  \[
+    D < 0 \implies \text{Punto de Silla}
+  \]
+  \item \textbf{Criterio de clasificación (4):}
+  \[
+    D = 0 \implies \text{Criterio no concluyente}
+  \]
+  \item \textbf{Multiplicadores de Lagrange (Restricción $g(x,y,z) = k$):}
+  \[
+    \nabla f = \lambda \nabla g
+  \]
+\end{itemize}
+
+\subsection*{9.4 Integrales Múltiples y Transformaciones de Coordenadas}
+\addcontentsline{toc}{subsection}{9.4 Integrales Múltiples y Transformaciones de Coordenadas}
+
+\begin{itemize}
+  \item \textbf{Integral Doble General:}
+  \[
+    \iint_R f(x, y) \, dx \, dy = \iint_S f(x(u,v), y(u,v)) |J(u, v)| \, du \, dv
+  \]
+  \item \textbf{Jacobiano de Transformación:}
+  \[
+    J(u, v) = \frac{\partial(x, y)}{\partial(u, v)} = \det\begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \end{pmatrix}
+  \]
+  \item \textbf{Coordenadas Polares (2D):}
+  \[
+    dA = r \, dr \, d\theta
+  \]
+  \item \textbf{Coordenadas Cilíndricas (3D):}
+  \[
+    dV = r \, dr \, d\theta \, dz
+  \]
+  \item \textbf{Coordenadas Esféricas (3D):}
+  \[
+    dV = \rho^2 \sin(\varphi) \, d\rho \, d\varphi \, d\theta
+  \]
+\end{itemize}
+
+\section*{Compendio IV: Ecuaciones Diferenciales y Métodos Numéricos}
+\addcontentsline{toc}{section}{Compendio IV: Ecuaciones Diferenciales y Métodos Numéricos}
+
+\textit{(Nivel Intermedio)}
+
+\section*{10. Ecuaciones Diferenciales}
+\addcontentsline{toc}{section}{10. Ecuaciones Diferenciales}
+
+\subsection*{10.1 Ecuaciones Diferenciales Reducibles a 1er Orden}
+\addcontentsline{toc}{subsection}{10.1 Ecuaciones Diferenciales Reducibles a 1er Orden}
+
+\begin{itemize}
+  \item \textbf{Ecuación Homogénea de Grado $n$ (1):}
+  \[
+    \frac{dy}{dx} = F\left(\frac{y}{x}\right) \implies y = ux
+  \]
+  \item \textbf{Ecuación Homogénea de Grado $n$ (2):}
+  \[
+    \frac{dy}{dx} = u + x\frac{du}{dx}
+  \]
+  \item \textbf{Ecuación de Bernoulli ($n \ne 0, 1$):}
+  \[
+    y' + P(x)y = Q(x)y^n \implies u = y^{1 - n} \implies u' + (1 - n)P(x)u = (1 - n)Q(x)
+  \]
+  \item \textbf{Ecuación de Riccati (Con solución particular conocida $y_1(x)$) (1):}
+  \[
+    y' = P(x) + Q(x)y + R(x)y^2
+  \]
+  \item \textbf{Ecuación de Riccati (Con solución particular conocida $y_1(x)$) (2):}
+  \[
+    y = y_1(x) + \frac{1}{u(x)}
+  \]
+  \item \textbf{Ecuación de Clairaut:}
+  \[
+    y = x y' + f(y') \implies y = Cx + f(C) \quad (\text{Solución general})
+  \]
+\end{itemize}
+
+\subsection*{10.2 EDOs Lineales de Orden Superior con Coeficientes Constantes}
+\addcontentsline{toc}{subsection}{10.2 EDOs Lineales de Orden Superior con Coeficientes Constantes}
+
+\begin{itemize}
+  \item \textbf{Forma General Homogénea:}
+  \[
+    a_n y^{(n)} + a_{n-1} y^{(n-1)} + \dots + a_1 y' + a_0 y = 0
+  \]
+  \item \textbf{Ecuación Característica ($2^\circ \text{ orden}$) (1):}
+  \[
+    a r^2 + b r + c = 0
+  \]
+  \item \textbf{Ecuación Característica ($2^\circ \text{ orden}$) (2):}
+  \[
+    \text{Raíces reales distintas } (r_1 \ne r_2):
+  \]
+  \item \textbf{Ecuación Característica ($2^\circ \text{ orden}$) (3):}
+  \[
+    y_h = c_1 e^{r_1 x} + c_2 e^{r_2 x}
+  \]
+  \item \textbf{Ecuación Característica ($2^\circ \text{ orden}$) (4):}
+  \[
+    \text{Raíces reales repetidas } (r_1 = r_2 = r):
+  \]
+  \item \textbf{Ecuación Característica ($2^\circ \text{ orden}$) (5):}
+  \[
+    y_h = (c_1 + c_2 x)e^{r x}
+  \]
+  \item \textbf{Ecuación Característica ($2^\circ \text{ orden}$) (6):}
+  \[
+    \text{Raíces complejas } (r = \alpha \pm i\beta):
+  \]
+  \item \textbf{Seno:}
+  \[
+    y_h = e^{\alpha x}(c_1 \cos(\beta x) + c_2 \sin(\beta x))
+  \]
+  \item \textbf{Wronskiano e Independencia Lineal:}
+  \[
+    W(y_1, y_2, \dots, y_n) = \det\begin{pmatrix} y_1 & y_2 & \dots & y_n \\ y_1' & y_2' & \dots & y_n' \\ \vdots & \vdots & \ddots & \vdots \\ y_1^{(n-1)} & y_2^{(n-1)} & \dots & y_n^{(n-1)} \end{pmatrix} \ne 0
+  \]
+  \item \textbf{Fórmula de Abel para el Wronskiano:}
+  \[
+    W(x) = W(x_0) e^{-\int P(x) \, dx}
+  \]
+  \item \textbf{Método de Variación de Parámetros ($y'' + P(x)y' + Q(x)y = g(x)$) (1):}
+  \[
+    y_p = u_1(x)y_1(x) + u_2(x)y_2(x)
+  \]
+  \item \textbf{Método de Variación de Parámetros ($y'' + P(x)y' + Q(x)y = g(x)$) (2):}
+  \[
+    u_1'(x) = -\frac{y_2(x) g(x)}{W(y_1, y_2)}
+  \]
+  \item \textbf{Método de Variación de Parámetros ($y'' + P(x)y' + Q(x)y = g(x)$) (3):}
+  \[
+    u_2'(x) = \frac{y_1(x) g(x)}{W(y_1, y_2)}
+  \]
+  \item \textbf{Ecuación Equidimensional de Cauchy-Euler:}
+  \[
+    a x^2 y'' + b x y' + c y = 0 \implies a r(r - 1) + b r + c = a r^2 + (b - a)r + c = 0
+  \]
+\end{itemize}
+
+\subsection*{10.3 Transformada de Laplace para EDOs}
+\addcontentsline{toc}{subsection}{10.3 Transformada de Laplace para EDOs}
+
+\begin{itemize}
+  \item \textbf{Definición:}
+  \[
+    \mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt
+  \]
+  \item \textbf{Transformadas de Derivadas (1):}
+  \[
+    \mathcal{L}\{f'(t)\} = s F(s) - f(0)
+  \]
+  \item \textbf{Transformadas de Derivadas (2):}
+  \[
+    \mathcal{L}\{f''(t)\} = s^2 F(s) - s f(0) - f'(0)
+  \]
+  \item \textbf{Transformadas de Derivadas (3):}
+  \[
+    \mathcal{L}\{f^{(n)}(t)\} = s^n F(s) - \sum_{k=1}^n s^{n - k} f^{(k - 1)}(0)
+  \]
+  \item \textbf{Teoremas de Traslación (1):}
+  \[
+    \mathcal{L}\{e^{at} f(t)\} = F(s - a)
+  \]
+  \item \textbf{Teoremas de Traslación (2):}
+  \[
+    \mathcal{L}\{f(t - a)\mathcal{U}(t - a)\} = e^{-as} F(s) \quad (\mathcal{U} = \text{escalón unitario de Heaviside})
+  \]
+  \item \textbf{Transformada de la Convolución:}
+  \[
+    \mathcal{L}\{(f * g)(t)\} = \mathcal{L}\left\{ \int_0^t f(\tau)g(t - \tau) \, d\tau \right\} = F(s) \cdot G(s)
+  \]
+  \item \textbf{Transformada de la Delta de Dirac (1):}
+  \[
+    \mathcal{L}\{\delta(t - t_0)\} = e^{-s t_0}
+  \]
+  \item \textbf{Transformada de la Delta de Dirac (2):}
+  \[
+    \mathcal{L}\{\delta(t)\} = 1
+  \]
+\end{itemize}
+
+\section*{11. Métodos Numéricos}
+\addcontentsline{toc}{section}{11. Métodos Numéricos}
+
+\subsection*{11.1 Raíces de Ecuaciones No Lineales (Métodos Abiertos)}
+\addcontentsline{toc}{subsection}{11.1 Raíces de Ecuaciones No Lineales (Métodos Abiertos)}
+
+\begin{itemize}
+  \item \textbf{Método de Iteración de Punto Fijo ($g([a, b]) \subseteq [a, b]$ y $\max_{x \in [a, b]} |g'(x)| \le k < 1$) (1):}
+  \[
+    f(x) = 0 \iff x = g(x)
+  \]
+  \item \textbf{Método de Iteración de Punto Fijo ($g([a, b]) \subseteq [a, b]$ y $\max_{x \in [a, b]} |g'(x)| \le k < 1$) (2):}
+  \[
+    x_{k+1} = g(x_k)
+  \]
+  \item \textbf{Método de Iteración de Punto Fijo ($g([a, b]) \subseteq [a, b]$ y $\max_{x \in [a, b]} |g'(x)| \le k < 1$) (3):}
+  \[
+    |x_{k+1} - x^*| \le k |x_k - x^*|
+  \]
+  \item \textbf{Método de Newton-Raphson (Orden cuadrático $p = 2$):}
+  \[
+    x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}
+  \]
+  \item \textbf{Método de la Secante (Orden superlineal $p \approx 1.618$):}
+  \[
+    x_{k+1} = x_k - f(x_k)\frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}
+  \]
+  \item \textbf{Método de Newton-Raphson Multivariable ($\mathbf{F}(\mathbf{x}) = \mathbf{0}$) (1):}
+  \[
+    \mathbf{x}^{(k+1)} = \mathbf{x}^{(k)} - [J(\mathbf{x}^{(k)})]^{-1}\mathbf{F}(\mathbf{x}^{(k)})
+  \]
+  \item \textbf{Método de Newton-Raphson Multivariable ($\mathbf{F}(\mathbf{x}) = \mathbf{0}$) (2):}
+  \[
+    J_{ij} = \frac{\partial F_i}{\partial x_j}
+  \]
+\end{itemize}
+
+\subsection*{11.2 Métodos Iterativos para Sistemas de Ecuaciones Lineales ($A\mathbf{x} = \mathbf{b}$)}
+\addcontentsline{toc}{subsection}{11.2 Métodos Iterativos para Sistemas de Ecuaciones Lineales ($A\mathbf{x} = \mathbf{b}$)}
+
+\begin{itemize}
+  \item \textbf{Método de Jacobi ($A = D + L + U$, con $D$ diagonal, $L$ triangular inferior estricta y $U$ triangular superior estricta) (1):}
+  \[
+    x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j \ne i} a_{ij}x_j^{(k)} \right)
+  \]
+  \item \textbf{Método de Jacobi ($A = D + L + U$, con $D$ diagonal, $L$ triangular inferior estricta y $U$ triangular superior estricta) (2):}
+  \[
+    \mathbf{x}^{(k+1)} = -D^{-1}(L + U)\mathbf{x}^{(k)} + D^{-1}\mathbf{b}
+  \]
+  \item \textbf{Método de Gauss-Seidel ($A = D + L + U$) (1):}
+  \[
+    x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j < i} a_{ij}x_j^{(k+1)} - \sum_{j > i} a_{ij}x_j^{(k)} \right)
+  \]
+  \item \textbf{Método de Gauss-Seidel ($A = D + L + U$) (2):}
+  \[
+    \mathbf{x}^{(k+1)} = -(D + L)^{-1} U \mathbf{x}^{(k)} + (D + L)^{-1} \mathbf{b}
+  \]
+  \item \textbf{Método de Sobrerrelajación Sucesiva (SOR, $0 < \omega < 2$):}
+  \[
+    x_i^{(k+1)} = (1 - \omega)x_i^{(k)} + \frac{\omega}{a_{ii}} \left( b_i - \sum_{j < i} a_{ij}x_j^{(k+1)} - \sum_{j > i} a_{ij}x_j^{(k)} \right)
+  \]
+  \item \textbf{Criterio de Convergencia (1):}
+  \[
+    |a_{ii}| > \sum_{j \ne i} |a_{ij}| \quad (\text{Diagonalmente dominante}) \quad \text{o}
+  \]
+  \item \textbf{Criterio de Convergencia (2):}
+  \[
+    \rho(T) < 1
+  \]
+\end{itemize}
+
+\subsection*{11.3 Interpolación y Ajuste de Curvas}
+\addcontentsline{toc}{subsection}{11.3 Interpolación y Ajuste de Curvas}
+
+\begin{itemize}
+  \item \textbf{Polinomio Interpolador de Lagrange (1):}
+  \[
+    P_n(x) = \sum_{i=0}^n y_i L_i(x)
+  \]
+  \item \textbf{Polinomio Interpolador de Lagrange (2):}
+  \[
+    L_i(x) = \prod_{j \ne i}^n \frac{x - x_j}{x_i - x_j}
+  \]
+  \item \textbf{Polinomio de Newton en Diferencias Divididas (1):}
+  \[
+    P_n(x) = f[x_0] + \sum_{k=1}^n f[x_0, x_1, \dots, x_k] \prod_{j=0}^{k-1} (x - x_j)
+  \]
+  \item \textbf{Polinomio de Newton en Diferencias Divididas (2):}
+  \[
+    f[x_i, x_{i+1}] = \frac{f[x_{i+1}] - f[x_i]}{x_{i+1} - x_i}
+  \]
+  \item \textbf{Regresión Lineal por Mínimos Cuadrados ($y = a_0 + a_1 x$) (1):}
+  \[
+    a_1 = \frac{n \sum x_i y_i - \sum x_i \sum y_i}{n \sum x_i^2 - (\sum x_i)^2}
+  \]
+  \item \textbf{Regresión Lineal por Mínimos Cuadrados ($y = a_0 + a_1 x$) (2):}
+  \[
+    a_0 = \bar{y} - a_1 \bar{x}
+  \]
+\end{itemize}
+
+\subsection*{11.4 Diferenciación e Integración Numérica}
+\addcontentsline{toc}{subsection}{11.4 Diferenciación e Integración Numérica}
+
+\begin{itemize}
+  \item \textbf{Fórmulas de Diferenciación por Diferencias Finitas (1):}
+  \[
+    f'(x) = \frac{f(x + h) - f(x)}{h} + O(h) \quad (\text{Hacia adelante})
+  \]
+  \item \textbf{Fórmulas de Diferenciación por Diferencias Finitas (2):}
+  \[
+    f'(x) = \frac{f(x) - f(x - h)}{h} + O(h) \quad (\text{Hacia atrás})
+  \]
+  \item \textbf{Fórmulas de Diferenciación por Diferencias Finitas (3):}
+  \[
+    f'(x) = \frac{f(x + h) - f(x - h)}{2h} + O(h^2) \quad (\text{Centrada})
+  \]
+  \item \textbf{Fórmulas de Diferenciación por Diferencias Finitas (4):}
+  \[
+    f''(x) = \frac{f(x + h) - 2f(x) + f(x - h)}{h^2} + O(h^2) \quad (\text{2da derivada centrada})
+  \]
+  \item \textbf{Fórmulas de Integración de Newton-Cotes (1):}
+  \[
+    \text{Regla del Trapecio Simple: } \int_a^b f(x) \, dx \approx \frac{b - a}{2}[f(a) + f(b)]
+  \]
+  \item \textbf{Fórmulas de Integración de Newton-Cotes (2):}
+  \[
+    E = -\frac{h^3}{12}f''(\xi)
+  \]
+  \item \textbf{Fórmulas de Integración de Newton-Cotes (3):}
+  \[
+    \text{Regla del Trapecio Compuesta: } \int_a^b f(x) \, dx \approx \frac{h}{2}\left[ f(x_0) + 2\sum_{i=1}^{n-1} f(x_i) + f(x_n) \right]
+  \]
+  \item \textbf{Fórmulas de Integración de Newton-Cotes (4):}
+  \[
+    \text{Regla de Simpson } 1/3 \text{ Simple: } \int_a^b f(x) \, dx \approx \frac{h}{3}[f(x_0) + 4f(x_1) + f(x_2)]
+  \]
+  \item \textbf{Fórmulas de Integración de Newton-Cotes (5):}
+  \[
+    E = -\frac{h^5}{90}f^{(4)}(\xi)
+  \]
+  \item \textbf{Fórmulas de Integración de Newton-Cotes (6):}
+  \[
+    \begin{aligned}
+      &\text{Regla de Simpson } 1/3 \text{ Compuesta:} \\
+      &\int_a^b f(x) \, dx \approx \frac{h}{3}[f(x_0) + 4\sum_{i=1,3,\dots}^{n-1} f(x_i) \\
+      &\qquad + 2\sum_{j=2,4,\dots}^{n-2} f(x_j) + f(x_n)]
+    \end{aligned}
+  \]
+  \item \textbf{Fórmulas de Integración de Newton-Cotes (7):}
+  \[
+    \text{Regla de Simpson } 3/8 \text{ Simple: } \int_a^b f(x) \, dx \approx \frac{3h}{8}[f(x_0) + 3f(x_1) + 3f(x_2) + f(x_3)]
+  \]
+  \item \textbf{Cuadratura Gaussiana (Gauss-Legendre en $[a, b]$ con transformación a $[-1, 1]$) (1):}
+  \[
+    \int_a^b f(x) \, dx \approx \frac{b - a}{2} \sum_{i=1}^n w_i f(x_i)
+  \]
+  \item \textbf{Cuadratura Gaussiana (Gauss-Legendre en $[a, b]$ con transformación a $[-1, 1]$) (2):}
+  \[
+    x_i = \frac{(b - a)t_i + (a + b)}{2} \quad (t_i, w_i \text{ nodos y pesos en } [-1, 1])
+  \]
+\end{itemize}
+
+
+\end{document}

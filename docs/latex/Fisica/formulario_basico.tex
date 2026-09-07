@@ -1,0 +1,1314 @@
+% ---
+% file: docs/latex/Fisica/formulario_basico.tex
+% description: Compendio didáctico de fórmulas de física de nivel básico (cinemática, newton, ondas, fluidos).
+% type: doc/manual
+% version: 1.0.0
+% date: 2026-08-24
+% covers:
+%   - src/data/symbols.py
+% relations:
+%   - docs/fisica/formulario_fisica.md
+%   - docs/mates/formulario_basico.md
+%   - docs/ARCHITECTURE.md
+% keywords:
+%   - formulas-basicas-fisica
+%   - cinematica-basica
+%   - dinamica-newton
+%   - fluidos-basicos
+% ---
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{esint}
+\usepackage{array,tabularx}
+
+% Configuración de márgenes y espaciado estándar
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-0.25cm}
+\setlength{\evensidemargin}{-0.25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+
+\section*{Compendio I: Mecánica Clásica, de Fluidos y Analítica}
+\addcontentsline{toc}{section}{Compendio I: Mecánica Clásica, de Fluidos y Analítica}
+
+\textit{(Nivel Básico)}
+
+\section*{1. Cinemática y Dinámica Newtoniana}
+\addcontentsline{toc}{section}{1. Cinemática y Dinámica Newtoniana}
+
+\subsection*{1.1 Movimiento Rectilíneo Uniforme (MRU)}
+\addcontentsline{toc}{subsection}{1.1 Movimiento Rectilíneo Uniforme (MRU)}
+
+\begin{itemize}
+  \item \textbf{Posición en función del tiempo:}
+  \[
+    x(t) = x_0 + v \cdot t
+  \]
+  \item \textbf{Velocidad media:}
+  \[
+    v_m = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}
+  \]
+\end{itemize}
+
+\subsection*{1.2 Movimiento Rectilíneo Uniformemente Acelerado (MRUA)}
+\addcontentsline{toc}{subsection}{1.2 Movimiento Rectilíneo Uniformemente Acelerado (MRUA)}
+
+\begin{itemize}
+  \item \textbf{Velocidad:}
+  \[
+    v(t) = v_0 + a \cdot t
+  \]
+  \item \textbf{Posición:}
+  \[
+    x(t) = x_0 + v_0 t + \frac{1}{2} a t^2
+  \]
+  \item \textbf{Ecuación independiente del tiempo (Torricelli):}
+  \[
+    v_f^2 = v_0^2 + 2a (x_f - x_0)
+  \]
+  \item \textbf{Desplazamiento medio:}
+  \[
+    \Delta x = \left( \frac{v_0 + v_f}{2} \right) t
+  \]
+\end{itemize}
+
+\subsection*{1.3 Leyes del Movimiento de Newton}
+\addcontentsline{toc}{subsection}{1.3 Leyes del Movimiento de Newton}
+
+\begin{itemize}
+  \item \textbf{Primera Ley (Inercia):}
+  \[
+    \sum \vec{F} = \vec{0} \iff \vec{v} = \text{constante}
+  \]
+  \item \textbf{Segunda Ley (Ley Fundamental de la Dinámica):}
+  \[
+    \sum \vec{F} = m \vec{a} = \frac{d\vec{p}}{dt}
+  \]
+  \item \textbf{Tercera Ley (Acción y Reacción):}
+  \[
+    \vec{F}_{AB} = -\vec{F}_{BA}
+  \]
+\end{itemize}
+
+\subsection*{1.4 Fuerzas de Fricción / Rozamiento}
+\addcontentsline{toc}{subsection}{1.4 Fuerzas de Fricción / Rozamiento}
+
+\begin{itemize}
+  \item \textbf{Fricción estática máxima:}
+  \[
+    f_{s,\mathrm{máx}} = \mu_s N \quad \implies \quad f_s \le \mu_s N
+  \]
+  \item \textbf{Fricción cinética:}
+  \[
+    f_k = \mu_k N
+  \]
+\end{itemize}
+
+\subsection*{1.5 Movimiento Circular Uniforme (MCU) y Uniformemente Variado (MCUV)}
+\addcontentsline{toc}{subsection}{1.5 Movimiento Circular Uniforme (MCU) y Uniformemente Variado (MCUV)}
+
+\begin{itemize}
+  \item \textbf{Relaciones lineales y angulares (1):}
+  \[
+    s = \theta \cdot r
+  \]
+  \item \textbf{Relaciones lineales y angulares (2):}
+  \[
+    v = \omega \cdot r
+  \]
+  \item \textbf{Relaciones lineales y angulares (3):}
+  \[
+    a_t = \alpha \cdot r
+  \]
+  \item \textbf{Aceleración centrípeta / normal:}
+  \[
+    a_c = \frac{v^2}{r} = \omega^2 r
+  \]
+  \item \textbf{Cinemática angular con $\alpha$ constante (1):}
+  \[
+    \omega(t) = \omega_0 + \alpha t
+  \]
+  \item \textbf{Cinemática angular con $\alpha$ constante (2):}
+  \[
+    \theta(t) = \theta_0 + \omega_0 t + \frac{1}{2} \alpha t^2
+  \]
+  \item \textbf{Cinemática angular con $\alpha$ constante (3):}
+  \[
+    \omega_f^2 = \omega_0^2 + 2\alpha (\theta_f - \theta_0)
+  \]
+\end{itemize}
+
+\section*{2. Trabajo, Energía, Momento Lineal y Gravitación}
+\addcontentsline{toc}{section}{2. Trabajo, Energía, Momento Lineal y Gravitación}
+
+\subsection*{2.1 Trabajo y Energía Mecánica}
+\addcontentsline{toc}{subsection}{2.1 Trabajo y Energía Mecánica}
+
+\begin{itemize}
+  \item \textbf{Trabajo efectuado por fuerza constante:}
+  \[
+    W = \vec{F} \cdot \Delta\vec{r} = F \Delta r \cos(\theta)
+  \]
+  \item \textbf{Energía Cinética traslacional:}
+  \[
+    E_k = \frac{1}{2} m v^2
+  \]
+  \item \textbf{Energía Potencial Gravitatoria (cerca de la superficie terrestre):}
+  \[
+    E_{p,\text{grav}} = m g h
+  \]
+  \item \textbf{Energía Potencial Elástica (Ley de Hooke $F = -kx$):}
+  \[
+    E_{p,\text{elás}} = \frac{1}{2} k x^2
+  \]
+  \item \textbf{Teorema del Trabajo y la Energía Cinética:}
+  \[
+    W_{\text{neto}} = \Delta E_k = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_0^2
+  \]
+  \item \textbf{Conservación de la Energía Mecánica:}
+  \[
+    E_m = E_k + E_p \implies \Delta E_m = W_{\text{no conservativas}}
+  \]
+\end{itemize}
+
+\subsection*{2.2 Cantidad de Movimiento e Impulso}
+\addcontentsline{toc}{subsection}{2.2 Cantidad de Movimiento e Impulso}
+
+\begin{itemize}
+  \item \textbf{Momento lineal:}
+  \[
+    \vec{p} = m \vec{v}
+  \]
+  \item \textbf{Impulso:}
+  \[
+    \vec{J} = \vec{F}_{\text{prom}} \Delta t = \Delta \vec{p}
+  \]
+  \item \textbf{Choques unidimensionales y Coeficiente de Restitución ($e$):}
+  \[
+    e = \frac{v_{2f} - v_{1f}}{v_{1i} - v_{2i}}
+  \]
+\end{itemize}
+
+\section*{3. Oscilaciones y Mecánica de Fluidos}
+\addcontentsline{toc}{section}{3. Oscilaciones y Mecánica de Fluidos}
+
+\subsection*{3.1 Oscilador Armónico Simple (M.A.S.)}
+\addcontentsline{toc}{subsection}{3.1 Oscilador Armónico Simple (M.A.S.)}
+
+\begin{itemize}
+  \item \textbf{Ecuación diferencial y solución:}
+  \[
+    \ddot{x} + \omega_0^2 x = 0 \implies x(t) = A \cos(\omega_0 t + \phi)
+  \]
+  \item \textbf{Frecuencia angular:}
+  \[
+    \omega_0 = \sqrt{\frac{k}{m}}
+  \]
+  \item \textbf{Periodo (sistema masa-resorte):}
+  \[
+    T = 2\pi\sqrt{\frac{m}{k}}
+  \]
+  \item \textbf{Péndulo Simple:}
+  \[
+    T = 2\pi\sqrt{\frac{L}{g}}
+  \]
+  \item \textbf{Péndulo Físico:}
+  \[
+    T = 2\pi\sqrt{\frac{I}{m g d}}
+  \]
+\end{itemize}
+
+\subsection*{3.2 Estática de Fluidos}
+\addcontentsline{toc}{subsection}{3.2 Estática de Fluidos}
+
+\begin{itemize}
+  \item \textbf{Presión hidrostática:}
+  \[
+    P(h) = P_0 + \rho g h
+  \]
+  \item \textbf{Principio de Pascal:}
+  \[
+    \frac{F_1}{A_1} = \frac{F_2}{A_2}
+  \]
+  \item \textbf{Principio de Arquímedes (Fuerza de Empuje):}
+  \[
+    E = \rho_{\text{fluido}} g V_{\text{sumergido}}
+  \]
+\end{itemize}
+
+\section*{Compendio II: Oscilaciones y Ondas Mecánicas}
+\addcontentsline{toc}{section}{Compendio II: Oscilaciones y Ondas Mecánicas}
+
+\textit{(Nivel Básico)}
+
+\section*{4. Movimiento Oscilatorio (Oscilaciones)}
+\addcontentsline{toc}{section}{4. Movimiento Oscilatorio (Oscilaciones)}
+
+\subsection*{4.1 Cinemática del Movimiento Armónico Simple (M.A.S.)}
+\addcontentsline{toc}{subsection}{4.1 Cinemática del Movimiento Armónico Simple (M.A.S.)}
+
+\begin{itemize}
+  \item \textbf{Posición en función del tiempo:}
+  \[
+    x(t) = A \cos(\omega t + \phi)
+  \]
+  \item \textbf{Velocidad:}
+  \[
+    v(t) = \frac{dx}{dt} = -\omega A \sen(\omega t + \phi) = \pm \omega \sqrt{A^2 - x^2}
+  \]
+  \item \textbf{Aceleración:}
+  \[
+    a(t) = \frac{d^2x}{dt^2} = -\omega^2 A \cos(\omega t + \phi) = -\omega^2 x(t)
+  \]
+  \item \textbf{Valores máximos (1):}
+  \[
+    x_{\mathrm{máx}} = A
+  \]
+  \item \textbf{Valores máximos (2):}
+  \[
+    v_{\mathrm{máx}} = \omega A
+  \]
+  \item \textbf{Valores máximos (3):}
+  \[
+    a_{\mathrm{máx}} = \omega^2 A
+  \]
+\end{itemize}
+
+\subsection*{4.2 Parámetros Temporales y Frecuenciales}
+\addcontentsline{toc}{subsection}{4.2 Parámetros Temporales y Frecuenciales}
+
+\begin{itemize}
+  \item \textbf{Periodo ($T$):}
+  \[
+    T = \frac{1}{f} = \frac{2\pi}{\omega}
+  \]
+  \item \textbf{Frecuencia ($f$):}
+  \[
+    f = \frac{1}{T} = \frac{\omega}{2\pi}
+  \]
+  \item \textbf{Frecuencia angular ($\omega$):}
+  \[
+    \omega = 2\pi f = \frac{2\pi}{T}
+  \]
+\end{itemize}
+
+\subsection*{4.3 Energía del M.A.S. (Sistema Conservativo)}
+\addcontentsline{toc}{subsection}{4.3 Energía del M.A.S. (Sistema Conservativo)}
+
+\begin{itemize}
+  \item \textbf{Energía Cinética:}
+  \[
+    E_k = \frac{1}{2} m v^2 = \frac{1}{2} m \omega^2 A^2 \sen^2(\omega t + \phi)
+  \]
+  \item \textbf{Energía Potencial Elástica:}
+  \[
+    E_p = \frac{1}{2} k x^2 = \frac{1}{2} k A^2 \cos^2(\omega t + \phi)
+  \]
+  \item \textbf{Energía Mecánica Total:}
+  \[
+    E_m = E_k + E_p = \frac{1}{2} k A^2 = \frac{1}{2} m \omega^2 A^2 = \text{constante}
+  \]
+\end{itemize}
+
+\subsection*{4.4 Sistemas Oscilatorios Simples}
+\addcontentsline{toc}{subsection}{4.4 Sistemas Oscilatorios Simples}
+
+\begin{itemize}
+  \item \textbf{Masa-Resorte (1):}
+  \[
+    \omega_0 = \sqrt{\frac{k}{m}}
+  \]
+  \item \textbf{Masa-Resorte (2):}
+  \[
+    T = 2\pi\sqrt{\frac{m}{k}}
+  \]
+  \item \textbf{Péndulo Simple (Aproximación para ángulos pequeños $\sen\theta \approx \theta$) (1):}
+  \[
+    \omega_0 = \sqrt{\frac{g}{L}}
+  \]
+  \item \textbf{Péndulo Simple (Aproximación para ángulos pequeños $\sen\theta \approx \theta$) (2):}
+  \[
+    T = 2\pi\sqrt{\frac{L}{g}}
+  \]
+\end{itemize}
+
+\section*{5. Ondas Mecánicas en Medios Continuos}
+\addcontentsline{toc}{section}{5. Ondas Mecánicas en Medios Continuos}
+
+\subsection*{5.1 Cinemática de Ondas Armónicas Unidimensionales}
+\addcontentsline{toc}{subsection}{5.1 Cinemática de Ondas Armónicas Unidimensionales}
+
+\begin{itemize}
+  \item \textbf{Función de Onda Progresiva (hacia la derecha $-$ / hacia la izquierda $+$):}
+  \[
+    y(x, t) = A \sen(k x \mp \omega t + \phi)
+  \]
+  \item \textbf{Relación entre Parámetros Fundamentales (1):}
+  \[
+    k = \frac{2\pi}{\lambda}
+  \]
+  \item \textbf{Relación entre Parámetros Fundamentales (2):}
+  \[
+    \omega = \frac{2\pi}{T} = 2\pi f
+  \]
+  \item \textbf{Relación entre Parámetros Fundamentales (3):}
+  \[
+    v = \lambda f = \frac{\lambda}{T} = \frac{\omega}{k}
+  \]
+  \item \textbf{Velocidad:}
+  \[
+    v_y(x, t) = \frac{\partial y}{\partial t} = \mp \omega A \cos(k x \mp \omega t + \phi)
+  \]
+  \item \textbf{Aceleración transversal de las partículas del medio:}
+  \[
+    a_y(x, t) = \frac{\partial^2 y}{\partial t^2} = -\omega^2 A \sen(k x \mp \omega t + \phi) = -\omega^2 y(x, t)
+  \]
+\end{itemize}
+
+\section*{6. Interferencia, Ondas Estacionarias y Acústica}
+\addcontentsline{toc}{section}{6. Interferencia, Ondas Estacionarias y Acústica}
+
+\subsection*{6.1 Superposición e Interferencia}
+\addcontentsline{toc}{subsection}{6.1 Superposición e Interferencia}
+
+\begin{itemize}
+  \item \textbf{Interferencia de dos ondas armónicas con diferencia de fase $\Delta\phi$:}
+  \[
+    y_R(x, t) = \left[ 2A \cos\left(\frac{\Delta\phi}{2}\right) \right] \sen\left(kx - \omega t + \frac{\Delta\phi}{2}\right)
+  \]
+  \item \textbf{Condición de Interferencia Constructiva:}
+  \[
+    \Delta\phi = 2n\pi \implies \Delta r = n\lambda \quad n \in \mathbb{Z}
+  \]
+  \item \textbf{Condición de Interferencia Destructiva:}
+  \[
+    \Delta\phi = (2n + 1)\pi \implies \Delta r = \left(n + \frac{1}{2}\right)\lambda \quad n \in \mathbb{Z}
+  \]
+\end{itemize}
+
+\subsection*{6.2 Batidos o Pulsaciones}
+\addcontentsline{toc}{subsection}{6.2 Batidos o Pulsaciones}
+
+\begin{itemize}
+  \item \textbf{Superposición de ondas con frecuencias ligeramente diferentes $\omega_1 \approx \omega_2$:}
+  \[
+    y_R(t) = \left[ 2A \cos\left( \frac{\omega_1 - \omega_2}{2} t \right) \right] \cos\left( \frac{\omega_1 + \omega_2}{2} t \right)
+  \]
+  \item \textbf{Frecuencia de Batido:}
+  \[
+    f_{\text{batido}} = |f_1 - f_2|
+  \]
+\end{itemize}
+
+\subsection*{6.3 Escala Decibélica y Nivel de Sonido}
+\addcontentsline{toc}{subsection}{6.3 Escala Decibélica y Nivel de Sonido}
+
+\begin{itemize}
+  \item \textbf{Nivel de Intensidad Sonora ($\beta$) (1):}
+  \[
+    \beta = 10 \log_{10}\left( \frac{I}{I_0} \right)
+  \]
+  \item \textbf{Nivel de Intensidad Sonora ($\beta$) (2):}
+  \[
+    I_0 = 10^{-12} \, \mathrm{W/m}^2
+  \]
+  \item \textbf{Nivel de Presión Sonora ($SPL$) (1):}
+  \[
+    L_p = 20 \log_{10}\left( \frac{p_{\mathrm{rms}}}{p_0} \right)
+  \]
+  \item \textbf{Nivel de Presión Sonora ($SPL$) (2):}
+  \[
+    p_0 = 20 \, \mu\mathrm{Pa}
+  \]
+\end{itemize}
+
+\section*{Compendio III: Termodinámica Clásica, Química y Estadística}
+\addcontentsline{toc}{section}{Compendio III: Termodinámica Clásica, Química y Estadística}
+
+\textit{(Nivel Básico)}
+
+\section*{7. Conceptos Fundamentales, Gases y Ecuaciones de Estado}
+\addcontentsline{toc}{section}{7. Conceptos Fundamentales, Gases y Ecuaciones de Estado}
+
+\subsection*{7.1 Escalas Termométricas y Temperatura}
+\addcontentsline{toc}{subsection}{7.1 Escalas Termométricas y Temperatura}
+
+\begin{itemize}
+  \item \textbf{Escala Celsius a Kelvin:}
+  \[
+    T(\mathrm{K}) = T(^\circ\mathrm{C}) + 273.15
+  \]
+  \item \textbf{Escala Celsius a Fahrenheit:}
+  \[
+    T(^\circ\mathrm{F}) = \frac{9}{5} T(^\circ\mathrm{C}) + 32
+  \]
+  \item \textbf{Escala Fahrenheit a Rankine (Temperatura absoluta $T_{\mathrm{R}}$):}
+  \[
+    T_{\mathrm{R}}(\mathrm{Ra}) = T(^\circ\mathrm{F}) + 459.67 = \frac{9}{5} T(\mathrm{K})
+  \]
+\end{itemize}
+
+\subsection*{7.2 Dilatación Térmica}
+\addcontentsline{toc}{subsection}{7.2 Dilatación Térmica}
+
+\begin{itemize}
+  \item \textbf{Dilatación Lineal:}
+  \[
+    \Delta L = \alpha L_0 \Delta T \implies L(T) = L_0 (1 + \alpha \Delta T)
+  \]
+  \item \textbf{Dilatación Superficial ($\gamma \approx 2\alpha$):}
+  \[
+    \Delta A = \gamma A_0 \Delta T \implies A(T) = A_0 (1 + \gamma \Delta T)
+  \]
+  \item \textbf{Dilatación Volumétrica ($\beta \approx 3\alpha$ para sólidos isótropos):}
+  \[
+    \Delta V = \beta V_0 \Delta T \implies V(T) = V_0 (1 + \beta \Delta T)
+  \]
+\end{itemize}
+
+\subsection*{7.3 Calorimetría y Capacidad Calorífica}
+\addcontentsline{toc}{subsection}{7.3 Calorimetría y Capacidad Calorífica}
+
+\begin{itemize}
+  \item \textbf{Calor sensible:}
+  \[
+    Q = m c \Delta T = n C_m \Delta T = C \Delta T
+  \]
+  \item \textbf{Calor latente en cambio de fase:}
+  \[
+    Q = m L
+  \]
+  \item \textbf{Principio de Conservación de la Energía (Equilibrio térmico):}
+  \[
+    \sum Q_{\text{ganado}} + \sum Q_{\text{perdido}} = 0 \implies \sum m_i c_i (T_{\mathrm{eq}} - T_i) = 0
+  \]
+\end{itemize}
+
+\subsection*{7.4 Gas Ideal y Leyes Empíricas}
+\addcontentsline{toc}{subsection}{7.4 Gas Ideal y Leyes Empíricas}
+
+\begin{itemize}
+  \item \textbf{Ecuación de Estado del Gas Ideal (1):}
+  \[
+    P V = n R T = N k_B T
+  \]
+  \item \textbf{Ecuación de Estado del Gas Ideal (2):}
+  \[
+    R = N_A k_B \approx 8.314 \, \frac{\mathrm{J}}{\mathrm{mol}\cdot\mathrm{K}}
+  \]
+  \item \textbf{Ley de Boyle-Mariotte ($T = \text{constante}$):}
+  \[
+    P_1 V_1 = P_2 V_2
+  \]
+  \item \textbf{Ley de Charles ($P = \text{constante}$):}
+  \[
+    \frac{V_1}{T_1} = \frac{V_2}{T_2}
+  \]
+  \item \textbf{Ley de Gay-Lussac ($V = \text{constante}$):}
+  \[
+    \frac{P_1}{T_1} = \frac{P_2}{T_2}
+  \]
+  \item \textbf{Ley Combinada:}
+  \[
+    \frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2}
+  \]
+\end{itemize}
+
+\section*{8. Primera y Segunda Ley de la Termodinámica}
+\addcontentsline{toc}{section}{8. Primera y Segunda Ley de la Termodinámica}
+
+\subsection*{8.1 Primera Ley de la Termodinámica (Sistemas Cerrados)}
+\addcontentsline{toc}{subsection}{8.1 Primera Ley de la Termodinámica (Sistemas Cerrados)}
+
+\begin{itemize}
+  \item \textbf{Forma Integral (Convención física: trabajo $W$ realizado por el sistema):}
+  \[
+    \Delta U = Q - W
+  \]
+  \item \textbf{Forma Diferencial General (Sistema cerrado):}
+  \[
+    dU = \delta Q - \delta W
+  \]
+  \item \textbf{Para procesos cuasiestáticos de expansión/compresión hidrostática ($\delta W = P \, dV$):}
+  \[
+    dU = \delta Q - P \, dV
+  \]
+  \item \textbf{Trabajo Cuasiestático de Expansión/Compresión:}
+  \[
+    W = \int_{V_i}^{V_f} P \, dV
+  \]
+\end{itemize}
+
+\subsection*{8.2 Procesos Termodinámicos Cuasiestáticos en Gases Ideales}
+\addcontentsline{toc}{subsection}{8.2 Procesos Termodinámicos Cuasiestáticos en Gases Ideales}
+
+\begin{itemize}
+  \item \textbf{Proceso Isocórico ($V = \text{constante}, \, dV = 0$) (1):}
+  \[
+    W = 0
+  \]
+  \item \textbf{Proceso Isocórico ($V = \text{constante}, \, dV = 0$) (2):}
+  \[
+    Q = \Delta U = n C_v \Delta T
+  \]
+  \item \textbf{Proceso Isobárico ($P = \text{constante}$) (1):}
+  \[
+    W = P(V_f - V_i) = n R \Delta T
+  \]
+  \item \textbf{Proceso Isobárico ($P = \text{constante}$) (2):}
+  \[
+    Q = n C_p \Delta T
+  \]
+  \item \textbf{Proceso Isobárico ($P = \text{constante}$) (3):}
+  \[
+    \Delta U = n C_v \Delta T
+  \]
+  \item \textbf{Proceso Isotérmico ($T = \text{constante}, \, \Delta T = 0$):}
+  \[
+    \Delta U = 0 \implies Q = W = n R T \ln\left(\frac{V_f}{V_i}\right) = n R T \ln\left(\frac{P_i}{P_f}\right)
+  \]
+  \item \textbf{Proceso Adiabático Reversible ($Q = 0, \, \delta Q = 0$) (1):}
+  \[
+    Q = 0 \implies \Delta U = -W = n C_v (T_f - T_i) = \frac{P_f V_f - P_i V_i}{1 - \gamma}
+  \]
+  \item \textbf{Proceso Adiabático Reversible ($Q = 0, \, \delta Q = 0$) (2):}
+  \[
+    P V^\gamma = \text{constante}
+  \]
+  \item \textbf{Proceso Adiabático Reversible ($Q = 0, \, \delta Q = 0$) (3):}
+  \[
+    T V^{\gamma - 1} = \text{constante}
+  \]
+  \item \textbf{Proceso Adiabático Reversible ($Q = 0, \, \delta Q = 0$) (4):}
+  \[
+    T^\gamma P^{1 - \gamma} = \text{constante}
+  \]
+  \item \textbf{Relación de mayer:}
+  \[
+    C_p - C_v = R
+  \]
+  \item \textbf{Coeficiente de dilatación adiabática:}
+  \[
+    \gamma = \frac{C_p}{C_v}
+  \]
+\end{itemize}
+
+\section*{Compendio IV: Electricidad y Magnetismo}
+\addcontentsline{toc}{section}{Compendio IV: Electricidad y Magnetismo}
+
+\textit{(Nivel Básico)}
+
+\section*{9. Electrostática y Medios Dieléctricos}
+\addcontentsline{toc}{section}{9. Electrostática y Medios Dieléctricos}
+
+\subsection*{9.1 Ley de Coulomb y Fuerza Eléctrica}
+\addcontentsline{toc}{subsection}{9.1 Ley de Coulomb y Fuerza Eléctrica}
+
+\begin{itemize}
+  \item \textbf{Magnitud de la fuerza entre dos cargas puntuales (1):}
+  \[
+    F = \frac{1}{4\pi\varepsilon_0} \frac{|q_1 q_2|}{r^2} = k_e \frac{|q_1 q_2|}{r^2}
+  \]
+  \item \textbf{Magnitud de la fuerza entre dos cargas puntuales (2):}
+  \[
+    k_e \approx 8.9875 \times 10^9 \, \frac{\mathrm{N}\cdot\mathrm{m}^2}{\mathrm{C}^2}
+  \]
+  \item \textbf{Forma vectorial de la fuerza sobre $q_1$ debida a $q_2$:}
+  \[
+    \vec{F}_{12} = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r_{21}^2} \hat{r}_{21}
+  \]
+\end{itemize}
+
+\subsection*{9.2 Campo Eléctrico ($\vec{E}$)}
+\addcontentsline{toc}{subsection}{9.2 Campo Eléctrico ($\vec{E}$)}
+
+\begin{itemize}
+  \item \textbf{Definición por carga de prueba:}
+  \[
+    \vec{E} = \frac{\vec{F}}{q_0}
+  \]
+  \item \textbf{Campo de una carga puntual:}
+  \[
+    \vec{E} = \frac{1}{4\pi\varepsilon_0} \frac{q}{r^2} \hat{r}
+  \]
+  \item \textbf{Principio de superposición para $N$ cargas:}
+  \[
+    \vec{E}_{\text{total}} = \sum_{i=1}^N \vec{E}_i = \frac{1}{4\pi\varepsilon_0} \sum_{i=1}^N \frac{q_i}{r_i^2} \hat{r}_i
+  \]
+\end{itemize}
+
+\subsection*{9.3 Potencial y Energía Potencial Electrostática}
+\addcontentsline{toc}{subsection}{9.3 Potencial y Energía Potencial Electrostática}
+
+\begin{itemize}
+  \item \textbf{Potencial eléctrico de una carga puntual:}
+  \[
+    V(r) = \frac{1}{4\pi\varepsilon_0} \frac{q}{r}
+  \]
+  \item \textbf{Trabajo y diferencia de potencial:}
+  \[
+    W_{A \to B} = -q_0 \Delta V = q_0 (V_A - V_B)
+  \]
+  \item \textbf{Energía potencial electrostática de dos cargas:}
+  \[
+    U = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r}
+  \]
+\end{itemize}
+
+\subsection*{9.4 Capacitancia y Condensadores}
+\addcontentsline{toc}{subsection}{9.4 Capacitancia y Condensadores}
+
+\begin{itemize}
+  \item \textbf{Definición general:}
+  \[
+    C = \frac{Q}{V}
+  \]
+  \item \textbf{Condensador de placas plano-paralelas:}
+  \[
+    C = \frac{\varepsilon_0 A}{d}
+  \]
+  \item \textbf{Condensador coaxial / cilíndrico (longitud $L$, radios $a < b$):}
+  \[
+    C = \frac{2\pi\varepsilon_0 L}{\ln(b/a)}
+  \]
+  \item \textbf{Condensador esférico (radios $a < b$):}
+  \[
+    C = 4\pi\varepsilon_0 \left( \frac{a b}{b - a} \right)
+  \]
+  \item \textbf{Asociación de Condensadores (1):}
+  \[
+    \text{En Paralelo: } C_{\mathrm{eq}} = \sum_{i=1}^N C_i \quad |
+  \]
+  \item \textbf{Asociación de Condensadores (2):}
+  \[
+    \text{En Serie: } \frac{1}{C_{\mathrm{eq}}} = \sum_{i=1}^N \frac{1}{C_i}
+  \]
+  \item \textbf{Energía almacenada en un condensador:}
+  \[
+    U = \frac{1}{2} Q V = \frac{1}{2} C V^2 = \frac{Q^2}{2C}
+  \]
+\end{itemize}
+
+\section*{10. Electrodinámica, Corriente y Circuitos Eléctricos}
+\addcontentsline{toc}{section}{10. Electrodinámica, Corriente y Circuitos Eléctricos}
+
+\subsection*{10.1 Corriente, Resistencia y Ley de Ohm}
+\addcontentsline{toc}{subsection}{10.1 Corriente, Resistencia y Ley de Ohm}
+
+\begin{itemize}
+  \item \textbf{Intensidad de corriente eléctrica:}
+  \[
+    I = \frac{dQ}{dt}
+  \]
+  \item \textbf{Ley de Ohm Macroscópica:}
+  \[
+    V = I R
+  \]
+  \item \textbf{Resistencia en función de la geometría:}
+  \[
+    R = \rho_e \frac{L}{A} = \frac{L}{\sigma_c A}
+  \]
+  \item \textbf{Variación de la resistividad con la temperatura:}
+  \[
+    \rho_e(T) = \rho_0 [1 + \alpha (T - T_0)]
+  \]
+\end{itemize}
+
+\subsection*{10.2 Potencia Eléctrica y Efecto Joule}
+\addcontentsline{toc}{subsection}{10.2 Potencia Eléctrica y Efecto Joule}
+
+\begin{itemize}
+  \item \textbf{Potencia disipada / consumida:}
+  \[
+    P = V I = I^2 R = \frac{V^2}{R}
+  \]
+  \item \textbf{Energía disipada por efecto Joule:}
+  \[
+    W = \int P \, dt = I^2 R t \quad (\text{para } I \text{ constante})
+  \]
+\end{itemize}
+
+\subsection*{10.3 Fuerza Electromotriz (FEM) y Asociación de Resistencias}
+\addcontentsline{toc}{subsection}{10.3 Fuerza Electromotriz (FEM) y Asociación de Resistencias}
+
+\begin{itemize}
+  \item \textbf{FEM ($\mathcal{E}$) y voltaje terminal con resistencia interna $r$:}
+  \[
+    V_{\text{terminal}} = \mathcal{E} - I r
+  \]
+  \item \textbf{Asociación de Resistencias (1):}
+  \[
+    \text{En Serie: } R_{\mathrm{eq}} = \sum_{i=1}^N R_i \quad |
+  \]
+  \item \textbf{Asociación de Resistencias (2):}
+  \[
+    \text{En Paralelo: } \frac{1}{R_{\mathrm{eq}}} = \sum_{i=1}^N \frac{1}{R_i}
+  \]
+\end{itemize}
+
+\section*{11. Magnetostática y Materia Magnética}
+\addcontentsline{toc}{section}{11. Magnetostática y Materia Magnética}
+
+\subsection*{11.1 Fuerza Magnética y Fuerza de Lorentz}
+\addcontentsline{toc}{subsection}{11.1 Fuerza Magnética y Fuerza de Lorentz}
+
+\begin{itemize}
+  \item \textbf{Fuerza magnética sobre una carga en movimiento:}
+  \[
+    \vec{F}_B = q (\vec{v} \times \vec{B}) \implies F_B = |q| v B \sen\theta
+  \]
+  \item \textbf{Fuerza de Lorentz completa:}
+  \[
+    \vec{F} = q (\vec{E} + \vec{v} \times \vec{B})
+  \]
+  \item \textbf{Movimiento ciclotrónico (carga perpendicular a campo uniforme) (1):}
+  \[
+    r = \frac{m v}{|q| B}
+  \]
+  \item \textbf{Movimiento ciclotrónico (carga perpendicular a campo uniforme) (2):}
+  \[
+    \omega_c = \frac{|q| B}{m}
+  \]
+  \item \textbf{Movimiento ciclotrónico (carga perpendicular a campo uniforme) (3):}
+  \[
+    T = \frac{2\pi m}{|q| B}
+  \]
+\end{itemize}
+
+\subsection*{11.2 Fuerza Magnética sobre Conductores}
+\addcontentsline{toc}{subsection}{11.2 Fuerza Magnética sobre Conductores}
+
+\begin{itemize}
+  \item \textbf{Conductor rectilíneo con corriente $I$:}
+  \[
+    \vec{F} = I (\vec{L} \times \vec{B})
+  \]
+  \item \textbf{Conductor de geometría arbitraria:}
+  \[
+    \vec{F} = \int_C I (d\vec{\ell} \times \vec{B})
+  \]
+  \item \textbf{Fuerza magnética entre dos conductores paralelos largos (1):}
+  \[
+    \frac{F}{L} = \frac{\mu_0 I_1 I_2}{2\pi d}
+  \]
+  \item \textbf{Fuerza magnética entre dos conductores paralelos largos (2):}
+  \[
+    \mu_0 = 4\pi \times 10^{-7} \, \frac{\mathrm{T}\cdot\mathrm{m}}{\mathrm{A}}
+  \]
+\end{itemize}
+
+\subsection*{11.3 Dipolo Magnético}
+\addcontentsline{toc}{subsection}{11.3 Dipolo Magnético}
+
+\begin{itemize}
+  \item \textbf{Momento dipolar magnético de una espira plana:}
+  \[
+    \vec{\mu} = N I A \hat{n}
+  \]
+  \item \textbf{Torque sobre una espira en campo magnético:}
+  \[
+    \vec{\tau} = \vec{\mu} \times \vec{B}
+  \]
+  \item \textbf{Energía potencial magnética del dipolo:}
+  \[
+    U = -\vec{\mu} \cdot \vec{B}
+  \]
+\end{itemize}
+
+\section*{12. Inducción Electromagnética, Maxwell y Ondas}
+\addcontentsline{toc}{section}{12. Inducción Electromagnética, Maxwell y Ondas}
+
+\subsection*{12.1 Ley de Faraday-Henry y Ley de Lenz}
+\addcontentsline{toc}{subsection}{12.1 Ley de Faraday-Henry y Ley de Lenz}
+
+\begin{itemize}
+  \item \textbf{Fuerza Electromotriz Inducida ($\mathcal{E}$):}
+  \[
+    \mathcal{E} = -\frac{d\Phi_B}{dt} = -\frac{d}{dt}\left( \iint_S \vec{B} \cdot d\vec{A} \right)
+  \]
+  \item \textbf{FEM de movimiento en barra conductora (longitud $L$, velocidad $v \perp B$):}
+  \[
+    \mathcal{E} = B L v
+  \]
+\end{itemize}
+
+\subsection*{12.2 Inductancia y Autoinducción}
+\addcontentsline{toc}{subsection}{12.2 Inductancia y Autoinducción}
+
+\begin{itemize}
+  \item \textbf{Autoinductancia ($L$):}
+  \[
+    L = \frac{N \Phi_B}{I} \implies \mathcal{E}_L = -L \frac{dI}{dt}
+  \]
+  \item \textbf{Inductancia de un solenoide ideal (longitud $l$, área $A$, $N$ vueltas):}
+  \[
+    L = \mu_0 \frac{N^2 A}{l} = \mu_0 n^2 A l
+  \]
+  \item \textbf{Inductancia Mutua ($M$) (1):}
+  \[
+    M_{12} = \frac{N_2 \Phi_{21}}{I_1}
+  \]
+  \item \textbf{Inductancia Mutua ($M$) (2):}
+  \[
+    \mathcal{E}_2 = -M_{12} \frac{dI_1}{dt}
+  \]
+  \item \textbf{Energía acumulada en un inductor:}
+  \[
+    U = \frac{1}{2} L I^2
+  \]
+\end{itemize}
+
+\section*{Compendio V: Óptica y Luz}
+\addcontentsline{toc}{section}{Compendio V: Óptica y Luz}
+
+\textit{(Nivel Básico)}
+
+\section*{13. Óptica Geométrica y Sistemas Ópticos}
+\addcontentsline{toc}{section}{13. Óptica Geométrica y Sistemas Ópticos}
+
+\subsection*{13.1 Propagación de la Luz y Leyes Fundamentales}
+\addcontentsline{toc}{subsection}{13.1 Propagación de la Luz y Leyes Fundamentales}
+
+\begin{itemize}
+  \item \textbf{Índice de refracción absoluto ($c = \text{velocidad en el vacío}$):}
+  \[
+    n = \frac{c}{v}
+  \]
+  \item \textbf{Ley de Reflexión:}
+  \[
+    \theta_i = \theta_r
+  \]
+  \item \textbf{Ley de Refracción (Ley de Snell):}
+  \[
+    n_1 \sen(\theta_1) = n_2 \sen(\theta_2)
+  \]
+  \item \textbf{Ángulo Crítico y Reflexión Interna Total ($n_1 > n_2$):}
+  \[
+    \sen(\theta_c) = \frac{n_2}{n_1} \implies \theta_c = \arcsen\left( \frac{n_2}{n_1} \right)
+  \]
+\end{itemize}
+
+\subsection*{13.2 Espejos Planos y Esféricos (Aproximación Paraxial)}
+\addcontentsline{toc}{subsection}{13.2 Espejos Planos y Esféricos (Aproximación Paraxial)}
+
+\begin{itemize}
+  \item \textbf{Relación entre Radio de Curvatura y Distancia Focal:}
+  \[
+    f = \frac{R}{2}
+  \]
+  \item \textbf{Ecuación de Descartes para Espejos Esféricos ($s_o = \text{objeto}, \, s_i = \text{imagen}$):}
+  \[
+    \frac{1}{s_o} + \frac{1}{s_i} = \frac{1}{f} = \frac{2}{R}
+  \]
+  \item \textbf{Aumento Lateral Transversal ($m$):}
+  \[
+    m = \frac{y_i}{y_o} = -\frac{s_i}{s_o}
+  \]
+\end{itemize}
+
+\section*{14. Óptica Ondulatoria (Interferencia, Difracción y Polarización)}
+\addcontentsline{toc}{section}{14. Óptica Ondulatoria (Interferencia, Difracción y Polarización)}
+
+\subsection*{14.1 Interferencia por División de Frente de Onda}
+\addcontentsline{toc}{subsection}{14.1 Interferencia por División de Frente de Onda}
+
+\begin{itemize}
+  \item \textbf{Experimento de la Doble Rendija de Young (Separación $d$, distancia a pantalla $D \gg d$) (1):}
+  \[
+    d \sen\theta = m \lambda \implies y_{\mathrm{máx}} \approx m \frac{\lambda D}{d} \quad m \in \mathbb{Z}
+  \]
+  \item \textbf{Experimento de la Doble Rendija de Young (Separación $d$, distancia a pantalla $D \gg d$) (2):}
+  \[
+    d \sen\theta = \left( m + \frac{1}{2} \right)\lambda \implies y_{\mathrm{mín}} \approx \left( m + \frac{1}{2} \right)\frac{\lambda D}{d} \quad m \in \mathbb{Z}
+  \]
+  \item \textbf{Experimento de la Doble Rendija de Young (Separación $d$, distancia a pantalla $D \gg d$) (3):}
+  \[
+    \Delta y = \frac{\lambda D}{d}
+  \]
+\end{itemize}
+
+\subsection*{14.2 Polarización de la Luz}
+\addcontentsline{toc}{subsection}{14.2 Polarización de la Luz}
+
+\begin{itemize}
+  \item \textbf{Ley de Malus (Intensidad tras polarizador lineal con ángulo $\theta$):}
+  \[
+    I = I_0 \cos^2\theta
+  \]
+  \item \textbf{Ángulo de Polarización de Brewster:}
+  \[
+    \tan(\theta_B) = \frac{n_2}{n_1} \implies \theta_B + \theta_t = 90^\circ
+  \]
+\end{itemize}
+
+\section*{15. Óptica Cuántica, Radiación, Haces Láser y No Lineal}
+\addcontentsline{toc}{section}{15. Óptica Cuántica, Radiación, Haces Láser y No Lineal}
+
+\subsection*{15.1 Fotones y Naturaleza Cuántica de la Luz}
+\addcontentsline{toc}{subsection}{15.1 Fotones y Naturaleza Cuántica de la Luz}
+
+\begin{itemize}
+  \item \textbf{Energía del Fotón (Relación de Planck-Einstein) (1):}
+  \[
+    E = h f = \hbar \omega
+  \]
+  \item \textbf{Energía del Fotón (Relación de Planck-Einstein) (2):}
+  \[
+    \hbar = \frac{h}{2\pi}
+  \]
+  \item \textbf{Momento Lineal del Fotón (Relación de De Broglie):}
+  \[
+    p = \frac{h}{\lambda} = \hbar k = \frac{E}{c}
+  \]
+  \item \textbf{Ecuación del Efecto Fotoeléctrico de Einstein:}
+  \[
+    E_{k,\mathrm{máx}} = e V_{\text{corte}} = h f - \Phi
+  \]
+  \item \textbf{Presión de Radiación ($P_{\mathrm{rad}}$ con densidad de flujo radiante / irradiancia $I$) (1):}
+  \[
+    P_{\mathrm{rad}} = \frac{I}{c} \quad (\text{Absorción pura})
+  \]
+  \item \textbf{Presión de Radiación ($P_{\mathrm{rad}}$ con densidad de flujo radiante / irradiancia $I$) (2):}
+  \[
+    P_{\mathrm{rad}} = \frac{2I}{c} \quad (\text{Reflexión perfecta})
+  \]
+\end{itemize}
+
+\section*{Compendio VI: Física Moderna}
+\addcontentsline{toc}{section}{Compendio VI: Física Moderna}
+
+\textit{(Nivel Básico)}
+
+\section*{16. Teoría de la Relatividad (Especial y General)}
+\addcontentsline{toc}{section}{16. Teoría de la Relatividad (Especial y General)}
+
+\subsection*{16.1 Cinemática Relativista Unidimensional}
+\addcontentsline{toc}{subsection}{16.1 Cinemática Relativista Unidimensional}
+
+\begin{itemize}
+  \item \textbf{Factor de Lorentz ($\gamma$ con $\beta = v/c$):}
+  \[
+    \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{\sqrt{1 - \beta^2}}
+  \]
+  \item \textbf{Dilatación Temporal ($\Delta t_0 = \text{tiempo propio}$):}
+  \[
+    \Delta t = \gamma \Delta t_0 = \frac{\Delta t_0}{\sqrt{1 - \frac{v^2}{c^2}}}
+  \]
+  \item \textbf{Contracción de la Longitud ($L_0 = \text{longitud propia}$ en dirección del movimiento):}
+  \[
+    L = \frac{L_0}{\gamma} = L_0 \sqrt{1 - \frac{v^2}{c^2}}
+  \]
+  \item \textbf{Adición Relativista de Velocidades (Movimiento en el eje $x$):}
+  \[
+    u_x' = \frac{u_x - v}{1 - \frac{u_x v}{c^2}} \iff u_x = \frac{u_x' + v}{1 + \frac{u_x' v}{c^2}}
+  \]
+\end{itemize}
+
+\subsection*{16.2 Dinámica y Equivalencia Masa-Energía}
+\addcontentsline{toc}{subsection}{16.2 Dinámica y Equivalencia Masa-Energía}
+
+\begin{itemize}
+  \item \textbf{Momento Lineal Relativista:}
+  \[
+    \vec{p} = \gamma m_0 \vec{v} = \frac{m_0 \vec{v}}{\sqrt{1 - \frac{v^2}{c^2}}}
+  \]
+  \item \textbf{Energía en Reposo:}
+  \[
+    E_0 = m_0 c^2
+  \]
+  \item \textbf{Energía Total de una Partícula Libre:}
+  \[
+    E = \gamma m_0 c^2 = E_k + m_0 c^2
+  \]
+  \item \textbf{Energía Cinética Relativista:}
+  \[
+    E_k = (\gamma - 1) m_0 c^2 = m_0 c^2 \left( \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} - 1 \right)
+  \]
+  \item \textbf{Relación Fundamental Energía-Momento (1):}
+  \[
+    E^2 = (p c)^2 + (m_0 c^2)^2 \implies E = \sqrt{p^2 c^2 + m_0^2 c^4}
+  \]
+  \item \textbf{Relación Fundamental Energía-Momento (2):}
+  \[
+    (\text{Para fotones y partículas sin masa } m_0 = 0 \implies E = p c)
+  \]
+\end{itemize}
+
+\subsection*{16.3 Efecto Doppler Relativista}
+\addcontentsline{toc}{subsection}{16.3 Efecto Doppler Relativista}
+
+\begin{itemize}
+  \item \textbf{Fuente:}
+  \[
+    f_o = f_s \sqrt{\frac{1 - \beta}{1 + \beta}} \quad (\text{Alejamiento}) \quad |
+  \]
+  \item \textbf{Observador en dirección longitudinal:}
+  \[
+    f_o = f_s \sqrt{\frac{1 + \beta}{1 - \beta}} \quad (\text{Acercamiento})
+  \]
+  \item \textbf{Efecto Doppler Transversal ($\theta = 90^\circ$):}
+  \[
+    f_o = \frac{f_s}{\gamma} = f_s \sqrt{1 - \beta^2}
+  \]
+\end{itemize}
+
+\section*{17. Mecánica Cuántica y Física Atómica}
+\addcontentsline{toc}{section}{17. Mecánica Cuántica y Física Atómica}
+
+\subsection*{17.1 Fenomenología Cuántica Temprana}
+\addcontentsline{toc}{subsection}{17.1 Fenomenología Cuántica Temprana}
+
+\begin{itemize}
+  \item \textbf{Hipótesis de De Broglie (Dualidad onda-partícula) (1):}
+  \[
+    \lambda = \frac{h}{p} = \frac{h}{\gamma m v}
+  \]
+  \item \textbf{Hipótesis de De Broglie (Dualidad onda-partícula) (2):}
+  \[
+    p = \hbar k = \frac{h}{\lambda}
+  \]
+  \item \textbf{Efecto Fotoeléctrico (Einstein) (1):}
+  \[
+    E_k^{\mathrm{máx}} = e V_s = h f - \Phi_0 = \hbar \omega - \Phi_0
+  \]
+  \item \textbf{Efecto Fotoeléctrico (Einstein) (2):}
+  \[
+    f_0 = \frac{\Phi_0}{h}
+  \]
+  \item \textbf{Dispersión Compton (Corrimiento en longitud de onda) (1):}
+  \[
+    \Delta\lambda = \lambda' - \lambda = \frac{h}{m_e c}(1 - \cos\theta) = \lambda_C (1 - \cos\theta)
+  \]
+  \item \textbf{Dispersión Compton (Corrimiento en longitud de onda) (2):}
+  \[
+    \lambda_C = \frac{h}{m_e c} \approx 2.4263 \times 10^{-12} \, \mathrm{m} \quad (\text{Longitud de onda Compton})
+  \]
+  \item \textbf{Principio de Incertidumbre de Heisenberg (1):}
+  \[
+    \Delta x \cdot \Delta p_x \ge \frac{\hbar}{2}
+  \]
+  \item \textbf{Principio de Incertidumbre de Heisenberg (2):}
+  \[
+    \Delta E \cdot \Delta t \ge \frac{\hbar}{2}
+  \]
+\end{itemize}
+
+\subsection*{17.2 Modelo Atómico de Bohr (Átomos Hidrogenoides de número atómico $Z$)}
+\addcontentsline{toc}{subsection}{17.2 Modelo Atómico de Bohr (Átomos Hidrogenoides de número atómico $Z$)}
+
+\begin{itemize}
+  \item \textbf{Cuantización del Momento Angular Orbital (1):}
+  \[
+    L = m_e v r = n \hbar = n \frac{h}{2\pi}
+  \]
+  \item \textbf{Cuantización del Momento Angular Orbital (2):}
+  \[
+    n = 1, 2, 3, \dots
+  \]
+  \item \textbf{Radios de Órbitas Permitidas ($a_0 = \text{Radio de Bohr}$) (1):}
+  \[
+    r_n = \frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2} \frac{n^2}{Z} = a_0 \frac{n^2}{Z}
+  \]
+  \item \textbf{Radios de Órbitas Permitidas ($a_0 = \text{Radio de Bohr}$) (2):}
+  \[
+    a_0 = \frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2} \approx 0.529 \, \mathrm{Å}
+  \]
+  \item \textbf{Niveles de Energía Cuantizados:}
+  \[
+    E_n = -\frac{m_e Z^2 e^4}{32 \pi^2 \varepsilon_0^2 \hbar^2} \frac{1}{n^2} = -E_R \frac{Z^2}{n^2} = -13.6 \, \mathrm{eV} \cdot \frac{Z^2}{n^2}
+  \]
+  \item \textbf{Fórmula de Rydberg para Transiciones Espectrales (1):}
+  \[
+    \frac{1}{\lambda} = R_\infty Z^2 \left( \frac{1}{n_1^2} - \frac{1}{n_2^2} \right)
+  \]
+  \item \textbf{Fórmula de Rydberg para Transiciones Espectrales (2):}
+  \[
+    R_\infty = \frac{m_e e^4}{8 \varepsilon_0^2 h^3 c} \approx 1.09737 \times 10^7 \, \mathrm{m}^{-1}
+  \]
+\end{itemize}
+
+\section*{18. Física Nuclear, Radiactividad y Partículas Elementales}
+\addcontentsline{toc}{section}{18. Física Nuclear, Radiactividad y Partículas Elementales}
+
+\subsection*{18.1 Estructura Nuclear y Defecto de Masa}
+\addcontentsline{toc}{subsection}{18.1 Estructura Nuclear y Defecto de Masa}
+
+\begin{itemize}
+  \item \textbf{Radio Nuclear Empírico ($A = \text{número másico}$) (1):}
+  \[
+    R \approx R_0 A^{1/3}
+  \]
+  \item \textbf{Radio Nuclear Empírico ($A = \text{número másico}$) (2):}
+  \[
+    R_0 \approx 1.2 \, \mathrm{fm} = 1.2 \times 10^{-15} \, \mathrm{m}
+  \]
+  \item \textbf{Defecto de Masa ($\Delta m$ para un núcleo $_Z^A X_N$ con $N = A - Z$):}
+  \[
+    \Delta m = Z m_p + N m_n - M_{\text{núcleo}}(A, Z)
+  \]
+  \item \textbf{Energía de Enlace Nuclear Total ($B$ o $E_b$):}
+  \[
+    B(A, Z) = \Delta m \cdot c^2 = [Z m_p + (A - Z) m_n - M_{\text{núcleo}}] c^2
+  \]
+  \item \textbf{Energía de Enlace por Nucleón ($B/A$):}
+  \[
+    \frac{B}{A} = \frac{B(A, Z)}{A} \quad (\approx 8.8 \, \text{MeV/nucleón para el } ^{56}\mathrm{Fe})
+  \]
+\end{itemize}
+
+\subsection*{18.2 Cinética de la Desintegración Radiactiva}
+\addcontentsline{toc}{subsection}{18.2 Cinética de la Desintegración Radiactiva}
+
+\begin{itemize}
+  \item \textbf{Ley de Desintegración Radiactiva:}
+  \[
+    N(t) = N_0 e^{-\lambda t}
+  \]
+  \item \textbf{Actividad radiactiva ($a(t)$ en becquerels $\mathrm{bq} = \mathrm{des/s}$:}
+  \[
+    A(t) = -\frac{dN}{dt} = \lambda N(t) = A_0 e^{-\lambda t}
+  \]
+  \item \textbf{Curie $\mathrm{ci}$):}
+  \[
+    A_0 = \lambda N_0
+  \]
+  \item \textbf{Periodo de Semidesintegración / Vida Media ($t_{1/2}$):}
+  \[
+    t_{1/2} = \frac{\ln(2)}{\lambda} \approx \frac{0.693}{\lambda}
+  \]
+  \item \textbf{Tiempo de Vida Medio ($\tau$):}
+  \[
+    \tau = \frac{1}{\lambda} = \frac{t_{1/2}}{\ln(2)} \approx 1.443 \, t_{1/2}
+  \]
+\end{itemize}
+
+\subsection*{18.3 Tipos Principales de Desintegración Radiactiva}
+\addcontentsline{toc}{subsection}{18.3 Tipos Principales de Desintegración Radiactiva}
+
+\begin{itemize}
+  \item \textbf{Desintegración Alfa ($\alpha = \,_2^4\mathrm{He}$):}
+  \[
+    _Z^A X \longrightarrow \,_{Z-2}^{A-4} Y + \,_2^4\mathrm{He} + Q_\alpha
+  \]
+  \item \textbf{Desintegración Beta Negativa ($\beta^-$ con emisión de antineutrino electrónico):}
+  \[
+    _Z^A X \longrightarrow \,_{Z+1}^A Y + e^- + \bar{\nu}_e + Q_{\beta^-} \quad (n \to p + e^- + \bar{\nu}_e)
+  \]
+  \item \textbf{Desintegración Beta Positiva ($\beta^+$ con emisión de neutrino electrónico):}
+  \[
+    _Z^A X \longrightarrow \,_{Z-1}^A Y + e^+ + \nu_e + Q_{\beta^+} \quad (p \to n + e^+ + \nu_e)
+  \]
+  \item \textbf{Captura Electrónica ($\mathrm{CE}$):}
+  \[
+    _Z^A X + e^- \longrightarrow \,_{Z-1}^A Y + \nu_e + Q_{\mathrm{CE}}
+  \]
+  \item \textbf{Emisión Gamma ($\gamma = \text{fotón nuclear}$):}
+  \[
+    _Z^A X^* \longrightarrow \,_Z^A X + \gamma
+  \]
+\end{itemize}
+
+\section*{19. Física del Estado Sólido y Materia Condensada}
+\addcontentsline{toc}{section}{19. Física del Estado Sólido y Materia Condensada}
+
+\subsection*{19.1 Cristalografía y Difracción}
+\addcontentsline{toc}{subsection}{19.1 Cristalografía y Difracción}
+
+\begin{itemize}
+  \item \textbf{Ley de Bragg para Difracción de Rayos X ($d_{hkl} = \text{espaciado interplanar}$):}
+  \[
+    2 d_{hkl} \sen\theta = n \lambda \quad n \in \mathbb{N}
+  \]
+  \item \textbf{Espaciado Interplanar para Red Cúbica Simple (Parámetro de red $a$):}
+  \[
+    d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}}
+  \]
+  \item \textbf{Vectores Primitivos de la Red Recíproca (1):}
+  \[
+    \vec{b}_1 = 2\pi \frac{\vec{a}_2 \times \vec{a}_3}{\vec{a}_1 \cdot (\vec{a}_2 \times \vec{a}_3)}
+  \]
+  \item \textbf{Vectores Primitivos de la Red Recíproca (2):}
+  \[
+    \vec{b}_2 = 2\pi \frac{\vec{a}_3 \times \vec{a}_1}{\vec{a}_1 \cdot (\vec{a}_2 \times \vec{a}_3)}
+  \]
+  \item \textbf{Vectores Primitivos de la Red Recíproca (3):}
+  \[
+    \vec{b}_3 = 2\pi \frac{\vec{a}_1 \times \vec{a}_2}{\vec{a}_1 \cdot (\vec{a}_2 \times \vec{a}_3)}
+  \]
+  \item \textbf{Condición de Difracción de Laue ($\vec{G} = \vec{G}_{hkl} = \text{vector de red recíproca}$) (1):}
+  \[
+    \Delta\vec{k} = \vec{k}' - \vec{k} = \vec{G} \iff 2\vec{k} \cdot \vec{G} + |\vec{G}|^2 = 0 \quad (\text{para dispersión elástica } |\vec{k}'| = |\vec{k}|)
+  \]
+  \item \textbf{Condición de Difracción de Laue (forma alternativa):}
+  \[
+    \text{O definiendo } \Delta\vec{k} = \vec{k} - \vec{k}' = \vec{G}: \quad 2\vec{k} \cdot \vec{G} = |\vec{G}|^2
+  \]
+\end{itemize}
+
+\subsection*{19.2 Gas de Electrones Libres de Fermi}
+\addcontentsline{toc}{subsection}{19.2 Gas de Electrones Libres de Fermi}
+
+\begin{itemize}
+  \item \textbf{Vector de Onda de Fermi y Momento de Fermi (1):}
+  \[
+    k_F = (3\pi^2 n)^{1/3}
+  \]
+  \item \textbf{Vector de Onda de Fermi y Momento de Fermi (2):}
+  \[
+    p_F = \hbar k_F = \hbar (3\pi^2 n)^{1/3}
+  \]
+  \item \textbf{Vector de Onda de Fermi y Momento de Fermi (3):}
+  \[
+    n = \frac{N}{V}
+  \]
+  \item \textbf{Energía de Fermi a $T = 0\mathrm{ K}$:}
+  \[
+    E_F = \frac{\hbar^2 k_F^2}{2m} = \frac{\hbar^2}{2m}(3\pi^2 n)^{2/3}
+  \]
+  \item \textbf{Temperatura de fermi:}
+  \[
+    T_F = \frac{E_F}{k_B}
+  \]
+  \item \textbf{Velocidad de fermi:}
+  \[
+    v_F = \frac{\hbar k_F}{m} = \sqrt{\frac{2E_F}{m}}
+  \]
+  \item \textbf{Densidad de Estados Tridimensional ($g(E)$ o $D(E)$):}
+  \[
+    g(E) = \frac{V}{2\pi^2}\left( \frac{2m}{\hbar^2} \right)^{3/2} \sqrt{E} = \frac{3N}{2E_F^{3/2}}\sqrt{E}
+  \]
+  \item \textbf{Capacidad Calorífica Electrónica Lineal ($T \ll T_F$):}
+  \[
+    C_{v,e} = \gamma T = \frac{\pi^2}{2}\left( \frac{k_B T}{E_F} \right) N k_B = \frac{\pi^2}{3} g(E_F) k_B^2 T
+  \]
+\end{itemize}
+
+\subsection*{19.3 Transporte Electrónico y Térmico}
+\addcontentsline{toc}{subsection}{19.3 Transporte Electrónico y Térmico}
+
+\begin{itemize}
+  \item \textbf{Conductividad Eléctrica de Drude-Sommerfeld:}
+  \[
+    \sigma = \frac{n e^2 \tau_c}{m}
+  \]
+  \item \textbf{Ley de Wiedemann-Franz (Número de Lorenz $L$) (1):}
+  \[
+    \frac{K}{\sigma} = L T
+  \]
+  \item \textbf{Ley de Wiedemann-Franz (Número de Lorenz $L$) (2):}
+  \[
+    L = \frac{\pi^2}{3}\left( \frac{k_B}{e} \right)^2 \approx 2.44 \times 10^{-8} \, \frac{\mathrm{W}\cdot\Omega}{\mathrm{K}^2}
+  \]
+\end{itemize}
+
+
+\end{document}
